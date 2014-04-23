@@ -47,7 +47,7 @@
      Close
 ---------------*/
 
-.ui.modal > .close {
+.ui.modal > .cross {
   cursor: pointer;
   position: absolute;
   z-index: 1;
@@ -60,7 +60,7 @@
 
   color: #FFFFFF;
 }
-.ui.modal > .close:hover {
+.ui.modal > .cross:hover {
   opacity: 1;
 }
 
@@ -89,7 +89,6 @@
   width: 100%;
   position: relative;
   padding: 2em;
-  background-color: #F4F4F4;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -120,8 +119,9 @@
 ---------------*/
 
 .ui.modal .actions {
-  padding: 1rem 2rem;
-  text-align: right;
+	background-color: #F4F4F4;
+    font-size: 0.825em;
+    padding: 1.5rem 2rem;
 }
 .ui.modal .actions > .button {
   margin-left: 0.75em;
@@ -246,8 +246,8 @@
 }
 @media only screen and (min-width : 998px) {
   .ui.small.modal {
-    width: 58%;
-    margin-left: -29%;
+    width: 48%;
+    margin-left: -24%;
   }
 }
 
@@ -294,4 +294,19 @@
     width: 44%;
     margin-left: -22%;
   }
+}
+
+/* Login */
+.ui.modal .forgot {
+    float: right;
+    font-size: 0.825em;
+}
+.ui.modal .ui.checkbox {
+    font-size: 0.825em;
+}
+.ui.modal .ui.vertical.divider {
+    left: 57%;
+}
+.ui.login-modal {
+	position: relative;
 }

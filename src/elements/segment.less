@@ -23,9 +23,9 @@
   margin: 1em 0em;
   padding: 1em;
 
-  -webkit-border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 0.3125em;
+  -moz-border-radius: 0.3125em;
+  border-radius: 0.3125em;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -467,9 +467,9 @@
 
   margin: 0em;
 
-  -moz-box-shadow: 0px 0px 0px 1px #DDDDDD;
-  -webkit-box-shadow: 0px 0px 0px 1px #DDDDDD;
-  box-shadow: 0px 0px 0px 1px #DDDDDD;
+  -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .ui.top.attached.segment {
@@ -479,9 +479,9 @@
   margin-top: 1em;
   margin-bottom: 0em;
 
-  -moz-border-radius: 5px 5px 0px 0px;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 0.3125em 0.3125em 0px 0px;
+  -webkit-border-radius: 0.3125em 0.3125em 0px 0px;
+  border-radius: 0.3125em 0.3125em 0px 0px;
 }
 .ui.segment.top.attached:first-child {
   margin-top: 0em;
@@ -494,10 +494,63 @@
   margin-top: 0em;
   margin-bottom: 1em;
 
-  -moz-border-radius: 0px 0px 5px 5px;
-  -webkit-border-radius: 0px 0px 5px 5px;
-  border-radius: 0px 0px 5px 5px;
+  -moz-border-radius: 0px 0px 0.3125em 0.3125em;
+  -webkit-border-radius: 0px 0px 0.3125em 0.3125em;
+  border-radius: 0px 0px 0.3125em 0.3125em;
 }
 .ui.segment.bottom.attached:last-child {
   margin-bottom: 0em;
+}
+
+
+
+.ui.level {
+	padding:0;
+}
+.ui.level > .header{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 40px;
+    margin: 0;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.ui.level > .content {
+	padding: 0em 1em;
+}
+.ui.level > .content > .time,
+.ui.level > .content > .price {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    line-height: 30px;
+    margin: 0;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.ui.level > .content > .price {
+	font-size: 1.5em;
+}
+.ui.level > .actions {
+    line-height: 20px;
+    margin: 0;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.ui.level > .actions > .button {
+	margin: 1.5em auto 0.5em;
+	padding: 0.8em 2.5em;
+	
+}
+.ui.level > .actions > .small {
+	font-size: 0.875em;
+}
+
+.ui.active.level {
+	background-color: #FF3366;
+	color: #fff;
+}
+.ui.active.level > .header{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.ui.active.level .time, 
+.ui.active.level .price {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
