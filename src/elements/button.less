@@ -90,7 +90,14 @@
   ;
 }
 
-
+/*--------------
+     Square
+---------------*/
+.ui.squ.button {
+    -webkit-border-radius: 0em !important;
+    -moz-border-radius: 0em !important;
+    border-radius: 0em !important;
+}
 
 
 /*******************************
@@ -573,6 +580,21 @@
 .ui.massive.button {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.ui.twopad.buttons .button,
+.ui.twopad.button {
+	padding: 0.8em 2.5em;
+}
+
+.ui.threepad.buttons .button,
+.ui.threepad.button {
+	padding: 0.8em 3.5em;
+}
+
+.ui.fourpad.buttons .button,
+.ui.fourpad.button {
+	padding: 0.8em 4.5em;
 }
 
 /* Or resize */
@@ -1372,17 +1394,13 @@
   border-color: #fff;
   color: #fff;
 }
+.ui.magenta.buttons .button:hover,
+.ui.magenta.button:hover,
 .ui.magenta.buttons .active.button,
 .ui.magenta.button.active {
   background-color: #FF3366;
   border-color: #FF3366;
   color: #FFFFFF;
-}
-.ui.magenta.buttons .button:hover,
-.ui.magenta.button:hover {
-    background-color: #F42156;
-    border-color: #F42156;
-    color: #FFFFFF;
 }
 .ui.magenta.buttons .button:active,
 .ui.magenta.button:active {
@@ -1506,6 +1524,45 @@
   border-radius: 0px 0px 0.25em 0.25em;
 }
 
+
+.ui.login-user > .ui.basket.button {
+	border: medium none;
+    padding: 0.5em;
+    position: relative;
+	margin-right: 1em;
+}
+.ui.login-user > .ui.basket.button > .icon {
+	margin-right: 0.2em;
+	font-size: 1.325em;
+}
+.ui.login-user > .ui.active.basket.button {
+	color: #FF3366;
+	background-color: #fff;
+}
+.ui.login-user > .ui.basket.button > .ui.circular.label {
+	background-color: #FF3366;
+    border-radius: 500rem;
+    color: #FFFFFF;
+    font-size: 0.6125rem;
+    height: 1.8em;
+    line-height: 1em;
+    padding: 0.4em !important;
+    text-align: center;
+    width: 1.8em;
+	top: -0.4em;
+}
+
+.ui.close.button {
+	border-radius: 500rem;
+    height: 2em;
+    padding: 0.2em;
+    width: 2em;
+}
+.ui.close.button > .icon {
+    font-size: 0.875em;
+    margin-right: 0;
+}
+
 /*******************************
             Btn
 *******************************/
@@ -1526,9 +1583,9 @@
     text-align: center;
     text-decoration: none;
 
-    -webkit-border-radius: 0.25em;
-    -moz-border-radius: 0.25em;
-    border-radius: 0.25em;
+    -webkit-border-radius: 0em;
+    -moz-border-radius: 0em;
+    border-radius: 0em;
 	
     -webkit-user-select: none;
     -moz-user-select: none;
