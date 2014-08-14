@@ -41,6 +41,12 @@
 
 .ui.breadcrumb a.section {
   cursor: pointer;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.ui.breadcrumb a.section:hover {
+  color: #ff3366;
 }
 
 .ui.breadcrumb .section {
@@ -62,6 +68,7 @@
 
 .ui.breadcrumb .active.section {
   font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /*******************************
@@ -70,6 +77,10 @@
 
 .ui.small.breadcrumb {
   font-size: 0.75em;
+}
+
+.ui.medium.breadcrumb {
+  font-size: 0.85em;
 }
 
 .ui.large.breadcrumb {

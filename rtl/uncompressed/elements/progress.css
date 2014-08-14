@@ -35,6 +35,12 @@
   transition: width 1s ease-in-out, background-color 1s ease-out;
 }
 
+.ui.progress .percent {
+  float: left;
+  font-size: 0.875em;
+  line-height: 24px;
+}
+
 /*******************************
             States
 *******************************/
@@ -211,6 +217,10 @@
 
 .ui.teal.progress .bar {
   background-color: #00B5AD;
+}
+
+.ui.magenta.progress .bar {
+  background-color: #FF3366;
 }
 
 /*--------------

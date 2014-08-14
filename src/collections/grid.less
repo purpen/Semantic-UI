@@ -81,6 +81,11 @@ body > .ui.grid {
   margin-top: 0rem;
 }
 
+.ui.grid > .row.only-one {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 /*-------------------
       Content
 --------------------*/
@@ -516,6 +521,7 @@ body > .ui.grid {
 
 /* Mobile Only */
 @media only screen and (max-width : 767px) {
+  .ui.mobile.only.block,
   .ui.mobile.only.grid,
   .ui.grid > .mobile.only.row {
     display: block !important;
@@ -543,6 +549,7 @@ body > .ui.grid {
   }
 }
 @media only screen and (min-width : 768px) {
+  .ui.mobile.only.block,
   .ui.mobile.only.grid,
   .ui.grid > .mobile.only.row,
   .ui.grid > .mobile.only.column,
@@ -552,6 +559,7 @@ body > .ui.grid {
 }
 /* Tablet Only */
 @media only screen and (min-width : 768px) and (max-width : 991px) {
+  .ui.tablet.only.block,
   .ui.tablet.only.grid,
   .ui.grid > .tablet.only.row {
     display: block !important;
@@ -579,6 +587,7 @@ body > .ui.grid {
   }
 }
 @media only screen and (max-width : 767px), (min-width: 992px) {
+  .ui.tablet.only.block,
   .ui.tablet.only.grid,
   .ui.grid > .tablet.only.row,
   .ui.grid > .tablet.only.column,
@@ -588,6 +597,7 @@ body > .ui.grid {
 }
 /* Computer Only */
 @media only screen and (min-width : 992px) {
+  .ui.computer.only.block,
   .ui.computer.only.grid,
   .ui.grid > .computer.only.row {
     display: block !important;
@@ -615,6 +625,7 @@ body > .ui.grid {
   }
 }
 @media only screen and (max-width : 991px) {
+  .ui.computer.only.block,
   .ui.computer.only.grid,
   .ui.grid > .computer.only.row,
   .ui.grid > .computer.only.column,
@@ -805,6 +816,9 @@ body > .ui.grid {
 
 }
 
+/***********************************
+	Schedule
+************************************/
 .ui.grid > .schedule {
 	position: relative;
 }
@@ -820,4 +834,11 @@ body > .ui.grid {
 }
 .ui.grid > .schedule .count > b {
 	font-size: 2em;
+}
+
+/***********************************
+	Grid background-color
+************************************/
+.ui.white.grid {
+	background-color: #fff;
 }

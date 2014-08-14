@@ -26,28 +26,14 @@
              Icon
 *******************************/
 
-@font-face {
-  font-family: 'Icons';
-  src: url(../fonts/icons.eot);
-  src:
-    url(../fonts/icons.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/icons.svg#icons) format('svg'),
-    url(../fonts/icons.woff) format('woff'),
-    url(../fonts/icons.ttf) format('truetype')
-  ;
-
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-decoration: inherit;
-  text-transform: none;
-}
-
 i.icon {
   display: inline-block;
   opacity: 0.75;
 
   margin: 0em 0.25em 0em 0em;
+
+  width: 1.23em;
+  height: 1em;
 
   font-family: 'Icons';
   font-style: normal;
@@ -63,9 +49,6 @@ i.icon {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 
 i.icon.left:before { content: "\f060"; }
@@ -707,6 +690,9 @@ i.red.icon {
 i.purple.icon {
   color: #564F8A !important;
 }
+i.orange.icon {
+  color: #F05940 !important;
+}
 i.teal.icon {
   color: #00B5AD !important;
 }
@@ -733,6 +719,10 @@ i.inverted.red.icon {
 }
 i.inverted.purple.icon {
   background-color: #564F8A !important;
+  color: #FFFFFF !important;
+}
+i.inverted.orange.icon {
+  background-color: #F05940 !important;
   color: #FFFFFF !important;
 }
 i.inverted.teal.icon {

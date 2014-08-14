@@ -73,6 +73,7 @@ phenix.after_submit = function() {
  * 初始化,设置常用的ajax hook
  */
 phenix.initial = function(){
+	/*
 	var shrink_header = 50;
 	var get_current_scroll = function(){
 		return window.pageYOffset || document.documentElement.scrollTop;
@@ -85,7 +86,7 @@ phenix.initial = function(){
 		} else {
 			$('header.main').removeClass('shrink');
 		}
-	});
+	});*/
 	
 	/* 此类为确认后执行的ajax操作 */
 	$('a.confirm-request').livequery(function(){
@@ -150,8 +151,6 @@ phenix.initial = function(){
 	});
 	
 	$('.ui.accordion').accordion();
-	
-	$('.ui.product.buttons .item').tab();
 	
 	$.scrollUp({
         scrollText: '<i class="flat page_up icon"></i>',
@@ -233,6 +232,30 @@ phenix.showbox = function() {
 	        return false;
 		});
     });
+};
+
+/*
+ * 计数
+ */
+phenix.doit = function(eid, n, step){
+	var el = $('#'+eid),i;
+	var now = el.html();
+	if (typeof(step) === "undefined"){
+		step = 1;
+	}
+	if (parseInt(now) == n){
+		now = 0;
+	}
+	i = parseInt(now) + step;
+	if (isNaN(i)) {
+		i = 0;
+	}
+	if (i < n) {
+		el.html(i.toString());
+		setTimeout('phenix.doit(\''+eid+'\','+n+','+step+')', 1);
+	} else {
+		el.html(n.toString());
+	}
 };
 
 /*

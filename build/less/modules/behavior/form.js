@@ -374,6 +374,10 @@ $.fn.form = function(fields, parameters) {
             ;
             if(field.rules !== undefined) {
               $.each(field.rules, function(index, rule) {
+	  			// add for editor by purpen
+	  			if (settings.beforeValid) {
+	  				$.proxy(settings.beforeValid, $field)();
+	  			}
                 if( module.has.field(field.identifier) && !( module.validate.rule(field, rule) ) ) {
                   module.debug('Field is invalid', field.identifier, rule.type);
                   fieldErrors.push(rule.prompt);
@@ -619,7 +623,7 @@ $.fn.form.settings = {
   transition        : 'scale',
   duration          : 150,
 
-
+  beforeValid       : function() {},
   onValid           : function() {},
   onInvalid         : function() {},
   onSuccess         : function() { return true; },

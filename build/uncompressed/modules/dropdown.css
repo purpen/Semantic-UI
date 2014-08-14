@@ -114,7 +114,7 @@
   font-size: 0.875em;
   display: block;
   color: rgba(0, 0, 0, 0.75);
-  padding: 0.85em 1em !important;
+  padding: 0.85em 1.5em;
   font-size: 0.875rem;
   text-transform: none;
   font-weight: normal;
@@ -424,8 +424,8 @@
 ---------------*/
 
 .ui.floating.dropdown .menu {
-  left: 0;
-  right: auto;
+  left: auto;
+  right: 0;
   margin-top: 0.5em !important;
   border-radius: 0.325em;
 }

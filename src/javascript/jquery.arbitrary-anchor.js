@@ -75,6 +75,10 @@
 
     // What are valid values for the id attribute?
     // http://stackoverflow.com/questions/70579/what-are-valid-values-for-the-id-attribute-in-html
+	if ( hash.indexOf('/') == 0) { // fixed semantic-ui tab.js Conflict.
+		return;
+	}
+	
     if ( hash.charAt(0).search(/[A-Za-z]/) > -1 )
       var $actualID         = $document.find( "#" + hash );
 

@@ -399,6 +399,7 @@ module.exports = function(grunt) {
             src    : [
               '**/*.js',
               'images/*',
+			  'images/**/*',
               'fonts/*'
             ],
             dest : 'build/uncompressed'
@@ -420,6 +421,7 @@ module.exports = function(grunt) {
             cwd    : 'src/',
             src    : [
               'images/*',
+			  'images/**/*',
               'fonts/*'
             ],
             dest : 'build/packaged'
@@ -527,20 +529,7 @@ module.exports = function(grunt) {
     cssmin: {
       options : {
         keepSpecialComments: 0,
-        report: 'min',
-        banner : '' +
-          '/*\n' +
-          '* # <%= package.title %>\n' +
-          '* Version: <%= package.version %>\n' +
-          '* http://github.com/jlukic/semantic-ui\n' +
-          '*\n' +
-          '*\n' +
-          '* Copyright <%= grunt.template.today("yyyy") %> Contributors\n' +
-          '* Released under the MIT license\n' +
-          '* http://opensource.org/licenses/MIT\n' +
-          '*\n' +
-          '* Released: <%= grunt.template.today("mm/dd/yyyy") %>\n' +
-          '*/\n'
+        report: 'min'
       },
 
       // copy minified css to minified release
@@ -557,8 +546,14 @@ module.exports = function(grunt) {
       // add comment banner to css release
       createMinCSSPackage: {
         files: {
-          'build/packaged/css/semantic.min.css': [
-            'build/uncompressed/**/*.css'
+          'build/packaged/css/base.min.css': [
+            'build/uncompressed/collections/*.css',
+			'build/uncompressed/elements/*.css',
+			'build/uncompressed/modules/*.css',
+			'build/uncompressed/views/*.css'
+          ],
+          'build/packaged/css/frbird.min.css': [
+            'build/uncompressed/site/zphenix.css'
           ]
         }
       }
@@ -592,24 +587,36 @@ module.exports = function(grunt) {
       createMinJSPackage: {
         options: {
           mangle   : true,
-          compress : true,
-          banner   : '' +
-            '/*' +
-            '* # <%= package.title %>\n' +
-            '* Version: <%= package.version %>\n' +
-            '* http://github.com/jlukic/semantic-ui\n' +
-            '*\n' +
-            '*\n' +
-            '* Copyright <%= grunt.template.today("yyyy") %> Contributors\n' +
-            '* Released under the MIT license\n' +
-            '* http://opensource.org/licenses/MIT\n' +
-            '*\n' +
-            '* Release Date: <%= grunt.template.today("mm/dd/yyyy") %>\n' +
-            '*/\n'
+          compress : true
         },
         files: {
-          'build/packaged/javascript/semantic.min.js': [
-            'build/uncompressed/**/*.js'
+          'build/packaged/javascript/base.min.js': [
+            'build/uncompressed/modules/**/*.js'
+          ],
+          'build/packaged/javascript/jquery-2.min.js': [
+            'build/uncompressed/javascript/jquery-2.1.0.js'
+          ],
+          'build/packaged/javascript/jquery_bundle.min.js': [
+		  	'build/uncompressed/javascript/jquery.taconite.js',
+			'build/uncompressed/javascript/jquery.livequery.min.js',
+			'build/uncompressed/javascript/jquery.form.js',
+			'build/uncompressed/javascript/jquery.imgareaselect.js',
+			'build/uncompressed/javascript/jquery.fineuploader-3.5.0.js',
+			'build/uncompressed/javascript/jquery.countdown.js',
+			'build/uncompressed/javascript/jquery.address.js',
+			'build/uncompressed/javascript/jquery.bar.js',
+			'build/uncompressed/javascript/jquery.easing.1.3.js',
+			'build/uncompressed/javascript/sly.js',
+			'build/uncompressed/javascript/jquery.scrollUp.js',
+			'build/uncompressed/javascript/jquery.arbitrary-anchor.js',
+			'build/uncompressed/javascript/froala_editor.min.js',
+			'build/uncompressed/javascript/video.min.js',
+			'build/uncompressed/javascript/media_manager.min.js',
+			'build/uncompressed/javascript/jquery.qrcode.min.js',
+			'build/uncompressed/javascript/langs/zh_cn.js'
+          ],
+          'build/packaged/javascript/frbird.min.js': [
+            'build/uncompressed/javascript/phenix.js'
           ]
         }
       }

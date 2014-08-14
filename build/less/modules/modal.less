@@ -39,7 +39,8 @@
      Close
 ---------------*/
 
-.ui.modal > .close {
+.ui.modal > .close,
+.ui.modal > .cross {
   cursor: pointer;
   position: absolute;
   z-index: 1;
@@ -50,7 +51,8 @@
   color: #FFFFFF;
 }
 
-.ui.modal > .close:hover {
+.ui.modal > .close:hover,
+.ui.modal > .cross:hover {
   opacity: 1;
 }
 
@@ -60,7 +62,7 @@
 
 .ui.modal > .header {
   margin: 0em;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem 1rem;
   font-size: 1.6em;
   font-weight: bold;
   border-radius: 0.325em 0.325em 0px 0px;
@@ -70,11 +72,10 @@
      Content
 ---------------*/
 
-.ui.modal > .content {
+.ui.modal > .container {
   display: table;
   width: 100%;
   position: relative;
-  padding: 2em;
   background-color: #F4F4F4;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -82,13 +83,17 @@
   box-sizing: border-box;
 }
 
-.ui.modal > .content > .left:not(.ui) {
+.ui.modal > .container .content {
+  padding: 1em;
+}
+
+.ui.modal > .container .content > .left:not(.ui) {
   display: table-cell;
   padding-right: 1.5%;
   min-width: 25%;
 }
 
-.ui.modal > .content > .right:not(.ui) {
+.ui.modal > .container .content > .right:not(.ui) {
   display: table-cell;
   padding-left: 1.5%;
   vertical-align: top;
@@ -96,12 +101,12 @@
 
 /*rtl:ignore*/
 
-.ui.modal > .content > .left:not(.ui) > i.icon {
+.ui.modal > .container .content > .left:not(.ui) > i.icon {
   font-size: 8em;
   margin: 0em;
 }
 
-.ui.modal > .content p {
+.ui.modal > .container .content p {
   line-height: 1.6;
 }
 
@@ -109,13 +114,21 @@
      Actions
 ---------------*/
 
-.ui.modal .actions {
-  padding: 1rem 2rem;
-  text-align: right;
+.ui.modal .actions,
+.ui.modal .action {
+  background-color: #FFF;
+  font-size: 0.825em;
+  padding: 1rem;
 }
 
-.ui.modal .actions > .button {
+.ui.modal .actions > .button,
+.ui.modal .action > .button {
   margin-left: 0.75em;
+}
+
+.ui.modal .right.aligned.actions,
+.ui.modal .right.aligned.action {
+  text-align: right;
 }
 
 /*-------------------
@@ -251,8 +264,8 @@
 
 @media only screen and (min-width : 998px) {
   .ui.small.modal {
-    width: 58%;
-    margin-left: -29%;
+    width: 48%;
+    margin-left: -24%;
   }
 }
 
@@ -274,6 +287,36 @@
   .ui.small.modal {
     width: 20%;
     margin-left: -10%;
+  }
+}
+
+/* Medium */
+
+@media only screen and (min-width : 998px) {
+  .ui.medium.modal {
+    width: 61%;
+    margin-left: -30.5%;
+  }
+}
+
+@media only screen and (min-width : 1500px) {
+  .ui.medium.modal {
+    width: 52%;
+    margin-left: -26%;
+  }
+}
+
+@media only screen and (min-width : 1750px) {
+  .ui.medium.modal {
+    width: 40%;
+    margin-left: -20%;
+  }
+}
+
+@media only screen and (min-width : 2000px) {
+  .ui.medium.modal {
+    width: 32%;
+    margin-left: -16%;
   }
 }
 
@@ -305,4 +348,23 @@
     width: 44%;
     margin-left: -22%;
   }
+}
+
+/* Login */
+
+.ui.modal .forgot {
+  float: right;
+  font-size: 0.825em;
+}
+
+.ui.modal .ui.checkbox {
+  font-size: 0.825em;
+}
+
+.ui.modal .ui.vertical.divider {
+  left: 57%;
+}
+
+.ui.login-modal {
+  position: relative;
 }

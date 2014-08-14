@@ -19,11 +19,11 @@
   margin: 1em 0em;
 
   height: auto;
-  background-color: #EFEFEF;
   padding: 1em;
 
   line-height: 1.33;
   color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.4);
 
   -webkit-transition:
     opacity 0.1s ease,
@@ -141,6 +141,7 @@
   top: 1em;
   right: 0.5em;
   opacity: 0.7;
+  font-size: 0.875em;
 
   -webkit-transition:
     opacity 0.1s linear
@@ -300,8 +301,7 @@
 /*--------------
      Types
 ---------------*/
-.ui.blue.message,
-.ui.info.message {
+.ui.blue.message {
   background-color: #E6F4F9;
   color: #4D8796;
 }
@@ -313,8 +313,7 @@
 }
 
 /* Yellow Text Block */
-.ui.yellow.message,
-.ui.warning.message {
+.ui.yellow.message {
   background-color: #F6F3D5;
   color: #96904D;
 }
@@ -327,9 +326,11 @@
 /* Success Text Block */
 .ui.success.message,
 .ui.positive.message {
-  background-color: #DEFCD5;
-  color: #52A954;
+  background-color: #EDFEF1;
+  border-color: #58CB73;
+  color: #58CB73;
 }
+
 /* Error Text Block */
 .ui.error.message,
 .ui.negative.message {
@@ -337,7 +338,30 @@
   color: #A95252;
 }
 
-
+/* Info Text Block */
+.ui.info.message {
+	background-color: #F1F2F2;
+    border-color: #D7D8D9;
+    color: #4F5459;
+}
+/* Danger Text Block */
+.ui.danger.message {
+    background-color: #FFF7F7;
+    border-color: #F15959;
+    color: #F15959;
+}
+/* Warning Text Block */
+.ui.warning.message {
+	background-color: #FCF8E3;
+    border-color: #D7CFA8;
+    color: #8A6D3B;
+}
+/* magenta Text Block */
+.ui.magenta.message {
+    background-color: #FFF7F7;
+    border-color: #ff3366;
+    color: #ff3366;
+}
 /*--------------
      Sizes
 ---------------*/
@@ -358,11 +382,10 @@
   font-size: 2em;
 }
 
-/**  jbar **/
+/*--------------
+     jbar
+---------------*/
+
 .ui.jbar.message {
-    position: fixed;
-    padding: 1.5em 3em;
-    left: 45%;
-    top: 20%;
-	z-index: 9999;
+    margin-bottom: 1em;
 }

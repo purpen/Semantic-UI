@@ -72,7 +72,7 @@
 
 .ui.comments .comment > .avatar ~ .content {
   padding-top: 0.25em;
-  margin-left: 3.5em;
+  margin-left: 4em;
 }
 
 .ui.comments .comment .metadata {
@@ -93,6 +93,7 @@
 .ui.comments .comment .text {
   margin: 0.25em 0em 0.5em;
   word-wrap: break-word;
+  line-height: 1.325em;
 }
 
 /*--------------------

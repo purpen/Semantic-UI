@@ -47,15 +47,19 @@
   margin: 0em 0em 1em;
 }
 
+.ui.form .right.aligned.field {
+  text-align: left;
+}
+
 /*--------------------
         Labels
 ---------------------*/
 
 .ui.form .field > label {
-  margin: 0em 0em 0.3em;
+  margin: 0em 0em 0.5em;
   display: block;
   color: #555555;
-  font-size: 0.875em;
+  font-size: 0.975em;
 }
 
 /*--------------------
@@ -83,13 +87,13 @@
 .ui.form input[type="url"],
 .ui.form input[type="tel"] {
   margin: 0em;
-  padding: 0.65em 1em;
+  padding: 0.65em 0.8em;
   font-size: 1em;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.15);
   outline: none;
   color: rgba(0, 0, 0, 0.7);
-  border-radius: 0.3125em;
+  border-radius: 0.2125em;
   -webkit-transition: background-color 0.3s ease-out,
     -webkit-box-shadow 0.2s ease,
     border-color 0.2s ease;
@@ -112,6 +116,15 @@
   min-height: 8em;
   height: 12em;
   max-height: 24em;
+  resize: vertical;
+}
+
+.ui.small.textarea,
+.ui.form textarea.small {
+  line-height: 1.33;
+  min-height: 4em;
+  height: 6em;
+  max-height: 12em;
   resize: vertical;
 }
 
@@ -183,12 +196,10 @@
 .ui.form input[type="tel"]:focus,
 .ui.form textarea:focus {
   color: rgba(0, 0, 0, 0.85);
-  border-color: rgba(0, 0, 0, 0.2);
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
+  border-color: rgba(255, 51, 102, 0.9);
   -webkit-appearance: none;
-  -webkit-box-shadow: 0.3em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 0.3em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
 }
 
 /*--------------------
@@ -213,16 +224,14 @@
 
 /* On Field(s) */
 
-.ui.form .fields.error .field label,
-.ui.form .field.error label,
 .ui.form .fields.error .field .input,
 .ui.form .field.error .input {
-  color: #D95C5C;
+  color: #FF3366;
 }
 
 .ui.form .fields.error .field .corner.label,
 .ui.form .field.error .corner.label {
-  border-color: #D95C5C;
+  border-color: #FF3366;
   color: #FFFFFF;
 }
 
@@ -243,14 +252,10 @@
 .ui.form .field.error input[type="url"],
 .ui.form .field.error input[type="tel"] {
   background-color: #FFFAFA;
-  border-color: #E7BEBE;
-  border-right: none;
-  color: #D95C5C;
-  padding-right: 1.2em;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  -webkit-box-shadow: 0.3em 0em 0em 0em #D95C5C inset;
-  box-shadow: 0.3em 0em 0em 0em #D95C5C inset;
+  border-color: #FF3366;
+  color: #FF3366;
+  -webkit-box-shadow: 0em 0em 0em 0em #CC0000 inset;
+  box-shadow: 0em 0em 0em 0em #CC0000 inset;
 }
 
 .ui.form .field.error textarea:focus,
@@ -261,11 +266,11 @@
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="url"]:focus,
 .ui.form .field.error input[type="tel"]:focus {
-  border-color: rgba(255, 80, 80, 1);
-  color: rgba(255, 80, 80, 1);
+  border-color: rgba(255, 51, 102, 1);
+  color: rgba(255, 51, 102, 1);
   -webkit-appearance: none;
-  -webkit-box-shadow: 0.3em 0em 0em 0em #FF5050 inset;
-  box-shadow: 0.3em 0em 0em 0em #FF5050 inset;
+  -webkit-box-shadow: 0em 0em 0em 0em #FF5050 inset;
+  box-shadow: 0em 0em 0em 0em #FF5050 inset;
 }
 
 /*----------------------------
@@ -627,4 +632,48 @@
 
 .ui.large.form {
   font-size: 1.125em;
+}
+
+.ui.form .editable {
+  margin: 0em;
+  padding: 0.65em 0.8em;
+  font-size: 1em;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  outline: none;
+  min-height: 25rem;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.2125em;
+  -webkit-transition: background-color 0.3s ease-out,
+      -webkit-box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  transition: background-color 0.3s ease-out,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  -webkit-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui.form .editable:focus {
+  color: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 51, 102, 0.9);
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+}
+
+.ui.form .reply-content {
+  min-height: 2em;
+}
+
+.ui.form .description {
+  color: #9DA6AB;
+  font-size: 0.8em;
+  margin-top: 0.5em;
 }
