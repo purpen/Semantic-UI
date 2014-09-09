@@ -299,7 +299,12 @@
 					for (var i = 0; i < pages.length; i++) {
 						pagesHtml += o.pageBuilder.call(self, i);
 					}
-					$pages = $pb.html(pagesHtml).children();
+					// modify by purpen
+					if (o.pageItem == 'custom'){
+						$pages = $pb.children();
+					} else {
+						$pages = $pb.html(pagesHtml).children();
+					}
 					$pages.eq(rel.activePage).addClass(o.activeClass);
 				}
 			}
@@ -2041,6 +2046,7 @@
 
 		// Pagesbar
 		pagesBar:       null, // Selector or DOM element for pages bar container.
+		pageItem: 'custom',
 		activatePageOn: null, // Event used to activate page. Can be: click, mouseenter, ...
 		pageBuilder:          // Page item generator.
 			function (index) {

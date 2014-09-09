@@ -11,29 +11,30 @@ var phenix = {
 				window.location = url;
 			},delay);
 	    },
-	    show_error_note: function(msg,delay,ele) {
-	    	phenix.show_notify_bar(msg,'error',delay,ele);
+	    show_error_note: function(msg,delay) {
+			msg = '<div class="content"><i class="remove sign icon"></i>'+ msg +'</div>';
+	    	phenix.show_notify_bar(msg,'error',delay);
 	    },
-	    show_ok_note:function(msg,delay,ele) {
-	    	phenix.show_notify_bar(msg,'ok',delay,ele);
+	    show_ok_note:function(msg,delay) {
+			msg = '<div class="content"><i class="checkmark icon"></i>'+ msg +'</div>';
+	    	phenix.show_notify_bar(msg,'ok', delay);
 	    },
-	    show_notify_bar: function(msg,type,delay,ele) {
+	    show_notify_bar: function(msg,type,delay) {
             var class_name;
 	        if(!type || type == 'ok'){
 	        	type = 'ok';
 				class_name = 'success';
 	        }else{
 				type = 'error';
-				class_name = 'danger';
+				class_name = 'error';
 	        }
-		    $.show_notify_bar({
-	        	position		 : 'top',	
-	        	removebutton     : true,
-	        	message			 : msg,
-	        	time			 : delay,
-				class_name       : class_name,
-	            container        : ele
-	        });
+			
+			$.gritter.add({
+				title: '',
+				text: msg,
+				time: delay,
+				class_name: class_name,
+			});
 	    }
 };
 
@@ -129,6 +130,15 @@ phenix.initial = function(){
 		});
 	});
 	
+	// 从购物车删除
+	$('#shopping-basket .ui.close.button').livequery(function(){
+		$(this).bind('click', function(){
+			var sku = $(this).data('sku');
+			$.get(phenix.url.domain+'/shopping/remove', {sku: sku});
+			return false;
+		});
+	});
+	
 	// 取消并返回上一步
 	$('.ui.cancel.button').bind('click', function(){
 		window.location.href = document.referrer;
@@ -153,8 +163,8 @@ phenix.initial = function(){
 	$('.ui.accordion').accordion();
 	
 	$.scrollUp({
-        scrollText: '<i class="flat page_up icon"></i>',
-		className: 'ui circular share button',
+        scrollText: '<i class="angle up icon"></i>',
+		className: 'ui circular topup button',
         scrollTitle: false
     });
 	
@@ -299,8 +309,7 @@ phenix.build_auth_page = function() {
 					phenix.after_submit();
 					
 					if(data.is_error){
-						$(event.target).addClass('error');
-						phenix.show_error_message(data.message, event.target);
+						phenix.show_error_note(data.message, 5000);
 					}else{
 						phenix.redirect(data.redirect_url);
 					}
@@ -373,8 +382,7 @@ phenix.build_auth_page = function() {
 					phenix.after_submit();
 					
 					if(data.is_error){
-						$(event.target).addClass('error');
-						phenix.show_error_note(data.message, 3000, event.target);
+						phenix.show_error_note(data.message, 5000);
 					}else{
 						phenix.redirect(data.redirect_url);
 					}
@@ -632,6 +640,19 @@ $.extend($.imgAreaSelect.prototype, {
             }
         });
     }
+});
+
+// Simplified Chinese
+jQuery.extend( jQuery.fn.pickadate.defaults, {
+    monthsFull: [ '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月' ],
+    monthsShort: [ '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二' ],
+    weekdaysFull: [ '星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六' ],
+    weekdaysShort: [ '日', '一', '二', '三', '四', '五', '六' ],
+    today: '今天',
+    clear: '清除',
+    firstDay: 1,
+    format: 'yyyy-mm-dd',
+    formatSubmit: 'yyyy-mm-dd'
 });
 
 (function($){
