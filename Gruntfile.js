@@ -553,7 +553,11 @@ module.exports = function(grunt) {
 			'build/uncompressed/views/*.css'
           ],
           'build/packaged/css/semantic-frbird.min.css': [
-            'build/uncompressed/site/semantic-frbird.css'
+		  	'build/uncompressed/site/frbird.css',
+            'build/uncompressed/site/semantic-frbird.css',
+			'build/uncompressed/site/flat.icon.css',
+			'build/uncompressed/site/font-awesome.css',
+			'build/uncompressed/site/froala_editor.css',
           ],
           'build/packaged/css/frbird.min.css': [
             'build/uncompressed/site/zphenix.css'

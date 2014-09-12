@@ -27,21 +27,19 @@
 .ui.header .sub.header {
   font-size: 1rem;
   font-weight: normal;
-  margin: 0.25em 0 0;
+  margin: 0em;
   padding: 0em;
 
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.ui.header .picicon {
+.ui.header .icon {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: middle;
   padding-right: 0.5em;
-  color: #FF3B6B;
-  font-size: 2em;
 }
-.ui.header .picicon:only-child {
+.ui.header .icon:only-child {
   display: inline-block;
   vertical-align: baseline;
 }
@@ -50,7 +48,7 @@
   display: inline-block;
   vertical-align: top;
 }
-.ui.header .picicon + .content {
+.ui.header .icon + .content {
   padding-left: 0.5em;
   display: table-cell;
 }
@@ -64,7 +62,6 @@
 }
 .ui.header + p {
   margin-top: 0em;
-  line-height: 1.35em;
 }
 
 
@@ -87,7 +84,7 @@ h3.ui.header {
 }
 h4.ui.header {
   line-height: 1.33;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 h5.ui.header {
   line-height: 1.2;
@@ -174,16 +171,10 @@ h5.ui.header {
   color: #6ECFF5 !important;
 }
 .ui.black.header {
-  color: #222222 !important;
-}
-.ui.dark.header {
-  color: #444 !important;
-}
-.ui.gray.header {
   color: #5C6166 !important;
 }
 .ui.green.header {
-  color: #44b549 !important;
+  color: #A1CF64 !important;
 }
 .ui.red.header {
   color: #D95C5C !important;
@@ -194,9 +185,6 @@ h5.ui.header {
 .ui.teal.header {
   color: #00B5AD !important;
 }
-.ui.magenta.header {
-  color: #ff3366 !important;
-}
 
 .ui.blue.dividing.header {
   border-bottom: 3px solid #6ECFF5;
@@ -205,7 +193,7 @@ h5.ui.header {
   border-bottom: 3px solid #5C6166;
 }
 .ui.green.dividing.header {
-  border-bottom: 3px solid #44b549;
+  border-bottom: 3px solid #A1CF64;
 }
 .ui.red.dividing.header {
   border-bottom: 3px solid #D95C5C;
@@ -242,7 +230,7 @@ h5.ui.header {
   color: #FFFFFF !important;
 }
 .ui.inverted.green.header {
-  background-color: #44b549 !important;
+  background-color: #A1CF64 !important;
   color: #FFFFFF !important;
 }
 .ui.inverted.red.header {
@@ -255,10 +243,6 @@ h5.ui.header {
 }
 .ui.inverted.teal.header {
   background-color: #00B5AD !important;
-  color: #FFFFFF !important;
-}
-.ui.inverted.magenta.header {
-  background-color: #ff3366 !important;
   color: #FFFFFF !important;
 }
 
@@ -343,7 +327,7 @@ h5.ui.header {
 --------------------*/
 
 .ui.attached.header {
-  background-color: rgb(255, 255, 255);
+  background-color: #E0E0E0;
   padding: 0.5em 1rem;
 
   -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
@@ -365,23 +349,3 @@ h5.ui.header {
   border-radius: 0em 0em 0.3125em 0.3125em;
 }
 
-/*---------------------------
-       Attached no padding
------------------------------*/
-.ui.attached.novpad.header {
-  padding: 0em 1rem;
-}
-
-.ui.attached.footer {
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-    padding: 0.5em 1rem;
-}
-
-.ui.bottom.attached.footer {
-  margin-top: 0em;
-
-  -webkit-border-radius: 0em 0em 0.3125em 0.3125em;
-  -moz-border-radius: 0em 0em 0.3125em 0.3125em;
-  border-radius: 0em 0em 0.3125em 0.3125em;
-}

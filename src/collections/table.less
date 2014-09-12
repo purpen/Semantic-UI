@@ -51,7 +51,7 @@
 
   text-align: left;
   color: rgba(0, 0, 0, 0.8);
-  padding: 0.8em 0.7em;
+  padding: 0.5em 0.7em;
   vertical-align: middle;
 }
 .ui.table thead th:first-child {
@@ -111,12 +111,34 @@
 
 @media only screen and (max-width : 768px) {
   .ui.table {
+    display: block;
     padding: 0em;
-	border-collapse: collapse;
   }
   .ui.table thead,
   .ui.table tfoot {
     display: none;
+  }
+  .ui.table tbody {
+    display: block;
+  }
+  .ui.table tr {
+    display: block;
+  }
+
+  .ui.table tr > td {
+    width: 100% !important;
+    display: block;
+    border: none !important;
+    padding: 0.25em 0.75em;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05) !important;
+  }
+  .ui.table td:first-child {
+    font-weight: bold;
+    padding-top: 1em;
+  }
+  .ui.table td:last-child {
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset !important;
+    padding-bottom: 1em;
   }
 
   /* Clear BG Colors */

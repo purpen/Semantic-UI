@@ -46,21 +46,16 @@
   margin: 0em 0em 1em;
 }
 
-.ui.form .right.aligned.field {
-	text-align: right;
-}
-
-
 /*--------------------
         Labels
 ---------------------*/
 
 .ui.form .field > label {
-  margin: 0em 0em 0.5em;
+  margin: 0em 0em 0.3em;
   display: block;
 
   color: #555555;
-  font-size: 0.975em;
+  font-size: 0.875em;
 }
 
 /*--------------------
@@ -90,7 +85,7 @@
 .ui.form input[type="tel"] {
 
   margin: 0em;
-  padding: 0.65em 0.8em;
+  padding: 0.65em 1em;
   font-size: 1em;
 
   background-color: #FFFFFF;
@@ -100,9 +95,9 @@
 
   color: rgba(0, 0, 0, 0.7);
 
-  -webkit-border-radius: 0.2125em;
-  -moz-border-radius: 0.2125em;
-  border-radius: 0.2125em;
+  -webkit-border-radius: 0.3125em;
+  -moz-border-radius: 0.3125em;
+  border-radius: 0.3125em;
 
   -webkit-transition:
     background-color 0.3s ease-out,
@@ -149,15 +144,6 @@
   min-height: 8em;
   height: 12em;
   max-height: 24em;
-  resize: vertical;
-}
-
-.ui.small.textarea,
-.ui.form textarea.small {
-  line-height: 1.33;
-  min-height: 4em;
-  height: 6em;
-  max-height: 12em;
   resize: vertical;
 }
 
@@ -229,13 +215,15 @@
 .ui.form input[type="tel"]:focus,
 .ui.form textarea:focus{
   color: rgba(0, 0, 0, 0.85);
-  border-color: rgba(255, 51, 102, 0.9);
+  border-color: rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 
   -webkit-appearance: none;
 
-  -webkit-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 0.3em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0.3em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0.3em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
 }
 
 /*--------------------
@@ -257,14 +245,16 @@
 }
 
 /* On Field(s) */
+.ui.form .fields.error .field label,
+.ui.form .field.error label,
 .ui.form .fields.error .field .input,
 .ui.form .field.error .input {
-  color: #FF3366;
+  color: #D95C5C;
 }
 
 .ui.form .fields.error .field .corner.label,
 .ui.form .field.error .corner.label {
-  border-color: #FF3366;
+  border-color: #D95C5C;
   color: #FFFFFF;
 }
 
@@ -285,13 +275,18 @@
 .ui.form .field.error input[type="url"],
 .ui.form .field.error input[type="tel"] {
   background-color: #FFFAFA;
-  border-color: #FF3366;
+  border-color: #E7BEBE;
+  border-left: none;
 
-  color: #FF3366;
+  color: #D95C5C;
+  padding-left: 1.2em;
 
-  -webkit-box-shadow: 0em 0em 0em 0em #CC0000 inset;
-  -moz-box-shadow: 0em 0em 0em 0em #CC0000 inset;
-  box-shadow: 0em 0em 0em 0em #CC0000 inset;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+
+  -webkit-box-shadow: 0.3em 0em 0em 0em #D95C5C inset;
+  -moz-box-shadow: 0.3em 0em 0em 0em #D95C5C inset;
+  box-shadow: 0.3em 0em 0em 0em #D95C5C inset;
 }
 
 .ui.form .field.error textarea:focus,
@@ -302,13 +297,13 @@
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="url"]:focus,
 .ui.form .field.error input[type="tel"]:focus{
-  border-color: rgba(255, 51, 102, 1);
-  color: rgba(255, 51, 102, 1);
+  border-color: rgba(255, 80, 80, 1);
+  color: rgba(255, 80, 80, 1);
 
   -webkit-appearance: none;
-  -webkit-box-shadow: 0em 0em 0em 0em #FF5050 inset;
-  -moz-box-shadow: 0em 0em 0em 0em #FF5050 inset;
-  box-shadow: 0em 0em 0em 0em #FF5050 inset;
+  -webkit-box-shadow: 0.3em 0em 0em 0em #FF5050 inset;
+  -moz-box-shadow: 0.3em 0em 0em 0em #FF5050 inset;
+  box-shadow: 0.3em 0em 0em 0em #FF5050 inset;
 }
 
 /*----------------------------
@@ -340,11 +335,13 @@
   -moz-box-shadow: 0px 1px 0px 1px #E7BEBE;
   box-shadow: 0px 1px 0px 1px #E7BEBE;
 }
-.ui.form .fields.error .field .ui.dropdown .menu .item:hover,
-.ui.form .field.error .ui.dropdown .menu .item:hover {
+.ui.form .fields.error .field .ui.selection.dropdown .menu .item:hover,
+.ui.form .field.error .ui.selection.dropdown .menu .item:hover {
   background-color: #FFF2F2;
 }
 
+
+/* Currently Active Item */
 .ui.form .fields.error .field .ui.dropdown .menu .active.item,
 .ui.form .field.error .ui.dropdown .menu .active.item {
   background-color: #FDCFCF !important;
@@ -561,6 +558,75 @@
   padding-right: 1%;
 }
 
+.ui.form .fields .field:first-child {
+  padding-left: 0%;
+}
+.ui.form .fields .field:last-child {
+  padding-right: 0%;
+}
+
+
+/* Fields grid support */
+.ui.form .fields .wide.field {
+  width: 6.25%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.ui.form .fields .wide.field:first-child {
+  padding-left: 0%;
+}
+.ui.form .fields .wide.field:last-child {
+  padding-right: 0%;
+}
+.ui.form .fields > .one.wide.field {
+  width: 6.25%;
+}
+.ui.form .fields > .two.wide.field {
+  width: 12.5%;
+}
+.ui.form .fields > .three.wide.field {
+  width: 18.75%;
+}
+.ui.form .fields > .four.wide.field {
+  width: 25%;
+}
+.ui.form .fields > .five.wide.field {
+  width: 31.25%;
+}
+.ui.form .fields > .six.wide.field {
+  width: 37.5%;
+}
+.ui.form .fields > .seven.wide.field {
+  width: 43.75%;
+}
+.ui.form .fields > .eight.wide.field {
+  width: 50%;
+}
+.ui.form .fields > .nine.wide.field {
+  width: 56.25%;
+}
+.ui.form .fields > .ten.wide.field {
+  width: 62.5%;
+}
+.ui.form .fields > .eleven.wide.field {
+  width: 68.75%;
+}
+.ui.form .fields > .twelve.wide.field {
+  width: 75%;
+}
+.ui.form .fields > .thirteen.wide.field {
+  width: 81.25%;
+}
+.ui.form .fields > .fourteen.wide.field {
+  width: 87.5%;
+}
+.ui.form .fields > .fifteen.wide.field {
+  width: 93.75%;
+}
+.ui.form .fields > .sixteen.wide.field {
+  width: 100%;
+}
+
 /* Swap to full width on mobile */
 @media only screen and (max-width : 767px) {
   .ui.form .two.fields > .fields,
@@ -570,20 +636,27 @@
   .ui.form .four.fields > .fields,
   .ui.form .four.fields > .field,
   .ui.form .five.fields > .fields,
-  .ui.form .five.fields > .field {
+  .ui.form .five.fields > .field,
+  .ui.form .fields > .two.wide.field,
+  .ui.form .fields > .three.wide.field,
+  .ui.form .fields > .four.wide.field,
+  .ui.form .fields > .five.wide.field,
+  .ui.form .fields > .six.wide.field,
+  .ui.form .fields > .seven.wide.field,
+  .ui.form .fields > .eight.wide.field,
+  .ui.form .fields > .nine.wide.field,
+  .ui.form .fields > .ten.wide.field,
+  .ui.form .fields > .eleven.wide.field,
+  .ui.form .fields > .twelve.wide.field,
+  .ui.form .fields > .thirteen.wide.field,
+  .ui.form .fields > .fourteen.wide.field,
+  .ui.form .fields > .fifteen.wide.field,
+  .ui.form .fields > .sixteen.wide.field {
     width: 100%;
     padding-left: 0%;
     padding-right: 0%;
   }
 }
-
-.ui.form .fields .field:first-child {
-  padding-left: 0%;
-}
-.ui.form .fields .field:last-child {
-  padding-right: 0%;
-}
-
 
 /*--------------------
     Inline Fields
@@ -595,9 +668,11 @@
 }
 .ui.form .inline.fields .field > label,
 .ui.form .inline.fields .field > p,
+.ui.form .inline.fields .field > .ui.input,
 .ui.form .inline.fields .field > input,
 .ui.form .inline.field > label,
 .ui.form .inline.field > p,
+.ui.form .inline.field > .ui.input,
 .ui.form .inline.field > input {
 
   display: inline-block;
@@ -607,11 +682,6 @@
   margin-bottom: 0em;
 
   vertical-align: middle;
-  font-size: 1em;
-}
-.ui.form .inline.fields .field > input,
-.ui.form .inline.field > input {
-  font-size: 0.875em;
 }
 
 .ui.form .inline.fields .field > :first-child,
@@ -647,81 +717,5 @@
 /* Large */
 .ui.large.form {
   font-size: 1.125em;
-}
-
-.ui.form .editable {
-    margin: 0em;
-    padding: 0.65em 0.8em;
-    font-size: 1em;
-
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    outline: none;
-
-	min-height: 25rem;
-	
-    color: rgba(0, 0, 0, 0.7);
-
-    -webkit-border-radius: 0.2125em;
-    -moz-border-radius: 0.2125em;
-    border-radius: 0.2125em;
-
-    -webkit-transition:
-      background-color 0.3s ease-out,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease
-    ;
-    -moz-transition:
-      background-color 0.3s ease-out,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease
-    ;
-    -o-transition:
-      background-color 0.3s ease-out,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease
-    ;
-    -ms-transition:
-      background-color 0.3s ease-out,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease
-    ;
-    transition:
-      background-color 0.3s ease-out,
-      box-shadow 0.2s ease,
-      border-color 0.2s ease
-    ;
-
-    -webkit-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset;
-    -moz-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset;
-    box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset;
-
-    -webkit-appearance: none;
-    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.ui.form .editable:focus{
-  color: rgba(0, 0, 0, 0.85);
-  border-color: rgba(255, 51, 102, 0.9);
-
-  -webkit-appearance: none;
-
-  -webkit-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 0em 0em 0em 0em rgba(0, 0, 0, 0.2) inset;
-}
-
-.ui.form .reply-content {
-	min-height: 2em;
-}
-.ui.form .description {
-    color: #9DA6AB;
-    font-size: 0.8em;
-    margin-top: 0.5em;
 }
 

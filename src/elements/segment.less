@@ -23,9 +23,9 @@
   margin: 1em 0em;
   padding: 1em;
 
-  -webkit-border-radius: 0.3125em;
-  -moz-border-radius: 0.3125em;
-  border-radius: 0.3125em;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -99,25 +99,11 @@
   padding-left: 0em;
 }
 
-/*--------------
-     Square
----------------*/
-.ui.squ.segment {
-    -webkit-border-radius: 0em !important;
-    -moz-border-radius: 0em !important;
-    border-radius: 0em !important;
-}
-
-.ui.twopad.segment {
-	padding: 2em;
-}
-
-
 /*-------------------
     Loose Coupling
 --------------------*/
 
-.ui.pointing.menu + .ui.attached.segment {
+.ui.pointing.menu ~ .ui.attached.segment {
   top: 1px;
 }
 
@@ -340,9 +326,6 @@
 .ui.teal.segment {
   border-top: 0.2em solid #00B5AD;
 }
-.ui.magenta.segment {
-  border-top: 0.2em solid #FF3366;
-}
 
 /*-------------------
    Inverted Colors
@@ -484,9 +467,9 @@
 
   margin: 0em;
 
-  -moz-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 0px 1px #DDDDDD;
+  -webkit-box-shadow: 0px 0px 0px 1px #DDDDDD;
+  box-shadow: 0px 0px 0px 1px #DDDDDD;
 }
 
 .ui.top.attached.segment {
@@ -496,9 +479,9 @@
   margin-top: 1em;
   margin-bottom: 0em;
 
-  -moz-border-radius: 0.3125em 0.3125em 0px 0px;
-  -webkit-border-radius: 0.3125em 0.3125em 0px 0px;
-  border-radius: 0.3125em 0.3125em 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 .ui.segment.top.attached:first-child {
   margin-top: 0em;
@@ -511,9 +494,9 @@
   margin-top: 0em;
   margin-bottom: 1em;
 
-  -moz-border-radius: 0px 0px 0.3125em 0.3125em;
-  -webkit-border-radius: 0px 0px 0.3125em 0.3125em;
-  border-radius: 0px 0px 0.3125em 0.3125em;
+  -moz-border-radius: 0px 0px 5px 5px;
+  -webkit-border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 5px 5px;
 }
 .ui.segment.bottom.attached:last-child {
   margin-bottom: 0em;
