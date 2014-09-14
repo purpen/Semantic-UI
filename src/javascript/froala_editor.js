@@ -5527,7 +5527,7 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
   };
 
   $.Editable.prototype.insertImageHTML = function () {
-    var html = '<div class="froala-popup froala-image-popup" style="display: none;"><h4><span data-text="true">Insert image</span><i title="Cancel" class="fa fa-times" id="f-image-close-' + this._id + '"></i></h4>';
+    var html = '<div class="froala-popup froala-image-popup" style="display: none;"><h4><span data-text="true">Insert image</span><small>（小于3M，jpg、jpeg格式）</small><i title="Cancel" class="fa fa-times" id="f-image-close-' + this._id + '"></i></h4>';
 
     html += '<div id="f-image-list-' + this._id + '">';
 
@@ -6327,10 +6327,10 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
       status = 'Image can be uploaded only to same domain in IE 8 and IE 9.'
     }
 
-    this.callback('imageError', {
+    this.callback('imageError', [{
       code: code,
       message: status
-    }, false);
+    }], false);
 
     this.hideImageLoader();
   };

@@ -19,6 +19,10 @@
 input {
 	background-color:#fff;
 }
+a,
+a:focus {
+	outline:0;
+}
 a > img {
 	text-decoration: none;
 	border: 0;
@@ -1594,6 +1598,46 @@ ul.sidemenu li a:hover span {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
+.user.center .submenu > .ui.buttons > .button {
+	padding: 0.8em 3em;
+}
+.user.center .ui.items .item > .content > .name {
+    font-size: 0.875em;
+} 
+.user.center .ui.items .item > .content > .timestatus {
+	position: relative;
+}
+.user.center .ui.items .item > .content > .timestatus .attr {
+	display: block;
+	margin-bottom: 0.25rem;
+}
+.user.center .ui.items .item .content .attr .amount {
+	margin-left: 0.35rem;
+}
+.user.center .ui.items .item .content .progress {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    z-index: 9;
+}
+.user.center .ui.items .item .content .progress .count {
+    display: block;
+    font-size: 1.15em;
+}
+.user.center .ui.items .item .content .progress .description {
+    font-size: 0.875em;
+}
+.user.center .ui.items .item:hover .content .progress .description {
+    color: #ff3366;
+}
+.user.center .ui.line.link:hover,
+.user.center .ui.line.link:active {
+	text-decoration: none;
+}
+.user.center .ui.list .description {
+	margin-top: 0.5em;
+}
 
 /* 商店列表 */
 #shoplist {
@@ -1851,6 +1895,11 @@ h4.ui.header .advantage {
 #shoppage .buy.box .ui.btn + .btn {
     margin-left: 0.25em;
 }
+#shoppage .ui.header .map.icon {
+	display: inline-block;
+	padding-right: 0em;
+}
+
 #shoppage .product.dream {
 	padding: 4em 0 2em;
 }
