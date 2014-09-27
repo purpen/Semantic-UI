@@ -181,7 +181,7 @@ phenix.show_login_box = function(next_res_url) {
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '输入你注册时填写的邮件'
+					prompt : '输入你注册时填写的邮件或手机号码'
 				}
 			]
 		},
@@ -212,7 +212,7 @@ phenix.show_login_box = function(next_res_url) {
 					
 					if(result.is_error){
 						$(event.target).addClass('error');
-						phenix.show_error_message(result.message, event.target);
+						phenix.show_error_note(result.message);
 					}else{
 						$('.ui.loginbox.modal').modal('hide');
 						phenix.visitor = result.data;
@@ -221,7 +221,6 @@ phenix.show_login_box = function(next_res_url) {
 							$.get(next_res_url);
 						}
 					}
-					
 				}
 			});
 		}
@@ -279,7 +278,7 @@ phenix.build_auth_page = function() {
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '邮件格式不对,请输入您注册时填写的邮件'
+					prompt : '请输入您注册时填写的邮件或手机号码'
 				}
 			]
 		},
@@ -326,20 +325,16 @@ phenix.build_auth_page = function() {
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '账户邮件不能为空'
-				},
-				{
-					type   : 'email',
-					prompt : '账户邮件格式不对'
+					prompt : '账户名称不能为空'
 				}
 			]
 		},
 		nickname: {
-			identifier  : 'nickname',
+			identifier  : 'verify_code',
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '昵称不能为空'
+					prompt : '验证码不能为空'
 				}
 			]
 		},

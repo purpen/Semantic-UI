@@ -461,7 +461,9 @@ header.shrink.main .ui.secondary.user {
 	margin-left: 5px;
 	margin-top: 10px;
 }
-
+#more-comments {
+    margin-top: 1em;
+}
 
 #login-info {
 	padding-top:5px;
@@ -774,7 +776,12 @@ header.shrink.main .ui.secondary.user {
 .not.login .ui.grid .column{
 	padding-top: 5%;
 }
-
+.ui.modal .third {
+	padding-top: 3.5em;
+}
+.ui.modal .ui.vertical.divider {
+    left: 54%;
+}
 
 /* 提交创意 */
 .ui.segment > .submit-help {
@@ -2059,6 +2066,67 @@ h4.ui.header .advantage {
     margin: 18% auto;
 }
 
+.ui.paywait.modal .picicon {
+    font-size: 8em;
+    padding-right: 20px;
+}
+.ui.paywait.modal .picicon .icon {
+    margin-right: 0;
+    opacity: 1;
+}
+.ui.paywait.modal .block {
+	margin-bottom: 3em;
+}
+#checkout .ordered.message {
+	margin-bottom: 2em;
+}
+#checkout .ordered.message .count {
+	color: #ff3366;
+	margin-right: 1em;
+}
+#checkout .ui.table tr .field {
+	margin: 0em;
+}
+#checkout .ui.radio.checkbox {
+    height: auto;
+}
+.payaway .ui.checkbox label {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding-left: 2em;
+}
+.payaway .ui.checkbox label:hover {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.payaway .ui.checkbox label.active {
+	border: 1px solid rgba(255, 51, 102, 1);
+}
+.payaway .ui.radio.checkbox .box:after, 
+.payaway .ui.radio.checkbox label:after {
+	left: 0.7em;
+}
+.payaway .ui.checkbox .box:before, 
+.payaway .ui.checkbox label:before {
+	left: 0.5em;
+}
+.payaway .ui.checkbox label.active:before {
+	box-shadow: 0 0 0 1px rgba(255, 51, 102, 1);
+}
+.payaway .ui.checkbox label.active:after {
+	background-color: #ff3366;
+}
+#checkout .bank .ui.radio.checkbox {
+	margin-bottom: 1em;
+}
+#checkout .bank .ui.checkbox label {
+	padding: 6px 0 6px 2em;
+}
+#checkout .ui.table td.company {
+	vertical-align: top;
+}
+#checkout .ui.table td.company .field {
+	padding-top: 0.45em;
+}
+
 /* 征集专题 */
 .panel{
 	overflow:hidden;
@@ -2669,6 +2737,11 @@ section.log-banner{
     margin-top: 0.5em;
     text-align: center;
 }
+#product-apply-people .item > .content > span {
+    display: inline-block;
+    min-height: 1em;
+}
+
 .try .apply {
 	margin-top: 1.5em;
 }
@@ -2687,6 +2760,11 @@ section.log-banner{
 .try .apply .ui.timer.list > .item > .count > span {
 	font-size: 0.65em;
 	margin-left: 0.15em;
+}
+
+/* 后台管理 */
+.ui.table .actions a {
+	margin-right: 0.5em;
 }
 
 /* 单品活动页 */
@@ -3470,6 +3548,17 @@ section .pad .category {
 		width: 100% !important;
 		text-align: center !important;
 	}
+	.ui.three.items > .item {
+	    width: 98%;
+	}
+	.ui.four.items > .item {
+		width: 99% !important;
+	}
+	.ui.tabox .ui.four.tabs .tab {
+	    width: 100%;
+	    margin-bottom: 1em;
+	}
+	
 	.hide-on-mobile {
 	    display: none !important;
 	}
@@ -3519,5 +3608,8 @@ section .pad .category {
 	}
 	#postpage .ui.big.segment .actions {
 		margin-bottom: 1.5em;
+	}
+	#shoppage .post.comment {
+	    margin-left: 0;
 	}
 }
