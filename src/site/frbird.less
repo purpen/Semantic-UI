@@ -2,7 +2,8 @@
 i.icon {
   font-family: 'FontIcons';
 }
-.ui.star.rating .icon:before {
+.ui.star.rating .icon:before,
+.ui.star.rating .active.icon:before {
   font-family: 'FontIcons';
 }
 i.basic.icon {
@@ -14,6 +15,11 @@ i.basic.icon {
 /*******************************
              Image
 *******************************/
+.ui.tiny.images .image,
+.ui.tiny.images img,
+.ui.tiny.image {
+  width: 50px;
+}
 .ui.mini.images .image,
 .ui.mini.images img,
 .ui.mini.image {
@@ -629,10 +635,9 @@ i.basic.icon {
   right: 0.5em;
   opacity: 0.7;
   font-size: 0.875em;
-  width: 2.5em;
-  height: 2.5em;
-  padding: 0.75em 0em 0em 0.75em;
-  z-index: 2;
+  width: 1em;
+  height: 1em;
+  padding: 0;
   z-index: 10;
 }
 .ui.message > .cross.icon:hover,
@@ -2244,4 +2249,9 @@ ul.ui.list li:before,
 .ui.links .gray.link,
 .ui.gray.link {
     color: rgba(0, 0, 0, 0.45);
+}
+
+
+.ui.magenta.progress .bar {
+    background-color: #ff3366;
 }
