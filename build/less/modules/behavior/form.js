@@ -296,10 +296,6 @@ $.fn.form = function(fields, parameters) {
               else {
                 module.verbose('Inline errors are disabled, no inline error added', identifier);
               }
-            } else { // add by purpen
-				if (typeof settings.error.method == 'function'){
-					settings.error.method.apply(this, errors);
-				}
             }
           },
           errors: function(errors) {
@@ -378,10 +374,6 @@ $.fn.form = function(fields, parameters) {
             ;
             if(field.rules !== undefined) {
               $.each(field.rules, function(index, rule) {
-	  			// add for editor by purpen
-	  			if (settings.beforeValid) {
-	  				$.proxy(settings.beforeValid, $field)();
-	  			}
                 if( module.has.field(field.identifier) && !( module.validate.rule(field, rule) ) ) {
                   module.debug('Field is invalid', field.identifier, rule.type);
                   fieldErrors.push(rule.prompt);
@@ -627,7 +619,7 @@ $.fn.form.settings = {
   transition        : 'scale',
   duration          : 150,
 
-  beforeValid       : function() {},
+
   onValid           : function() {},
   onInvalid         : function() {},
   onSuccess         : function() { return true; },
@@ -643,7 +635,7 @@ $.fn.form.settings = {
     group   : '.field',
     input   : 'input',
     prompt  : '.prompt',
-    submit  : '.submit'
+    submit  : '.submit:not([type="submit"])'
   },
 
   className : {

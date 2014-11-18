@@ -5531,7 +5531,7 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
   };
 
   $.Editable.prototype.insertImageHTML = function () {
-    var html = '<div class="froala-popup froala-image-popup" style="display: none;"><h4><span data-text="true">Insert image</span><i title="Cancel" class="fa fa-times" id="f-image-close-' + this._id + '"></i></h4>';
+    var html = '<div class="froala-popup froala-image-popup" style="display: none;"><h4><span data-text="true">Insert image</span><small>（小于3M，jpg、jpeg格式）</small><i title="Cancel" class="fa fa-times" id="f-image-close-' + this._id + '"></i></h4>';
 
     html += '<div id="f-image-list-' + this._id + '">';
 
@@ -6331,10 +6331,10 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
       status = 'Image can be uploaded only to same domain in IE 8 and IE 9.'
     }
 
-    this.callback('imageError', {
+    this.callback('imageError', [{
       code: code,
       message: status
-    }, false);
+    }], false);
 
     this.hideImageLoader();
   };
@@ -36534,7 +36534,10 @@ $.fn.accordion = function(parameters) {
           var
             $activeTitle     = $title.eq(index),
             $activeContent   = $activeTitle.next($content),
-            $previousTitle   = $activeTitle.siblings(selector.title).filter('.' + className.active),
+            $otherSections   = module.is.menu()
+              ? $activeTitle.parent().siblings(selector.item).find(selector.title)
+              : $activeTitle.siblings(selector.title),
+            $previousTitle   = $otherSections.filter('.' + className.active),
             $previousContent = $previousTitle.next($title),
             contentIsOpen    =  ($previousTitle.size() > 0)
           ;
@@ -36610,7 +36613,11 @@ $.fn.accordion = function(parameters) {
             })
           ;
         },
-
+        is: {
+          menu: function () {
+            return $module.hasClass(className.menu);
+          }
+        },
         setting: function(name, value) {
           if( $.isPlainObject(name) ) {
             $.extend(true, settings, name);
@@ -36791,7 +36798,7 @@ $.fn.accordion.settings = {
   name        : 'Accordion',
   namespace   : 'accordion',
 
-  debug       : true,
+  debug       : false,
   verbose     : true,
   performance : true,
 
@@ -36810,12 +36817,15 @@ $.fn.accordion.settings = {
   },
 
   className   : {
-    active : 'active'
+    active : 'active',
+    menu   : 'menu',
   },
 
   selector    : {
     title   : '.title',
-    content : '.content'
+    content : '.content',
+    menu    : '.menu',
+    item    : '.item',
   }
 
 
@@ -38035,10 +38045,6 @@ $.fn.form = function(fields, parameters) {
               else {
                 module.verbose('Inline errors are disabled, no inline error added', identifier);
               }
-            } else { // add by purpen
-				if (typeof settings.error.method == 'function'){
-					settings.error.method.apply(this, errors);
-				}
             }
           },
           errors: function(errors) {
@@ -38117,10 +38123,6 @@ $.fn.form = function(fields, parameters) {
             ;
             if(field.rules !== undefined) {
               $.each(field.rules, function(index, rule) {
-	  			// add for editor by purpen
-	  			if (settings.beforeValid) {
-	  				$.proxy(settings.beforeValid, $field)();
-	  			}
                 if( module.has.field(field.identifier) && !( module.validate.rule(field, rule) ) ) {
                   module.debug('Field is invalid', field.identifier, rule.type);
                   fieldErrors.push(rule.prompt);
@@ -38366,7 +38368,7 @@ $.fn.form.settings = {
   transition        : 'scale',
   duration          : 150,
 
-  beforeValid       : function() {},
+
   onValid           : function() {},
   onInvalid         : function() {},
   onSuccess         : function() { return true; },
@@ -38382,7 +38384,7 @@ $.fn.form.settings = {
     group   : '.field',
     input   : 'input',
     prompt  : '.prompt',
-    submit  : '.submit'
+    submit  : '.submit:not([type="submit"])'
   },
 
   className : {
@@ -39210,333 +39212,6 @@ $.fn.state.settings = {
 
 })( jQuery, window , document );
 
-/*  ******************************
-  Semantic Module: Carousel
-  Author: Jack Lukic
-  Notes: First Commit May 28, 2013
-
-  A carousel alternates between
-  several pieces of content in sequence.
-
-******************************  */
-
-;(function ( $, window, document, undefined ) {
-
-$.fn.carousel = function(parameters) {
-  var
-    $allModules     = $(this),
-
-    settings        = $.extend(true, {}, $.fn.carousel.settings, parameters),
-
-    eventNamespace  = '.' + settings.namespace,
-    moduleNamespace = 'module-' + settings.namespace,
-    moduleSelector  = $allModules.selector || '',
-
-    time            = new Date().getTime(),
-    performance     = [],
-
-    query           = arguments[0],
-    methodInvoked   = (typeof query == 'string'),
-    queryArguments  = [].slice.call(arguments, 1),
-    returnedValue
-  ;
-
-  $allModules
-    .each(function() {
-      var
-        $module     = $(this),
-        $arrows     = $(settings.selector.arrows),
-        $leftArrow  = $(settings.selector.leftArrow),
-        $rightArrow = $(settings.selector.rightArrow),
-        $content    = $(settings.selector.content),
-        $navigation = $(settings.selector.navigation),
-        $navItem    = $(settings.selector.navItem),
-
-        selector    = $module.selector || '',
-        element     = this,
-        instance    = $module.data('module-' + settings.namespace),
-
-        className   = settings.className,
-        namespace   = settings.namespace,
-        errors      = settings.errors,
-        module
-      ;
-
-      module      = {
-
-        initialize: function() {
-          module.openingAnimation();
-          module.marquee.autoAdvance();
-          $leftArrow
-            .on('click', module.marquee.left)
-          ;
-          $rightArrow
-            .on('click', module.marquee.right)
-          ;
-          $navItem
-            .on('click', module.marquee.change)
-          ;
-        },
-
-        destroy: function() {
-          module.verbose('Destroying previous module for', $module);
-          $module
-            .off(eventNamespace)
-          ;
-        },
-
-        left: function() {
-          var
-            $activeContent = $content.filter('.' + className.active),
-            currentIndex   = $content.index($activeContent),
-            imageCount     = $content.size(),
-            newIndex       = (currentIndex - 1 != -1)
-              ? (currentIndex - 1)
-              : (imageCount - 1)
-          ;
-          $navItem
-            .eq(newIndex)
-              .trigger('click')
-          ;
-        },
-
-        right: function() {
-          var
-            $activeContent = $content.filter('.' + className.active),
-            currentIndex   = $content.index($activeContent),
-            imageCount     = $content.size(),
-            newIndex       = (currentIndex + 1 != imageCount)
-              ? (currentIndex + 1)
-              : 0
-          ;
-          $navItem
-            .eq(newIndex)
-              .trigger('click')
-          ;
-        },
-
-        change: function() {
-          var
-            $selected      = $(this),
-            selectedIndex  = $navItem.index($selected),
-            $selectedImage = $content.eq(selectedIndex)
-          ;
-          module.marquee.autoAdvance();
-          $selected
-            .addClass('active')
-            .siblings()
-              .removeClass('active')
-          ;
-          $selectedImage
-            .addClass('active animated fadeIn')
-            .siblings('.' + className.active)
-              .removeClass('animated fadeIn scaleIn')
-              .animate({
-                opacity: 0
-              }, 500, function(){
-                $(this)
-                  .removeClass('active')
-                  .removeAttr('style')
-                ;
-              })
-          ;
-        },
-
-        autoAdvance: function() {
-          clearInterval(module.timer);
-          module.timer = setInterval(module.marquee.right, settings.duration);
-        },
-
-        setting: function(name, value) {
-          if(value !== undefined) {
-            if( $.isPlainObject(name) ) {
-              module.verbose('Modifying settings object', name, value);
-              $.extend(true, settings, name);
-            }
-            else {
-              module.verbose('Modifying setting', name, value);
-              settings[name] = value;
-            }
-          }
-          else {
-            return settings[name];
-          }
-        },
-        internal: function(name, value) {
-          if(value !== undefined) {
-            if( $.isPlainObject(name) ) {
-              module.verbose('Modifying internal property', name, value);
-              $.extend(true, module, name);
-            }
-            else {
-              module.verbose('Changing internal method to', value);
-              module[name] = value;
-            }
-          }
-          else {
-            return module[name];
-          }
-        },
-        debug: function() {
-          if(settings.debug) {
-            if(settings.performance) {
-              module.performance.log(arguments);
-            }
-            else {
-              module.debug = Function.prototype.bind.call(console.info, console, settings.moduleName + ':');
-              module.debug.apply(console, arguments);
-            }
-          }
-        },
-        verbose: function() {
-          if(settings.verbose && settings.debug) {
-            if(settings.performance) {
-              module.performance.log(arguments);
-            }
-            else {
-              module.verbose = Function.prototype.bind.call(console.info, console, settings.moduleName + ':');
-              module.verbose.apply(console, arguments);
-            }
-          }
-        },
-        error: function() {
-          module.error = Function.prototype.bind.call(console.error, console, settings.moduleName + ':');
-          module.error.apply(console, arguments);
-        },
-        performance: {
-          log: function(message) {
-            var
-              currentTime,
-              executionTime,
-              previousTime
-            ;
-            if(settings.performance) {
-              currentTime   = new Date().getTime();
-              previousTime  = time || currentTime;
-              executionTime = currentTime - previousTime;
-              time          = currentTime;
-              performance.push({
-                'Element'        : element,
-                'Name'           : message[0],
-                'Arguments'      : message[1] || 'None',
-                'Execution Time' : executionTime
-              });
-              clearTimeout(module.performance.timer);
-              module.performance.timer = setTimeout(module.performance.display, 100);
-            }
-          },
-          display: function() {
-            var
-              title              = settings.moduleName,
-              caption            = settings.moduleName + ': ' + moduleSelector + '(' + $allModules.size() + ' elements)',
-              totalExecutionTime = 0
-            ;
-            if(moduleSelector) {
-              title += ' Performance (' + moduleSelector + ')';
-            }
-            if( (console.group !== undefined || console.table !== undefined) && performance.length > 0) {
-              console.groupCollapsed(title);
-              if(console.table) {
-                $.each(performance, function(index, data) {
-                  totalExecutionTime += data['Execution Time'];
-                });
-                console.table(performance);
-              }
-              else {
-                $.each(performance, function(index, data) {
-                  totalExecutionTime += data['Execution Time'];
-                  console.log(data['Name'] + ': ' + data['Execution Time']+'ms');
-                });
-              }
-              console.log('Total Execution Time:', totalExecutionTime +'ms');
-              console.groupEnd();
-              performance = [];
-              time        = false;
-            }
-          }
-        },
-        invoke: function(query, passedArguments, context) {
-          var
-            maxDepth,
-            found
-          ;
-          passedArguments = passedArguments || queryArguments;
-          context         = element         || context;
-          if(typeof query == 'string' && instance !== undefined) {
-            query    = query.split(/[\. ]/);
-            maxDepth = query.length - 1;
-            $.each(query, function(depth, value) {
-              if( $.isPlainObject( instance[value] ) && (depth != maxDepth) ) {
-                instance = instance[value];
-                return true;
-              }
-              else if( instance[value] !== undefined ) {
-                found = instance[value];
-                return true;
-              }
-              module.error(errors.method);
-              return false;
-            });
-          }
-          if ( $.isFunction( found ) ) {
-            return found.apply(context, passedArguments);
-          }
-          return found || false;
-        }
-      };
-
-      if(methodInvoked) {
-        if(instance === undefined) {
-          module.initialize();
-        }
-        module.invoke(query);
-      }
-      else {
-        if(instance !== undefined) {
-          module.destroy();
-        }
-        module.initialize();
-      }
-    })
-  ;
-  return (returnedValue !== undefined)
-    ? returnedValue
-    : this
-  ;
-};
-
-$.fn.carousel.settings = {
-
-  name  : 'Carousel',
-  namespace   : 'carousel',
-
-  verbose     : true,
-  debug       : true,
-  performance : true,
-
-  // delegated event context
-  duration: 5000,
-
-  errors     : {
-    method   : 'The method you called is not defined.'
-  },
-
-  selector : {
-    arrows     : '.arrow',
-    leftArrow  : '.left.arrow',
-    rightArrow : '.right.arrow',
-    content    : '.content',
-    navigation : '.navigation',
-    navItem    : '.navigation .icon'
-  },
-
-  className : {
-    active : 'active'
-  }
-
-};
-
-})( jQuery, window , document );
 /*
  * # Semantic - Chatroom
  * http://github.com/jlukic/semantic-ui/
@@ -40127,8 +39802,7 @@ $.fn.chatroom = function(parameters) {
     }
   })
 ;
-
-  return (returnedValue)
+  return (returnedValue !== undefined)
     ? returnedValue
     : this
   ;
@@ -40443,11 +40117,13 @@ $.fn.checkbox = function(parameters) {
 
         toggle: function(event) {
           module.verbose('Determining new checkbox state');
-          if( module.is.disabled() ) {
-            module.enable();
-          }
-          else if( module.is.enabled() && module.can.disable() ) {
-            module.disable();
+          if( !$input.prop('disabled') ) {
+            if( module.is.disabled() ) {
+              module.enable();
+            }
+            else if( module.is.enabled() && module.can.disable() ) {
+              module.disable();
+            }
           }
         },
         setting: function(name, value) {
@@ -40630,8 +40306,8 @@ $.fn.checkbox.settings = {
   name        : 'Checkbox',
   namespace   : 'checkbox',
 
+  debug       : false,
   verbose     : true,
-  debug       : true,
   performance : true,
 
   // delegated event context
@@ -41204,7 +40880,7 @@ $.fn.dimmer.settings = {
   name        : 'Dimmer',
   namespace   : 'dimmer',
 
-  debug       : true,
+  debug       : false,
   verbose     : true,
   performance : true,
 
@@ -41322,6 +40998,7 @@ $.fn.dropdown = function(parameters) {
             module.bind.touchEvents();
           }
           module.bind.mouseEvents();
+          module.bind.keyboardEvents();
           module.instantiate();
         },
 
@@ -41345,6 +41022,15 @@ $.fn.dropdown = function(parameters) {
         },
 
         bind: {
+          keyboardEvents: function() {
+            module.debug('Binding keyboard events');
+            $module
+              .on('keydown' + eventNamespace, module.handleKeyboard)
+            ;
+            $module
+              .on('focus' + eventNamespace, module.show)
+            ;
+          },
           touchEvents: function() {
             module.debug('Touch device detected binding touch events');
             $module
@@ -41408,6 +41094,69 @@ $.fn.dropdown = function(parameters) {
           }
         },
 
+        handleKeyboard: function(event) {
+          var
+            $selectedItem = $item.filter('.' + className.selected),
+            pressedKey    = event.which,
+            keys          = {
+              enter     : 13,
+              escape    : 27,
+              upArrow   : 38,
+              downArrow : 40
+            },
+            selectedClass   = className.selected,
+            currentIndex    = $item.index( $selectedItem ),
+            hasSelectedItem = ($selectedItem.size() > 0),
+            resultSize      = $item.size(),
+            newIndex
+          ;
+          // close shortcuts
+          if(pressedKey == keys.escape) {
+            module.verbose('Escape key pressed, closing dropdown');
+            module.hide();
+          }
+          // result shortcuts
+          if(module.is.visible()) {
+            if(pressedKey == keys.enter && hasSelectedItem) {
+              module.verbose('Enter key pressed, choosing selected item');
+              $.proxy(module.event.item.click, $item.filter('.' + selectedClass) )(event);
+              event.preventDefault();
+              return false;
+            }
+            else if(pressedKey == keys.upArrow) {
+              module.verbose('Up key pressed, changing active item');
+              newIndex = (currentIndex - 1 < 0)
+                ? currentIndex
+                : currentIndex - 1
+              ;
+              $item
+                .removeClass(selectedClass)
+                .eq(newIndex)
+                  .addClass(selectedClass)
+              ;
+              event.preventDefault();
+            }
+            else if(pressedKey == keys.downArrow) {
+              module.verbose('Down key pressed, changing active item');
+              newIndex = (currentIndex + 1 >= resultSize)
+                ? currentIndex
+                : currentIndex + 1
+              ;
+              $item
+                .removeClass(selectedClass)
+                .eq(newIndex)
+                  .addClass(selectedClass)
+              ;
+              event.preventDefault();
+            }
+          }
+          else {
+            if(pressedKey == keys.enter) {
+              module.show();
+            }
+          }
+        },
+
         event: {
           test: {
             toggle: function(event) {
@@ -41435,17 +41184,22 @@ $.fn.dropdown = function(parameters) {
 
             mouseenter: function(event) {
               var
-                $currentMenu = $(this).find(selector.menu),
+                $currentMenu = $(this).find(selector.submenu),
                 $otherMenus  = $(this).siblings(selector.item).children(selector.menu)
               ;
-              if( $currentMenu.size() > 0 ) {
+              if($currentMenu.length > 0  || $otherMenus.length > 0) {
                 clearTimeout(module.itemTimer);
-                module.itemTimer = setTimeout(function() {
-                  module.animate.hide(false, $otherMenus);
-                  module.verbose('Showing sub-menu', $currentMenu);
-                  module.animate.show(false,  $currentMenu);
+                  module.itemTimer = setTimeout(function() {
+                  if($otherMenus.length > 0) {
+                    module.animate.hide(false, $otherMenus.filter(':visible'));
+                  }
+                  if($currentMenu.length > 0) {
+                    module.verbose('Showing sub-menu', $currentMenu);
+                    module.animate.show(false, $currentMenu);
+                  }
                 }, settings.delay.show * 2);
                 event.preventDefault();
+                event.stopPropagation();
               }
             },
 
@@ -41743,8 +41497,8 @@ $.fn.dropdown = function(parameters) {
           },
           animated: function($subMenu) {
             return ($subMenu)
-              ? $subMenu.is(':animated') || $subMenu.transition('is animating')
-              : $menu.is(':animated') || $menu.transition('is animating')
+              ? $subMenu.is(':animated') || $subMenu.transition && $subMenu.transition('is animating')
+              : $menu.is(':animated') || $menu.transition && $menu.transition('is animating')
             ;
           },
           visible: function($subMenu) {
@@ -42108,7 +41862,7 @@ $.fn.dropdown = function(parameters) {
     })
   ;
 
-  return (returnedValue)
+  return (returnedValue !== undefined)
     ? returnedValue
     : this
   ;
@@ -42119,8 +41873,8 @@ $.fn.dropdown.settings = {
   name        : 'Dropdown',
   namespace   : 'dropdown',
 
+  debug       : false,
   verbose     : true,
-  debug       : true,
   performance : true,
 
   on          : 'click',
@@ -42153,10 +41907,11 @@ $.fn.dropdown.settings = {
   },
 
   selector : {
-    menu  : '.menu',
-    item  : '.menu > .item',
-    text  : '> .text',
-    input : '> input[type="hidden"]'
+    menu    : '.menu',
+    submenu : '> .menu',
+    item    : '.menu > .item',
+    text    : '> .text',
+    input   : '> input[type="hidden"]'
   },
 
   className : {
@@ -42164,6 +41919,7 @@ $.fn.dropdown.settings = {
     placeholder : 'default',
     disabled    : 'disabled',
     visible     : 'visible',
+    selected    : 'selected',
     selection   : 'selection'
   }
 
@@ -42173,11 +41929,12 @@ $.fn.dropdown.settings = {
 $.extend( $.easing, {
   easeOutQuad: function (x, t, b, c, d) {
     return -c *(t/=d)*(t-2) + b;
-  },
+  }
 });
 
 
 })( jQuery, window , document );
+
 /*
  * # Semantic - Modal
  * http://github.com/semantic-org/semantic-ui/
@@ -42274,8 +42031,7 @@ $.fn.modal = function(parameters) {
             .dimmer('get dimmer')
           ;
 
-          $otherModals = $module.siblings(selector.modal);
-          $allModals   = $otherModals.add($module);
+          module.refreshSelectors();
 
           module.verbose('Attaching close events', $close);
           $close
@@ -42315,6 +42071,11 @@ $.fn.modal = function(parameters) {
           module.set.screenHeight();
           module.set.type();
           module.set.position();
+        },
+
+        refreshSelectors: function() {
+          $otherModals = $module.siblings(selector.modal);
+          $allModals   = $otherModals.add($module);
         },
 
         attachEvents: function(selector, event) {
@@ -42417,47 +42178,62 @@ $.fn.modal = function(parameters) {
           module.showModal(callback);
         },
 
+        onlyVisible: function() {
+          module.refreshSelectors();
+          return module.is.active() && $otherModals.filter(':visible').size() === 0;
+        },
+
+        othersVisible: function() {
+          module.refreshSelectors();
+          return $otherModals.filter(':visible').size() > 0;
+        },
+
         showModal: function(callback) {
+          if(module.is.active()) {
+            module.debug('Modal is already visible');
+            return;
+          }
+
           callback = $.isFunction(callback)
             ? callback
             : function(){}
           ;
-          if( !module.is.active() ) {
-            module.cacheSizes();
-            module.set.position();
-            module.set.screenHeight();
-            module.set.type();
 
-            if( $otherModals.filter(':visible').size() > 0 && !settings.allowMultiple) {
-              module.debug('Other modals visible, queueing show animation');
-              module.hideOthers(module.showModal);
-            }
-            else {
-              $.proxy(settings.onShow, element)();
-              if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
-                module.debug('Showing modal with css animations');
-                $module
-                  .transition(settings.transition + ' in', settings.duration, function() {
-                    $.proxy(settings.onVisible, element)();
-                    module.set.active();
-                    callback();
-                  })
-                ;
-              }
-              else {
-                module.debug('Showing modal with javascript');
-                $module
-                  .fadeIn(settings.duration, settings.easing, function() {
-                    $.proxy(settings.onVisible, element)();
-                    module.set.active();
-                    callback();
-                  })
-                ;
-              }
-            }
+          module.save.focus();
+          module.add.keyboardShortcuts();
+
+          if(module.cache === undefined) {
+            module.cacheSizes();
+          }
+          module.set.position();
+          module.set.screenHeight();
+          module.set.type();
+
+          if(module.othersVisible()  && !settings.allowMultiple) {
+            module.debug('Other modals visible, queueing show animation');
+            module.hideOthers(module.showModal);
           }
           else {
-            module.debug('Modal is already visible');
+            $.proxy(settings.onShow, element)();
+
+            var transitionCallback = function() {
+              module.set.active();
+              $.proxy(settings.onVisible, element)();
+              callback();
+            };
+
+            if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
+              module.debug('Showing modal with css animations');
+              $module
+                .transition(settings.transition + ' in', settings.duration, transitionCallback)
+              ;
+            }
+            else {
+              module.debug('Showing modal with javascript');
+              $module
+                .fadeIn(settings.duration, settings.easing, transitionCallback)
+              ;
+            }
           }
         },
 
@@ -42467,7 +42243,7 @@ $.fn.modal = function(parameters) {
             $dimmable.dimmer('show');
           }
           else {
-            module.debug('Dimmer already visible');
+            module.debug('Dimmer is already visible');
           }
         },
 
@@ -42476,7 +42252,8 @@ $.fn.modal = function(parameters) {
             ? callback
             : function(){}
           ;
-          if($allModals.filter(':visible').size() <= 1) {
+          module.refreshSelectors();
+          if(module.onlyVisible()) {
             module.hideDimmer();
           }
           module.hideModal(callback);
@@ -42484,7 +42261,7 @@ $.fn.modal = function(parameters) {
 
         hideDimmer: function() {
           if( !module.is.active() ) {
-            module.debug('Dimmer is not visible cannot hide');
+            module.debug('Dimmer is already hidden');
             return;
           }
           module.debug('Hiding dimmer');
@@ -42505,35 +42282,37 @@ $.fn.modal = function(parameters) {
         },
 
         hideModal: function(callback) {
+          if(!module.is.active()) {
+            module.debug('Modal is already hidden');
+            return;
+          }
+
           callback = $.isFunction(callback)
             ? callback
             : function(){}
           ;
-          if( !module.is.active() ) {
-            module.debug('Cannot hide modal it is not active');
-            return;
-          }
-          module.debug('Hiding modal');
+
+          module.restore.focus();
           module.remove.keyboardShortcuts();
+
           $.proxy(settings.onHide, element)();
+
+          var transitionCallback = function() {
+            module.remove.active();
+            $.proxy(settings.onHidden, element)();
+            callback();
+          };
+
           if(settings.transition && $.fn.transition !== undefined && $module.transition('is supported')) {
+            module.debug('Hiding modal with css animations');
             $module
-              .transition(settings.transition + ' out', settings.duration, function() {
-                $.proxy(settings.onHidden, element)();
-                module.remove.active();
-                module.restore.focus();
-                callback();
-              })
+              .transition(settings.transition + ' out', settings.duration, transitionCallback)
             ;
           }
           else {
+            module.debug('Hiding modal with javascript');
             $module
-              .fadeOut(settings.duration, settings.easing, function() {
-                $.proxy(settings.onHidden, element)();
-                module.remove.active();
-                module.restore.focus();
-                callback();
-              })
+              .fadeOut(settings.duration, settings.easing, transitionCallback)
             ;
           }
         },
@@ -42543,7 +42322,7 @@ $.fn.modal = function(parameters) {
             ? callback
             : function(){}
           ;
-          if( $allModals.is(':visible') ) {
+          if( $module.is(':visible') || module.othersVisible() ) {
             module.debug('Hiding all visible modals');
             module.hideDimmer();
             $allModals
@@ -42558,7 +42337,7 @@ $.fn.modal = function(parameters) {
             ? callback
             : function(){}
           ;
-          if( $otherModals.is(':visible') ) {
+          if( module.othersVisible() ) {
             module.debug('Hiding other modals');
             $otherModals
               .filter(':visible')
@@ -42651,16 +42430,21 @@ $.fn.modal = function(parameters) {
             }
           },
           active: function() {
-            module.add.keyboardShortcuts();
-            module.save.focus();
-            $module
-              .addClass(className.active)
-            ;
+            $module.addClass(className.active);
+
             if(settings.closable) {
               $dimmer
                 .off('click' + eventNamespace)
                 .on('click' + eventNamespace, module.event.click)
               ;
+            }
+
+            if(settings.autofocus) {
+                var $inputs    = $module.find(':input:visible');
+                var $autofocus = $inputs.filter('[autofocus]');
+                var $input     = $autofocus.length ? $autofocus : $inputs;
+
+                $input.first().focus();
             }
           },
           scrolling: function() {
@@ -42699,6 +42483,7 @@ $.fn.modal = function(parameters) {
         },
 
         setting: function(name, value) {
+          module.debug('Changing setting', name, value);
           if( $.isPlainObject(name) ) {
             $.extend(true, settings, name);
           }
@@ -42878,17 +42663,18 @@ $.fn.modal.settings = {
   name          : 'Modal',
   namespace     : 'modal',
 
-  debug         : true,
+  debug         : false,
   verbose       : true,
   performance   : true,
 
   allowMultiple : true,
   detachable    : true,
   closable      : true,
+  autofocus     : true,
   context       : 'body',
 
   duration      : 500,
-  easing        : 'easeOutExpo',
+  easing        : 'easeOutQuad',
   offset        : 0,
   transition    : 'scale',
 
@@ -42904,7 +42690,7 @@ $.fn.modal.settings = {
   onDeny        : function(){ return true; },
 
   selector    : {
-    close    : '.close, .cross, .actions .button',
+    close    : '.close, .actions .button',
     approve  : '.actions .positive, .actions .approve, .actions .ok',
     deny     : '.actions .negative, .actions .deny, .actions .cancel',
     modal    : '.ui.modal'
@@ -42919,8 +42705,15 @@ $.fn.modal.settings = {
   }
 };
 
+// Adds easing
+$.extend( $.easing, {
+  easeOutQuad: function (x, t, b, c, d) {
+    return -c *(t/=d)*(t-2) + b;
+  }
+});
 
 })( jQuery, window , document );
+
 /*
  * # Semantic - Nag
  * http://github.com/jlukic/semantic-ui/
@@ -43405,8 +43198,8 @@ $.fn.nag.settings = {
 
   name        : 'Nag',
 
+  debug       : false,
   verbose     : true,
-  debug       : true,
   performance : true,
 
   namespace   : 'Nag',
@@ -43726,6 +43519,7 @@ $.fn.popup = function(parameters) {
           $popup
             .remove()
           ;
+          $.proxy(settings.onRemove, $popup)();
         },
 
         save: {
@@ -44247,12 +44041,13 @@ $.fn.popup = function(parameters) {
 $.fn.popup.settings = {
 
   name           : 'Popup',
-  debug          : true,
+  debug          : false,
   verbose        : true,
   performance    : true,
   namespace      : 'popup',
 
   onCreate       : function(){},
+  onRemove       : function(){},
   onShow         : function(){},
   onHide         : function(){},
 
@@ -44272,7 +44067,7 @@ $.fn.popup.settings = {
   preserve       : false,
 
   duration       : 250,
-  easing         : 'easeOutQuint',
+  easing         : 'easeOutQuad',
   transition     : 'scale',
 
   distanceAway   : 0,
@@ -44320,6 +44115,14 @@ $.fn.popup.settings = {
   }
 
 };
+
+// Adds easing
+$.extend( $.easing, {
+  easeOutQuad: function (x, t, b, c, d) {
+    return -c *(t/=d)*(t-2) + b;
+  }
+});
+
 
 })( jQuery, window , document );
 
@@ -44699,7 +44502,7 @@ $.fn.rating.settings = {
   namespace     : 'rating',
 
   verbose       : true,
-  debug         : true,
+  debug         : false,
   performance   : true,
 
   initialRating : 0,
@@ -44870,7 +44673,7 @@ $.fn.search = function(source, parameters) {
           if($results.filter(':visible').size() > 0) {
             if(keyCode == keys.enter) {
               module.verbose('Enter key pressed, selecting active result');
-              if( $result.filter('.' + activeClass).exists() ) {
+              if( $result.filter('.' + activeClass).size() > 0 ) {
                 $.proxy(module.results.select, $result.filter('.' + activeClass) )();
                 event.preventDefault();
                 return false;
@@ -45320,7 +45123,7 @@ $.fn.search.settings = {
   name           : 'Search Module',
   namespace      : 'search',
 
-  debug          : true,
+  debug          : false,
   verbose        : true,
   performance    : true,
 
@@ -46242,7 +46045,7 @@ $.fn.shape.settings = {
   name : 'Shape',
 
   // debug content outputted to console
-  debug      : true,
+  debug      : false,
 
   // verbose debug output
   verbose    : true,
@@ -46764,8 +46567,8 @@ $.fn.sidebar.settings = {
   name        : 'Sidebar',
   namespace   : 'sidebar',
 
+  debug       : false,
   verbose     : true,
-  debug       : true,
   performance : true,
 
   useCSS      : true,
@@ -47448,8 +47251,8 @@ $.fn.sidebar.settings = {
   $.fn.tab.settings = {
 
     name        : 'Tab',
+    debug       : false,
     verbose     : true,
-    debug       : true,
     performance : true,
     namespace   : 'tab',
 
@@ -47738,7 +47541,7 @@ $.fn.transition = function() {
             var
               displayType = module.get.displayType()
             ;
-            if(displayType !== 'block') {
+            if(displayType !== 'block' && displayType !== 'none') {
               module.verbose('Setting final visibility to', displayType);
               $module
                 .css({
@@ -47972,7 +47775,7 @@ $.fn.transition = function() {
               animations  = {
                 'animation'       :'animationend',
                 'OAnimation'      :'oAnimationEnd',
-                'MozAnimation'    :'mozAnimationEnd',
+                'MozAnimation'    :'animationend',
                 'WebkitAnimation' :'webkitAnimationEnd'
               },
               animation
@@ -48738,7 +48541,7 @@ $.fn.video.settings = {
   name        : 'Video',
   namespace   : 'video',
 
-  debug       : true,
+  debug       : false,
   verbose     : true,
   performance : true,
 
