@@ -139,6 +139,10 @@ phenix.initial = function(){
 		});
 	});
 	
+	$('#searchbar i.search.icon').click(function(){
+		$('#searchbar').submit();
+	});
+	
 	// 取消并返回上一步
 	$('.ui.cancel.button').bind('click', function(){
 		window.location.href = document.referrer;
@@ -181,7 +185,7 @@ phenix.show_login_box = function(next_res_url) {
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '输入你注册时填写的邮件'
+					prompt : '输入你注册时填写的邮件或手机号码'
 				}
 			]
 		},
@@ -212,7 +216,7 @@ phenix.show_login_box = function(next_res_url) {
 					
 					if(result.is_error){
 						$(event.target).addClass('error');
-						phenix.show_error_message(result.message, event.target);
+						phenix.show_error_note(result.message);
 					}else{
 						$('.ui.loginbox.modal').modal('hide');
 						phenix.visitor = result.data;
@@ -221,7 +225,6 @@ phenix.show_login_box = function(next_res_url) {
 							$.get(next_res_url);
 						}
 					}
-					
 				}
 			});
 		}
@@ -279,7 +282,7 @@ phenix.build_auth_page = function() {
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '邮件格式不对,请输入您注册时填写的邮件'
+					prompt : '请输入您注册时填写的邮件或手机号码'
 				}
 			]
 		},
@@ -326,20 +329,16 @@ phenix.build_auth_page = function() {
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '账户邮件不能为空'
-				},
-				{
-					type   : 'email',
-					prompt : '账户邮件格式不对'
+					prompt : '账户名称不能为空'
 				}
 			]
 		},
 		nickname: {
-			identifier  : 'nickname',
+			identifier  : 'verify_code',
 			rules: [
 				{
 					type   : 'empty',
-					prompt : '昵称不能为空'
+					prompt : '验证码不能为空'
 				}
 			]
 		},
@@ -471,8 +470,8 @@ phenix.hook_comment_page = function(){
 					prompt : '评论内容不能为空'
 				},
 				{
-					type   : 'maxLength[140]',
-					prompt : '评论内容不超过140字符'
+					type   : 'maxLength[1400]',
+					prompt : '评论内容不超过1400字符'
 				}
 			]
 		}
@@ -509,6 +508,11 @@ phenix.bind_share_list = function(pic_url) {
 	var getParamsOfShareWindow = function(width, height) {
 		return ['toolbar=0,status=0,resizable=1,width=' + width + ',height=' + height + ',left=',(screen.width-width)/2,',top=',(screen.height-height)/2].join('');
 	}
+	
+	$('#wechat-share').click(function() {
+		$('.ui.qrcode.modal').modal('show');
+		return false;
+	});
 	
 	$('#sina-share').click(function() {
 		var url = 'http://v.t.sina.com.cn/share/share.php?url=' + link + '&title=' + title + '&pic=' + pic_url;
@@ -570,6 +574,43 @@ phenix.bind_share_list = function(pic_url) {
 	});
  
 };
+
+/**
+ * 设置cookie，用于区别PC与Mobile。
+ */
+phenix.create_cookie = function(name, value, days, domain, path){
+	var expires = '';
+	if (days) {
+		var d = new Date();
+		d.setTime(d.getTime() + (days*24*60*60*1000));
+		expires = '; expires=' + d.toGMTString();
+	}
+	domain = domain ? '; domain=' + domain : '';
+	path = '; path=' + (path ? path : '/');
+	document.cookie = name + '=' + value + expires + path + domain;
+}
+
+/**
+ * 读取cookie
+ */
+phenix.read_cookie = function(name){
+	var n = name + '=';
+	var cookies = document.cookie.split(';');
+	for (var i = 0; i < cookies.length; i++) {
+		var c = cookies[i].replace(/^\s+/, '');
+		if (c.indexOf(n) == 0) {
+			return c.substring(n.length);
+		}
+	}
+	return null;
+}
+
+/**
+ * 清除cookie
+ */
+phenix.erase_cookie = function(name, domain, path){
+	create_cookie(name, '', -1, domain, path);
+}
 
 /**
  * 全局变量声明

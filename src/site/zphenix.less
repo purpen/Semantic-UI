@@ -240,6 +240,7 @@ header.main .search.item .ui.icon.input > input ~ .icon {
 	border-left: 1px solid rgba(244, 33, 86, 0.9);
 	color:rgba(255, 255, 255, 0.9);
 	background-color:#ff3366;
+	cursor: pointer;
 	opacity: 1;
 }
 header.main .search.item .ui.input input:focus,
@@ -461,7 +462,9 @@ header.shrink.main .ui.secondary.user {
 	margin-left: 5px;
 	margin-top: 10px;
 }
-
+#more-comments {
+    margin-top: 1em;
+}
 
 #login-info {
 	padding-top:5px;
@@ -774,7 +777,12 @@ header.shrink.main .ui.secondary.user {
 .not.login .ui.grid .column{
 	padding-top: 5%;
 }
-
+.ui.modal .third {
+	padding-top: 3.5em;
+}
+.ui.modal .ui.vertical.divider {
+    left: 54%;
+}
 
 /* 提交创意 */
 .ui.segment > .submit-help {
@@ -806,7 +814,8 @@ header.shrink.main .ui.secondary.user {
 }
 .hero #frame {
     height: 100%;
-    padding-bottom: 90px;
+    padding-bottom: 80px;
+	width: 100%;
 }
 .hero .slidee {
     height: 100%;
@@ -836,7 +845,7 @@ header.shrink.main .ui.secondary.user {
     float: none;
     font-size: 0;
     height: 100%;
-    padding-top: 90px;
+    padding-top: 60px;
 }
 .hero-main.inverted {
 	color: #2D3538;
@@ -879,7 +888,7 @@ header.shrink.main .ui.secondary.user {
     bottom: 0;
     color: #000000;
     font-size: 0;
-    height: 90px;
+    height: 80px;
     min-width: 1024px;
     padding: 0 8%;
     position: absolute;
@@ -901,8 +910,8 @@ header.shrink.main .ui.secondary.user {
     display: block;
     font-size: 18px;
     font-weight: 400;
-    height: 90px;
-    line-height: 90px;
+    height: 80px;
+    line-height: 80px;
     position: relative;
     text-decoration: none;
     width: 100%;
@@ -1639,6 +1648,27 @@ ul.sidemenu li a:hover span {
 	margin-top: 0.5em;
 }
 
+.ui.bonus.items {
+	margin-top: 2%;
+}
+.ui.bonus.items > .item {
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   box-shadow: 0 0 rgba(0, 0, 0, 0.2) inset;
+   border-radius: 4px;
+   cursor: pointer;
+   height: 165px;
+   margin-bottom: 3%;
+   padding: 1%;
+   position: relative;
+   text-align: center;
+}
+.ui.bonus.items > .item:hover {
+	border-color: rgba(255, 51, 102, 1);
+} 
+.ui.bonus.items .item .ui.icon.header .circular.icon {
+	font-size: 1.5em;
+}
+
 /* 商店列表 */
 #shoplist {
 	margin-bottom: 3em;
@@ -1834,7 +1864,11 @@ h4.ui.header .advantage {
 	margin-bottom: 0rem;
 }
 #shoppage .buy.box .attributes {
-	margin-top: 2em;
+	margin-top: 1.5em;
+}
+#shoppage .product.attrs {
+	display: inline-block;
+	margin-top: 5px;
 }
 #shoppage .buy.box .count {
 	margin-right: 0.2em;
@@ -1853,7 +1887,7 @@ h4.ui.header .advantage {
 #shoppage .buy.box .price {
 	color: #ff3366;
 	font-size: 2em;
-	margin-right: 1em;
+	margin-right: 0.75em;
 }
 #shoppage .buy.box .old.price .unit,
 #shoppage .buy.box .price .unit {
@@ -1866,9 +1900,18 @@ h4.ui.header .advantage {
 #shoppage .buy.box .ui.basic.table tbody tr {
 	border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
+#shoppage .ui.buy.action.table td {
+	padding: 0.25em 0;
+}
 #shoppage .buy.box .ui.basic.table .buy.btn,
+#shoppage .buy.box .ui.basic.table .nowbuy.btn,
 #shoppage .buy.box .ui.basic.table .locknotice.btn {
-	width: 180px;
+	margin-top: 0.5em;
+	min-width: 190px;
+}
+#shoppage .buy.box .ui.basic.table .nowbuy.btn {
+	text-align: center;
+	padding: 0.75em 1em;
 }
 #shoppage .buy.box .ui.basic.table .ui.btn + .btn {
    margin-left: 0.25em;
@@ -1894,6 +1937,43 @@ h4.ui.header .advantage {
 }
 #shoppage .buy.box .ui.btn + .btn {
     margin-left: 0.25em;
+}
+#shoppage .ui.preresult.list {
+	margin-top: 5px;
+	display: block;
+}
+#shoppage .ui.preresult.list .item:last-child {
+	padding-right: 0;
+}
+#shoppage .buy.box .reorder.result {
+    font-size: 1em;
+	text-align: left;
+}
+#shoppage .buy.box .reorder.result > .count {
+	color: #f36;
+    display: block;
+    font-size: 1.325em;
+    margin-bottom: 0.65em;
+}
+#shoppage .buy.box .ui.tobuy.btn {
+	line-height: 1.5em;
+	padding: 0.75em 3em 0.75em 2em;
+	margin-top: 2.5em;
+}
+#shoppage .buy.box .ui.tobuy.btn > .icon {
+	font-size: 1.5em;
+	vertical-align: top;
+	margin-right: 0.2em;
+}
+#shoppage .product.snatched .count {
+    color: #f36;
+    font-size: 1.5em;
+}
+#shoppage .product.snatched .count span {
+	font-size: 0.875em;
+}
+#shoppage .buy.box .ui.basic.table .appoint.btn {
+	 margin-top: 0.5em;
 }
 #shoppage .ui.header .map.icon {
 	display: inline-block;
@@ -2056,6 +2136,67 @@ h4.ui.header .advantage {
 }
 #create-new-presale .btn {
     margin: 18% auto;
+}
+
+.ui.paywait.modal .picicon {
+    font-size: 8em;
+    padding-right: 20px;
+}
+.ui.paywait.modal .picicon .icon {
+    margin-right: 0;
+    opacity: 1;
+}
+.ui.paywait.modal .block {
+	margin-bottom: 3em;
+}
+#checkout .ordered.message {
+	margin-bottom: 2em;
+}
+#checkout .ordered.message .count {
+	color: #ff3366;
+	margin-right: 1em;
+}
+#checkout .ui.table tr .field {
+	margin: 0em;
+}
+#checkout .ui.radio.checkbox {
+    height: auto;
+}
+.payaway .ui.checkbox label {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding-left: 2em;
+}
+.payaway .ui.checkbox label:hover {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.payaway .ui.checkbox label.active {
+	border: 1px solid rgba(255, 51, 102, 1);
+}
+.payaway .ui.radio.checkbox .box:after, 
+.payaway .ui.radio.checkbox label:after {
+	left: 0.7em;
+}
+.payaway .ui.checkbox .box:before, 
+.payaway .ui.checkbox label:before {
+	left: 0.5em;
+}
+.payaway .ui.checkbox label.active:before {
+	box-shadow: 0 0 0 1px rgba(255, 51, 102, 1);
+}
+.payaway .ui.checkbox label.active:after {
+	background-color: #ff3366;
+}
+#checkout .bank .ui.radio.checkbox {
+	margin-bottom: 1em;
+}
+#checkout .bank .ui.checkbox label {
+	padding: 6px 0 6px 2em;
+}
+#checkout .ui.table td.company {
+	vertical-align: top;
+}
+#checkout .ui.table td.company .field {
+	padding-top: 0.45em;
 }
 
 /* 征集专题 */
@@ -2668,6 +2809,11 @@ section.log-banner{
     margin-top: 0.5em;
     text-align: center;
 }
+#product-apply-people .item > .content > span {
+    display: inline-block;
+    min-height: 1em;
+}
+
 .try .apply {
 	margin-top: 1.5em;
 }
@@ -2686,6 +2832,34 @@ section.log-banner{
 .try .apply .ui.timer.list > .item > .count > span {
 	font-size: 0.65em;
 	margin-left: 0.15em;
+}
+
+/* 搜索页 */
+#searchpage {
+	padding-top: 1.5em;
+	padding-bottom: 2em;
+	background-color: #fff;
+	min-height: 350px;
+}
+#searchpage .ui.tabox {
+	margin: 0em auto 0.8em;
+}
+#searchpage .ui.tabox .ui.ten.tabs .tab {
+	width: 8%;
+	font-size: 1.15rem;
+	text-align: center;
+}
+.ui.search.list > .item {
+	margin-bottom: 1em;
+}
+.ui.search.list > .item > .content {
+	margin-left: 0;
+	margin-right: -1.5%;
+}
+
+/* 后台管理 */
+.ui.table .actions a {
+	margin-right: 0.5em;
 }
 
 /* 单品活动页 */
@@ -3315,6 +3489,20 @@ section .pad .category {
 #checkout .payaway.table {
 	margin-bottom: 3em;
 }
+#checkout .ui.bonus.segment {
+	margin-top: 0.5em;
+	padding: 0.8em;
+}
+#checkout .ui.bonus.segment > h4 {
+    margin-bottom: 0.8em;
+}
+#checkout .ui.bonus.segment #bonus-code {
+	border-right: medium none rgba(255, 51, 102, 0.9);
+	font-size: 1.05em;
+}
+#checkout .ui.bonus.segment .field .small {
+	font-size: 0.875rem;
+}
 
 /* 导航购物篮 */
 #shopping-basket .basket.table .ui.cover.image {
@@ -3341,7 +3529,6 @@ section .pad .category {
 #shopping-basket .bill p + p {
 	padding: 0em;
 }
-
 
 @media only screen and (min-width: 2000px) {
 	.ui.responsive.grid {
@@ -3451,72 +3638,4 @@ section .pad .category {
 		width: 98%;
 	}
 	
-}
-
-/* Mobile Only */
-@media only screen and (max-width: 767px) {
-	.ui.responsive.grid {
-		padding: 0 2.5%;
-	}
-	
-	.ui.grid .one.wide.column, .ui.grid .two.wide.column, .ui.grid .three.wide.column, .ui.grid .four.wide.column, .ui.grid .five.wide.column, .ui.grid .six.wide.column, .ui.grid .seven.wide.column, .ui.grid .eight.wide.column, .ui.grid .nine.wide.column, .ui.grid .ten.wide.column, .ui.grid .eleven.wide.column, .ui.grid .twelve.wide.column, .ui.grid .thirteen.wide.column, .ui.grid .fourteen.wide.column, .ui.grid .fifteen.wide.column, .ui.grid .sixteen.wide.column {
-	    width: 100% !important;
-		text-align: center !important;
-	}
-	.ui.two.column.grid > .row > .column, .ui.two.column.grid > .column, .ui.grid > .two.column.row > .column,
-	.ui.four.column.grid > .row > .column, .ui.four.column.grid > .column, .ui.grid > .four.column.row > .column
-	 {
-		width: 100% !important;
-		text-align: center !important;
-	}
-	.hide-on-mobile {
-	    display: none !important;
-	}
-	.hide-on-desktop {
-	    display: block !important;
-	}
-	header.main .logo {
-		width: 40% !important;
-	}
-	.ui.btn {
-		margin-bottom: 1em;
-	}
-	.ui.log-in .ui.qq.btn {
-	    width: 100% !important;
-	}
-	.ui.log-in .ui.weibo.btn {
-	    width: 100% !important;
-	}
-	
-	/* 社区首页 */
-	#topics .ui.three.items .item {
-		width: 100% !important;
-	}
-	/* 帖子详情页 */
-	#postpage .ui.big.segment {
-		padding: 0.5em;
-	}
-	#postpage .post, #postpage .tags {
-	    font-size: 1em;
-	    line-height: 1.5;
-	    margin-left: 0.5em;
-	}
-	#postpage .avatar.image,
-	#postpage .dot-irecommend {
-		display:none;
-	}
-	#postpage .post img {
-		width: 98%;
-	}
-	#postpage .phenix-share {
-		display: block;
-	    margin-top: 1em;
-	    width: 100%;
-	}
-	#postpage .phenix-share span {
-		display: none;
-	}
-	#postpage .ui.big.segment .actions {
-		margin-bottom: 1.5em;
-	}
 }
