@@ -561,6 +561,9 @@ module.exports = function(grunt) {
           ],
           'build/packaged/css/frbird.min.css': [
             'build/uncompressed/site/zphenix.css'
+          ],
+          'build/packaged/css/frmobile.min.css': [
+            'build/uncompressed/site/mobile.css'
           ]
         }
       }
@@ -613,6 +616,7 @@ module.exports = function(grunt) {
 			'build/uncompressed/javascript/jquery.address.js',
 			'build/uncompressed/javascript/jquery.easing.1.3.js',
 			'build/uncompressed/javascript/sly.js',
+			'build/uncompressed/javascript/jquery.slides.js',
 			'build/uncompressed/javascript/jquery.scrollUp.js',
 			'build/uncompressed/javascript/jquery.smint.js',
 			'build/uncompressed/javascript/jquery.scrollify.js',
@@ -622,6 +626,7 @@ module.exports = function(grunt) {
 			'build/uncompressed/javascript/picker.js',
 			'build/uncompressed/javascript/picker.date.js',
 			'build/uncompressed/javascript/maxlength.js',
+			'build/uncompressed/javascript/jquery.arbitrary-anchor.js',
 			'build/uncompressed/javascript/jquery.gritter.js',
           ],
           'build/packaged/javascript/frbird.min.js': [
@@ -630,7 +635,7 @@ module.exports = function(grunt) {
           'build/packaged/javascript/froala_editor.min.js': [
 		  	'build/uncompressed/javascript/langs/beautify-html.js',
             'build/uncompressed/javascript/froala_editor.js',
-			'build/uncompressed/javascript/video.min.js',
+			'build/uncompressed/javascript/video.js',
 			'build/uncompressed/javascript/tables.js',
 			'build/uncompressed/javascript/langs/zh_cn.js',
           ]
