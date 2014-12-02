@@ -12,9 +12,9 @@
     Phenix Custom Stylesheet
 *******************************/
 .ui.responsive.grid {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    min-width: 320px;
+	margin: 0 auto;
+    min-width: 640px;
+	max-width: 1440px;
 }
 input {
 	background-color:#fff;
@@ -27,15 +27,19 @@ a > img {
 	text-decoration: none;
 	border: 0;
 }
-a.line {
+a.line,
+a.line:visited {
+	color: #444;
 	border-bottom: 2px solid rgba(255, 255, 255, 0);
     -webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
     -ms-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
+	text-decoration: none;
 }
 a.line:hover {
+	color: #ff3366;
 	text-decoration: none;
 	padding-bottom: 3px;
 	border-bottom: 2px solid rgba(255, 51, 102, 1);
@@ -65,6 +69,22 @@ a.line:hover {
 }
 #video-mobile {
 	visibility: hidden;
+}
+
+/* advertise */
+.advert.content {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+.advert.content .ui.image {
+    border-radius: 0.3125em;
+}
+.advert.bottom.content {
+	margin-bottom: 1rem;
+}
+.advert.top.content {
+	margin-top: 1rem;
 }
 
 /* the norm */
@@ -115,13 +135,40 @@ a.line:hover {
 
 /* 活动 */
 .promo {
-    background-color: #2D3538;
-    color: #FFFFFF;
+    background-color: #ff3366;
+    color: #fff;
+	position: relative;
 }
 .promo .container {
-    padding: 20px 52px 20px 47px;
     margin: 0 auto;
-    max-width: 1920px;
+    padding: 0;
+    text-align: center;
+	overflow: hidden;
+}
+.promo .ui.link {
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 1440px;
+}
+.promo .close-promo {
+	border: 1px solid #fff;
+    border-radius: 4em;
+    color: #fff;
+    height: 2em;
+    line-height: 2em;
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+    width: 2em;
+    z-index: 10;
+	text-decoration: none;
+}
+.promo .close-promo i.flat.icon {
+	margin-right: 0;
+}
+.promo .close-promo:hover {
+	background-color: #fff;
+	color: #ff3366;
 }
 .unsupported-browser {
 	background-color: #2d3538;
@@ -139,7 +186,7 @@ a.line:hover {
 	display: block;
 }
 /* 头部导航 */
-header.ui.responsive.grid > .column {
+header.main > .ui.grid > .column {
     margin-bottom: 0rem;
     margin-top: 0rem;
 }
@@ -277,6 +324,7 @@ header.main .ui.signup.button {
 }
 header.main .ui.user-setting.button {
 	border: none;
+	background: #fff;
 	padding: 0.3em 0 1.25em;
 }
 header.main .ui.user-setting.button:hover,
@@ -605,11 +653,8 @@ header.shrink.main .ui.secondary.user {
 }
 
 .masthead > .masthead-cover > .ui.head.grid {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 9;
+	margin-top: 3%;
+	width: 100%;
 }
 .masthead .ui.grid > .column {
     margin-bottom: 0;
@@ -814,7 +859,7 @@ header.shrink.main .ui.secondary.user {
 }
 .hero #frame {
     height: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
 	width: 100%;
 }
 .hero .slidee {
@@ -1359,6 +1404,13 @@ ul.sidemenu li a:hover span {
 	font-size: 0.925rem;
 	color: rgba(0, 0, 0, 0.4);
 }
+#postpage .post .ui.contest {
+	margin-bottom: 1rem;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 0.8em 0;
+	text-align: center;
+}
 #postpage .post, #postpage .tags {
     font-size: 1em;
     line-height: 1.5;
@@ -1479,6 +1531,18 @@ ul.sidemenu li a:hover span {
 /* 创意投票 */
 #votelist {
 	margin: 1.5em auto 2em;
+}
+#votelist a.link:hover {
+	text-decoration: none;
+}
+#votelist .ui.attached.header {
+	position: relative;
+}
+#votelist .ui.attached.header .showbox.link {
+	position: absolute;
+    right: 0;
+    top: 12px;
+	z-index: 10;
 }
 #votelist .ui.items {
 	margin-top: 1.5em;
@@ -3318,6 +3382,141 @@ section .pad .category {
 	box-shadow: 0 -2px 0 0 rgba(255, 51, 102, 1) inset;
 }
 
+#homepage .ui.topic .ui.grid > .row > .column {
+	padding-right: 0;
+}
+#homepage .ui.topic .ui.grid > .two.column.row > .column:first-child {
+	padding-left: 0;
+}
+#homepage .ui.topic .advert.content .ui.image {
+    border-radius: 0em;
+}
+#homepage .ui.topic .advert.content .bword {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	z-index: 10;
+	line-height: 40px;
+	background-color: rgba(0,0,0,.35);
+    -webkit-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    -moz-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    -o-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    -ms-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+}
+#homepage .ui.topic .advert.content:hover .bword {
+	background-color: rgba(0,0,0,.6);
+}
+#homepage .ui.topic .advert.content .bword a {
+	color: #fff;
+	margin-left: 10px;
+}
+#homepage .ui.topic .advert.content .bword a:hover {
+	text-decoration: none;
+}
+#homepage .ui.topic .stick.list .compact.label {
+	border-radius: 80px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 0.35em;
+    padding: 0;
+    text-align: center;
+    width: 40px;
+    -webkit-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    -moz-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    -o-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    -ms-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+    transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+    ;
+}
+#homepage .ui.topic .stick.list .item {
+	padding-top: 0.45em;
+	padding-bottom: 0.45em;
+}
+#homepage .ui.topic .stick.list .item .content {
+	margin-left: 0%;
+}
+#homepage .ui.topic .stick.list .item .description {
+    margin: 0;
+}
+#homepage .ui.topic .stick.list .header {
+	font-size: 1.12em;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.65);
+}
+#homepage .ui.topic .stick.list .description {
+	font-size: 0.875em;
+}
+#homepage .ui.topic .stick.list .user {
+	color: rgba(0, 0, 0, 0.5);
+}
+#homepage .ui.topic .stick.list .item:hover a.header {
+	color: #ff3366;
+}
+#homepage .ui.topic .stick.list .item:hover .compact.label {
+	background-color: #ff3366;
+	color: #fff;
+}
+#homepage .ui.topic .ui.divided.list:not(.horizontal) .list .item {
+	padding: 0.15em 0em 0em;
+	font-size: 14px;
+}
+#homepage .ui.vote.block .content.row {
+	margin-top: 0;
+	padding-top: 0;
+}
+#homepage h3 small {
+	font-weight: normal;
+	font-size: 0.65em;
+	margin-left: 0.5em;
+}
+#homepage .ui.vote.block .ui.items .item {
+	text-align: left;
+}
+#homepage .ui.vote.block .vstatus.horizontal.list > .item {
+    line-height: 1.8rem;
+}
 /* 购物车 */
 #shopping-basket .right.aligned {
  	text-align: right;
@@ -3588,30 +3787,36 @@ section .pad .category {
 	    padding-right: 1em;
 	}
 }
+@media only screen and (min-width : 992px) and (max-width : 1024px) {
+	.ui.responsive.grid {
+		padding: 0 3.5%;
+	}
+	.hero-main h1 {
+	    font-size: 70px;
+	}
+	.hero-main .verticalize {
+	    padding-left: 50px;
+	}
+	.hero .next, .hero .prev {
+	    bottom: 160px;
+	}
+	.fulllayout .match.head > .ui.logo.grid {
+		margin-top: 1.5%;
+	}
+}
+
 @media only screen and (max-width: 960px) {
 	header.main .search.item {
 		display: none !important;
-	}
-	.ui.grid > .row > .eleven.column,
-	.ui.grid > .row > .five.column {
-		width: 100% !important;
-	}
-	.ui.grid > .row > .five.column,
-	.ui.grid > .row > .four.column {
-		margin-top: 2em;
-	}
-	.ui.four.items > .item {
-		margin-left: 0.5%;
-	    margin-right: 0.5%;
-	    width: 34% !important;
 	}
 }
 
 /* Tablet Only */
 @media only screen and (min-width : 768px) and (max-width : 991px) {
 	.ui.responsive.grid {
-		padding: 0 2.5%;
+		padding: 0 1.5%;
 	}
+	
 	header.main .ui.main-nav > .item {
 		padding-left: 1em;
 		padding-right: 1em;
@@ -3622,12 +3827,36 @@ section .pad .category {
 	    padding-left: 1em;
 	    padding-right: 1em;
 	}
+	.hero .slidee li,
+	.hero .slidee li > div {
+	    min-width: 768px;
+	}
+	.hero-main {
+		padding-top: 20px;
+	}
+	.hero-main h1 {
+	    font-size: 50px;
+	}
+	.hero-main .verticalize {
+	    padding-left: 30px;
+	}
+	.hero .next, .hero .prev {
+	    bottom: 120px;
+	}
+	.hero:hover .prev {
+	    right: 90px;
+	}
+	.hero:hover .next {
+	    right: 30px;
+	}
 	.masthead .introduction {
 	    padding: 1.5em 0 3em;
 	}
-	#topics .ui.three.items .item {
-		width: 100%;
+	
+	.ui.four.social.items > .item {
+		width: 24%;
 	}
+	
 	#topics .ui.responsive.grid {
 		padding: 0 2.5%;
 	}

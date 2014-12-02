@@ -2,23 +2,14 @@
 	.ui.responsive.grid {
 	    padding: 0 23%;
 	}
-	#ajax-note {
-	    padding: 0 23%;
-	}
 }
 @media only screen and (min-width: 1750px) {
 	.ui.responsive.grid {
 	    padding: 0 18%;
 	}
-	#ajax-note {
-	    padding: 0 18%;
-	}
 }
 @media only screen and (min-width: 1500px) {
 	.ui.responsive.grid {
-	    padding: 0 13%;
-	}
-	#ajax-note {
 	    padding: 0 13%;
 	}
 }
@@ -31,16 +22,10 @@
 	.ui.responsive.grid {
 	    padding: 0 8%;
 	}
-	#ajax-note {
-	    padding: 0 2%;
-	}
 }
 @media only screen and (min-width: 1000px) {
 	.ui.responsive.grid {
 	    padding: 0 8%;
-	}
-	#ajax-note {
-	    padding: 0 2%;
 	}
 }
 
@@ -111,21 +96,24 @@
 /* Mobile Only */
 @media only screen and (max-width: 767px) {
 	.ui.responsive.grid {
-		padding: 0 2.5%;
+		padding: 0 2.5% !important;
+		text-align: center !important;
 	}
 	
 	.ui.grid .one.wide.column, .ui.grid .two.wide.column, .ui.grid .three.wide.column, .ui.grid .four.wide.column, .ui.grid .five.wide.column, .ui.grid .six.wide.column, .ui.grid .seven.wide.column, .ui.grid .eight.wide.column, .ui.grid .nine.wide.column, .ui.grid .ten.wide.column, .ui.grid .eleven.wide.column, .ui.grid .twelve.wide.column, .ui.grid .thirteen.wide.column, .ui.grid .fourteen.wide.column, .ui.grid .fifteen.wide.column, .ui.grid .sixteen.wide.column {
-	    width: 100% !important;
-		text-align: center !important;
+	    width: 92% !important;
 	}
 	.ui.two.column.grid > .row > .column, .ui.two.column.grid > .column, .ui.grid > .two.column.row > .column,
 	.ui.four.column.grid > .row > .column, .ui.four.column.grid > .column, .ui.grid > .four.column.row > .column
 	 {
-		width: 100% !important;
+		width: 92% !important;
 		text-align: center !important;
 	}
+	.ui.grid > .column:only-child, .ui.grid > .row > .column:only-child {
+	    width: 92% !important;
+	}
 	.ui.three.items > .item {
-	    width: 98%;
+	    width: 98% !important;
 	}
 	.ui.four.items > .item {
 		width: 99% !important;
@@ -141,9 +129,38 @@
 	.hide-on-desktop {
 	    display: block !important;
 	}
+	
 	header.main .logo {
-		width: 40% !important;
+		width: 80px !important;
+		margin: 2px 10px 2px 0 !important;
 	}
+	header.main .ui.main-nav > .item {
+		padding-left: 0.5em !important;
+		padding-right: 0.5em !important;
+	}
+	header.main .ui.main-nav > .active.item, 
+	header.main .ui.main-nav > .item:active, 
+	header.main .ui.main-nav > .item:hover {
+		padding-left: 0.5em !important;
+		padding-right: 0.5em !important;
+	}
+	.hero-main {
+		padding-top: 20px !important;
+	}
+	.hero-main h1 {
+		font-size: 60px !important;
+	}
+	.hero-main .verticalize {
+		padding-left: 200px !important;
+	}
+	.hero .next, .hero .prev {
+		bottom: 20px !important;
+	}
+	
+	#homepage .ui.divided.stick.list > .item {
+		text-align: left !important;
+	}
+	
 	.ui.btn {
 		margin-bottom: 1em;
 	}
@@ -154,10 +171,6 @@
 	    width: 100% !important;
 	}
 	
-	/* 社区首页 */
-	#topics .ui.three.items .item {
-		width: 100% !important;
-	}
 	/* 帖子详情页 */
 	#postpage .ui.big.segment {
 		padding: 0.5em;

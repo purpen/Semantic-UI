@@ -173,7 +173,11 @@ phenix.initial = function(){
     });
 	
 	phenix.showbox();
-	
+
+	$('.promo .close-promo').click(function(){
+		$('.promo').slideUp('slow');
+		return false;
+	});
 };
 
 // 显示登录弹出框
@@ -333,7 +337,7 @@ phenix.build_auth_page = function() {
 				}
 			]
 		},
-		nickname: {
+		verify_code: {
 			identifier  : 'verify_code',
 			rules: [
 				{
@@ -502,7 +506,7 @@ phenix.rebuild_batch_assets = function(id){
 // 社会化分享
 phenix.bind_share_list = function(pic_url) {
 	// 链接，标题，网站名称，子窗口别称，网站链接
-	var link = encodeURIComponent(document.location),title = encodeURIComponent(document.title.substring(0,76));
+	var link = encodeURIComponent(document.location),title = encodeURIComponent(document.title.substring(0,100));
 	var source = encodeURIComponent('太火鸟'), windowName = 'tShare', site = 'http://www.taihuoniao.com/';
 	
 	var getParamsOfShareWindow = function(width, height) {
@@ -515,6 +519,13 @@ phenix.bind_share_list = function(pic_url) {
 	});
 	
 	$('#sina-share').click(function() {
+		var url = 'http://v.t.sina.com.cn/share/share.php?url=' + link + '&title=' + title + '&pic=' + pic_url;
+		var params = getParamsOfShareWindow(607, 523);
+		window.open(url, windowName, params);
+		return false;
+	});
+	// 同一个页面出现2个
+	$('#o-share-weibo').click(function() {
 		var url = 'http://v.t.sina.com.cn/share/share.php?url=' + link + '&title=' + title + '&pic=' + pic_url;
 		var params = getParamsOfShareWindow(607, 523);
 		window.open(url, windowName, params);
