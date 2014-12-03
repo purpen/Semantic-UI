@@ -296,6 +296,10 @@ $.fn.form = function(fields, parameters) {
               else {
                 module.verbose('Inline errors are disabled, no inline error added', identifier);
               }
+            } else { // add by purpen
+				if (typeof settings.error.method == 'function'){
+					settings.error.method.apply(this, errors);
+				}
             }
           },
           errors: function(errors) {

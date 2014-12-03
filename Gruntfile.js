@@ -560,6 +560,7 @@ module.exports = function(grunt) {
 			'build/uncompressed/site/froala_editor.css',
           ],
           'build/packaged/css/frbird.min.css': [
+			'build/uncompressed/site/resp.css',
             'build/uncompressed/site/zphenix.css'
           ],
           'build/packaged/css/frmobile.min.css': [
