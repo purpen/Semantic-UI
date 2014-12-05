@@ -148,11 +148,12 @@
 	    margin-bottom: 1em;
 	}
 	
-	html {
-		width:700px !important;
+	html{
+		min-width:640px !important;
+		width:100%;
 	}
 	header.main .ui.user-setting.button {
-		adding: .3em 0 1em;
+		padding: .3em 0 1em !important;
 	}
 	.hero-main .verticalize{
 		margin-left:158px !important;
@@ -175,8 +176,9 @@
 	}
 	/* 面条线 */
 	.noodles.page .hero-main .verticalize {
-		padding-left: 27px !important;
+		padding-left: 15% !important;
 		text-align: left;
+		margin-left:0 !important;
 	}
 	.noodles.page .ui.grid > .row > .column:only-child {
 	    width: 100% !important;
@@ -243,6 +245,12 @@
 	}
 	#shoppage .post.comment {
 	    margin-left: 0;
+	}
+	#shoppage .buy.box .ui.btn+.btn {
+		margin-left: .42em !important;
+	}
+	#shoppage .ui.tobuy.nowbuy.btn {
+		margin-right: 0 !important;
 	}
 	#postpage .post, #postpage .tags {
 	font-size: 1em;
