@@ -565,6 +565,9 @@ module.exports = function(grunt) {
           ],
           'build/packaged/css/frmobile.min.css': [
             'build/uncompressed/site/mobile.css'
+          ],
+          'build/packaged/css/ie9.min.css': [
+            'build/uncompressed/site/ie9.css'
           ]
         }
       }

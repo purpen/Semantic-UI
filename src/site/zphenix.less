@@ -186,11 +186,11 @@ a.line:hover {
 	display: block;
 }
 /* 头部导航 */
-header.main > .ui.grid > .column {
+.main > .ui.grid > .column {
     margin-bottom: 0rem;
     margin-top: 0rem;
 }
-header.main {
+.main {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 1);
     border-bottom: 1px solid #E4E5E7;
 	width: 100%;
@@ -236,7 +236,7 @@ header.main {
 	  height 0.25s ease
     ;	
 }
-header.main .logo {
+.main .logo {
 	display: block;
     float: left;
     height: 60px;
@@ -246,15 +246,15 @@ header.main .logo {
 	text-indent: -99em;
 	background: url("/images/logo-home.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
-header.main .ui.pointing.icon.menu {
+.main .ui.pointing.icon.menu {
     float: left;
     margin: 0;
 }
-header.main .ui.main-nav {
+.main .ui.main-nav {
 	margin: 0 auto;
 	float: left;
 }
-header.main .ui.main-nav > .item {
+.main .ui.main-nav > .item {
 	border-top: 2px solid #FFFFFF;
     margin: 0;
     padding-left: 1.5em;
@@ -264,9 +264,9 @@ header.main .ui.main-nav > .item {
 	font-weight: bold;
 	opacity: 0.9;
 }
-header.main .ui.main-nav > .active.item,
-header.main .ui.main-nav > .item:active,
-header.main .ui.main-nav > .item:hover {
+.main .ui.main-nav > .active.item,
+.main .ui.main-nav > .item:active,
+.main .ui.main-nav > .item:hover {
     padding-left: 1.5em;
     padding-right: 1.5em;
     padding-top: 1rem;
@@ -274,65 +274,65 @@ header.main .ui.main-nav > .item:hover {
 	margin: 0;
 }
 /* 搜索框 */
-header.main .search.item {
+.header.main .search.item {
     font-size: 1rem;
     margin-top: 1.2rem;
 	width:38%;
 	float: left;
 }
-header.main .search.item .ui.input input {
+.header.main .search.item .ui.input input {
 	border-color: #E4E5E7;
 }
-header.main .search.item .ui.icon.input > input ~ .icon {
+.header.main .search.item .ui.icon.input > input ~ .icon {
 	border-left: 1px solid rgba(244, 33, 86, 0.9);
 	color:rgba(255, 255, 255, 0.9);
 	background-color:#ff3366;
 	cursor: pointer;
 	opacity: 1;
 }
-header.main .search.item .ui.input input:focus,
-header.main .active.search.item .ui.input input {
+.header.main .search.item .ui.input input:focus,
+.header.main .active.search.item .ui.input input {
 	border-color: rgba(244, 33, 86, 0.9);
 }
-header.main .search.item .ui.icon.input > .icon {
+.header.main .search.item .ui.icon.input > .icon {
 	border-left: 1px solid rgba(0, 0, 0, 0.25);
 }
-header.main .search.item .ui.icon.input > input:focus ~ .icon,
-header.main .active.search.item .ui.icon.input > input ~ .icon {
+.header.main .search.item .ui.icon.input > input:focus ~ .icon,
+.header.main .active.search.item .ui.icon.input > input ~ .icon {
 	border-left: 1px solid rgba(244, 33, 86, 0.9);
 	color:rgba(255, 255, 255, 0.9);
 	background-color:#ff3366;
 	opacity: 1;
 }
 /* 导航用户框 */
-header.main .ui.login.button {
+.header.main .ui.login.button {
 	border: medium none;
 	padding: 0.8em 0;
 	font-weight: 700;
 	margin-right: 0.8em;
 }
-header.main .ui.login.button:hover {
+.header.main .ui.login.button:hover {
 	background: none;
 	border-color: none;
 	color: #FF3366;
 }
-header.main .ui.signup.button {
+.header.main .ui.signup.button {
     font-size: 0.925em;
     font-weight: 700;
     line-height: 1em;
 	padding: 0.8em 2em;
 }
-header.main .ui.user-setting.button {
+.header.main .ui.user-setting.button {
 	border: none;
 	background: #fff;
 	padding: 0.3em 0 1.25em;
 }
-header.main .ui.user-setting.button:hover,
-header.main .ui.user-setting.button.active {
+.header.main .ui.user-setting.button:hover,
+.header.main .ui.user-setting.button.active {
   border: none;
   background: none;
 }
-header.main .ui.user-setting.button > a.link:hover {
+.header.main .ui.user-setting.button > a.link:hover {
 	text-decoration: none;
 }
 
@@ -384,39 +384,39 @@ header.main .ui.user-setting.button > a.link:hover {
     width: 1.8em;
 	top: -0.4em;
 }
-header.main .ui.how-work.button,
-header.main .ui.secondary.user.menu {
+.header.main .ui.how-work.button,
+.header.main .ui.secondary.user.menu {
 	margin-top: 1.2rem;
 	font-weight: 700;
 	float: left;
 }
-header.main .ui.how-work.button {
+.header.main .ui.how-work.button {
 	border: medium none;
     margin-left: 1em;
     padding: 0.8em 0;
 }
-header.main .ui.how-work.button:hover {
+.header.main .ui.how-work.button:hover {
 	background: none;
 	border-color: none;
 	color: #FF3b6b;
 }
-header.main .ui.basket.button {
+.header.main .ui.basket.button {
 	border: medium none;
     line-height: 1;
     margin-right: 0em;
     padding: 0.2em 0 1.25em;
     position: relative;
 }
-header.main .ui.basket.button .icon {
+.header.main .ui.basket.button .icon {
     font-size: 2em;
 }
-header.main .ui.basket.button:hover,
-header.main .ui.basket.active.button {
+.header.main .ui.basket.button:hover,
+.header.main .ui.basket.active.button {
 	background: none;
 	border-color: none;
 	color: #FF3b6b;
 }
-header.main .ui.basket.button > .floating.label {
+.header.main .ui.basket.button > .floating.label {
 	font-size: 0.65rem;
     height: 1rem;
     left: 65%;
@@ -424,56 +424,56 @@ header.main .ui.basket.button > .floating.label {
     width: 1rem;
 }
 
-header.main .ui.secondary.user.menu {
+.header.main .ui.secondary.user.menu {
     float: right;
     position: relative;
 	font-size: 1rem;
 	margin-top: 1.2rem;
 }
-header.main .ui.secondary.user.menu .ui.avatar.image {
+.header.main .ui.secondary.user.menu .ui.avatar.image {
 	margin-right: 0;
 }
 
-header.fixed {
+.header.fixed {
 	position: fixed;
  	top: 0;
  	left: 0;
  	z-index: 1000;
 	border-bottom: 0px solid #E4E5E7;
 }
-header.shrink {
+.header.shrink {
 	height: 50px;
 	background: none repeat scroll 0 0 rgba(255,255,255,1);
 }
-header.fixed.shrink {
+.header.fixed.shrink {
 	border-bottom: 1px solid #E4E5E7;
 }
 
-header.shrink.main .logo {
+.header.shrink.main .logo {
 	background: url("/images/text-logo.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 	height: 19px;
 	margin: 14px 0;
 }
-header.shrink.main .ui.main-nav > .item {
+.header.shrink.main .ui.main-nav > .item {
 	padding-top: 0rem;
 	border-top: medium none;
 	line-height: 48px;
 }
-header.shrink.main .ui.main-nav > .item > .icon {
+.header.shrink.main .ui.main-nav > .item > .icon {
 	display: none;
 }
-header.shrink.main .ui.main-nav > .active.item,
-header.shrink.main .ui.main-nav > .item:hover {
+.header.shrink.main .ui.main-nav > .active.item,
+.header.shrink.main .ui.main-nav > .item:hover {
 	border-top: medium none;
 	padding-top: 0px;
 	line-height: 48px;
 }
-header.shrink.main .search.item {
+.header.shrink.main .search.item {
 	font-size: 0.875rem;
 	margin-top: 0.5em;
 }
-header.shrink.main .ui.how-work.button,
-header.shrink.main .ui.secondary.user {
+.header.shrink.main .ui.how-work.button,
+.header.shrink.main .ui.secondary.user {
 	margin-top: 0.25em;
 }
 
@@ -906,6 +906,11 @@ header.shrink.main .ui.secondary.user {
 }
 .hero-main .verticalize > span {
     font-size: 24px;
+}
+.hero-main .verticalize.bottom {
+	margin-bottom: 100px;
+    padding-left: 160px;
+    vertical-align: bottom;
 }
 .hero-main h1 {
    font-size: 92px;
@@ -3754,7 +3759,7 @@ section .pad .category {
 	}
 }
 @media only screen and (max-width: 1200px) {
-	header.main .ui.how-work.button {
+	.header.main .ui.how-work.button {
 		display: none !important;
 	}
 }
@@ -3776,13 +3781,13 @@ section .pad .category {
 }
 
 @media only screen and (min-width : 992px) and (max-width : 1500px) {
-	header.main .ui.main-nav > .item {
+	.header.main .ui.main-nav > .item {
 		padding-left: 1em;
 		padding-right: 1em;
 	}
-	header.main .ui.main-nav > .active.item,
-	header.main .ui.main-nav > .item:active,
-	header.main .ui.main-nav > .item:hover {
+	.header.main .ui.main-nav > .active.item,
+	.header.main .ui.main-nav > .item:active,
+	.header.main .ui.main-nav > .item:hover {
 	    padding-left: 1em;
 	    padding-right: 1em;
 	}
@@ -3806,7 +3811,7 @@ section .pad .category {
 }
 
 @media only screen and (max-width: 960px) {
-	header.main .search.item {
+	.header.main .search.item {
 		display: none !important;
 	}
 }
@@ -3817,13 +3822,13 @@ section .pad .category {
 		padding: 0 1.5%;
 	}
 	
-	header.main .ui.main-nav > .item {
+	.header.main .ui.main-nav > .item {
 		padding-left: 1em;
 		padding-right: 1em;
 	}
-	header.main .ui.main-nav > .active.item,
-	header.main .ui.main-nav > .item:active,
-	header.main .ui.main-nav > .item:hover {
+	.header.main .ui.main-nav > .active.item,
+	.header.main .ui.main-nav > .item:active,
+	.header.main .ui.main-nav > .item:hover {
 	    padding-left: 1em;
 	    padding-right: 1em;
 	}
