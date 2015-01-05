@@ -3561,18 +3561,50 @@ section .pad .category {
 #homepage .ui.vote.block .vstatus.horizontal.list > .item {
     line-height: 1.8rem;
 }
-#homepage .response{
+#homepage .response {
 	position: fixed;
 	right: 10px;
 	top: 47%;
 	width: 118px;
 	background: rgba(0,0,0,0);
-	transition: 0.3s;
-	-webkit-transition: 0.3s;
-	-moz-transition: 0.3s;
+    -webkit-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease
+    ;
+    -moz-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease
+    ;
+    -o-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease
+    ;
+    -ms-transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease
+    ;
+    transition:
+      opacity 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease
+    ;
 	z-index: 111;
 }
-#homepage .response img{
+#homepage .response img {
 	border:1px solid rgba(0,0,0,.1);
 	border-bottom:none;
 }
