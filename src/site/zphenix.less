@@ -336,6 +336,13 @@ a.line:hover {
 	text-decoration: none;
 }
 
+.header.main .ui.login.button{
+	margin-bottom: .6em;
+}
+.header.main .ui.signup.button{
+	margin-bottom: .8em;
+}
+
 /* 表单 */
 #submitform {
 	margin-top: 1em;
@@ -548,6 +555,9 @@ a.line:hover {
 	display: block;
 	font-size: 1em;
 	padding: 0.3em 0;
+}
+#ft .ui.list a.ui.link.item {
+	width: 70px;
 }
 .ui.circular.topup.button {
     height: 3.5em;
@@ -2053,6 +2063,35 @@ h4.ui.header .advantage {
 	padding: 4em 0 2em;
 }
 
+.presell{
+	padding:.5em;
+	font-size: 14px;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	bottom: 0;
+	color: #fff;
+	z-index: 999;
+}
+.schedule.p-sell .remaining .flat.sale.icon {
+	margin:0;
+	opacity:1;
+	font-size: 14px;
+	font-weight: 700;
+}
+.schedule.p-sell{
+	margin-bottom:0 !important;
+}
+.schedule.p-sell .total.amount{
+	display:inline-block;
+}
+.schedule.p-sell>.remaining{
+	float:right;
+}
+.ui.items>.item .ui.progress{
+	background-color: #eee !important;
+	height: 5px !important;
+}
+
 .product.promotion {
 	display: none;
 	margin: 1.5em auto;
@@ -3521,6 +3560,30 @@ section .pad .category {
 }
 #homepage .ui.vote.block .vstatus.horizontal.list > .item {
     line-height: 1.8rem;
+}
+#homepage .response{
+	position: fixed;
+	right: 10px;
+	top: 47%;
+	width: 118px;
+	background: rgba(0,0,0,0);
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	z-index: 111;
+}
+#homepage .response img{
+	border:1px solid rgba(0,0,0,.1);
+	border-bottom:none;
+}
+#homepage .response .attention{
+	text-align: center;
+	background: #f36;
+	padding: 3px;
+	color: #fff;
+	margin-top:-3px;
+	font-size: 12px;
+	line-height: 17px;
 }
 /* 购物车 */
 #shopping-basket .right.aligned {
