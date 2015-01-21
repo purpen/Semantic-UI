@@ -551,13 +551,29 @@ a.line:hover {
 	font-size: 0.875em;
 	color: #999;
 }
+#ft .ui.list h2.item {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 0.5em;
+}
 #ft .ui.list .item {
 	display: block;
 	font-size: 1em;
-	padding: 0.3em 0;
+	padding: 0.2em 0;
 }
 #ft .ui.list a.ui.link.item {
-	width: 70px;
+	width: 65px;
+	font-size: 0.96rem !important;
+}
+#ft .computer.tablet.only.row, #ft .computer.tablet.only.row + .row {
+	padding-top: 0;
+}
+#ft .ui.circular.share.button {
+	height: 3em;
+	width: 3em;
+}
+#ft .ui.icon.button{
+	padding:0.6em;
 }
 .ui.circular.topup.button {
     height: 3.5em;
@@ -821,7 +837,7 @@ a.line:hover {
 
 /* 未登录时评论显示 */
 .not.login {
-	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     border-radius: 0.2125em;
     height: 100%;
     left: 0;
@@ -831,6 +847,9 @@ a.line:hover {
 }
 .not.login .ui.grid .column{
 	padding-top: 5%;
+}
+.not.login .ui.grid .column .ui.gray.text{
+	margin-top: 0.8em;
 }
 .ui.modal .third {
 	padding-top: 3.5em;
@@ -1936,9 +1955,7 @@ h4.ui.header .advantage {
 	right: 0;
 }
 
-#shoppage .buy.box {
-	background-color: #f4f4f4;
-}
+
 #shoppage .buy.box .ui.grid > .row {
 	margin-bottom: 0rem;
 }
@@ -2060,7 +2077,11 @@ h4.ui.header .advantage {
 }
 
 #shoppage .product.dream {
+	background:#eee;
 	padding: 4em 0 2em;
+}
+#shoppage .product.dream .ui.levels>.level{
+	background:#fff;
 }
 
 .presell{
