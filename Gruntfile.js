@@ -568,6 +568,9 @@ module.exports = function(grunt) {
           ],
           'build/packaged/css/ie9.min.css': [
             'build/uncompressed/site/ie9.css'
+          ],
+          'build/packaged/css/calendar-theme.css': [
+            'build/uncompressed/site/calendar.css'
           ]
         }
       }
@@ -642,6 +645,10 @@ module.exports = function(grunt) {
 			'build/uncompressed/javascript/video.js',
 			'build/uncompressed/javascript/tables.js',
 			'build/uncompressed/javascript/langs/zh_cn.js',
+          ],
+          'build/packaged/javascript/calendar.js': [
+ 		  	    'build/uncompressed/javascript/calendar.js',
+            'build/uncompressed/javascript/calendar-en.js',   
           ]
         }
       }
