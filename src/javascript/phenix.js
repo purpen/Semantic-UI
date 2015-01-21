@@ -465,27 +465,29 @@ phenix.hook_comment_page = function(){
 		$('.ui.submit.button').removeClass('loading');
 	});
 	
-	$('.ui.reply.form').form({
-		content: {
-			identifier  : 'content',
-			rules: [
-				{
-					type   : 'empty',
-					prompt : '评论内容不能为空'
-				},
-				{
-					type   : 'maxLength[1400]',
-					prompt : '评论内容不超过1400字符'
-				}
-			]
-		}
-	}, {
-		inline : true,
-		onSuccess: function(event){
-			event.preventDefault();
-			$(event.target).ajaxSubmit();
-		}
-	});
+  $('.ui.reply.form').livequery(function(){
+    $(this).form({
+      content: {
+        identifier  : 'content',
+        rules: [
+          {
+            type   : 'empty',
+            prompt : '评论内容不能为空'
+          },
+          {
+            type   : 'maxLength[1400]',
+            prompt : '评论内容不超过1400字符'
+          }
+        ]
+      }
+    }, {
+      inline : true,
+      onSuccess: function(event){
+        event.preventDefault();
+        $(event.target).ajaxSubmit();
+      }
+    });
+  });
 };
 
 // 处理批量附件
