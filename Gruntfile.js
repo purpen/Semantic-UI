@@ -649,6 +649,9 @@ module.exports = function(grunt) {
           'build/packaged/javascript/calendar.js': [
  		  	    'build/uncompressed/javascript/calendar.js',
             'build/uncompressed/javascript/calendar-en.js',   
+          ],
+          'build/packaged/javascript/jquery.flexslider.js': [
+ 		  	    'build/uncompressed/javascript/jquery.flexslider.js'
           ]
         }
       }
