@@ -1957,7 +1957,7 @@ h4.ui.header .advantage {
 }
 
 #shoppage .buy.box{
-	background:#fff;
+	background:#f8f8f8;
 }
 #shoppage .buy.box .ui.grid > .row {
 	margin-bottom: 0rem;
@@ -2086,16 +2086,21 @@ h4.ui.header .advantage {
 	background:#fff;
 }
 #shoppage .product.dream .ui.level.row{
-	background:#fff;
+	background: #fff;
 	border-radius: 6px;
-	font-size:0;
+	font-size: 0;
+}
+#shoppage .product.dream .ui.level.row .header{
+	text-align: left;
+	padding-left: 0.5em;
 }
 #shoppage .product.dream .ui.level.row .ui.two.column .price{
 	line-height: 70px;
 	margin: 0;
-	padding-bottom: .5em;
-	padding-top: .5em;
+	padding-bottom: 0.5em;
+	padding-top: .05em;
 	font-size: 1.5em;
+	color:#f36;
 }
 #shoppage .product.dream .ui.level.row .actions{
 	line-height: 20px;
@@ -2105,6 +2110,10 @@ h4.ui.header .advantage {
 }
 #shoppage .product.dream .ui.level.row:hover {
 	background: #f36 !important;
+	transform: scale(1.015) !important;
+}
+#shoppage .product.dream .ui.level.row:hover .header,#shoppage .product.dream .ui.level.row:hover .ui.two.column .price{
+	color: #fff !important;
 }
 .presell{
   padding: .8em 1.5em .8em .8em;
