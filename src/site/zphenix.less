@@ -673,7 +673,7 @@ a.line:hover {
 	height: 100%;
 }
 .masthead > .masthead-cover.translucent {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 .masthead > .masthead-cover.transparent {
 	background-color: rgba(0, 0, 0, 0);
@@ -1886,14 +1886,15 @@ ul.sidemenu li a:hover span {
     color: #ff3b6b;
 }
 
-h4.ui.header .advantage {
+h4.ui.header .advantage,
+h4.ui.header .result {
 	font-size: 0.75em;
 	margin: 0.35em 0;
 	font-weight: normal;
 }
 
 #shoppage {
-	padding: 1em 0 3em;
+	padding: 1em 0 0em;
 	background-color: #fff;
 }
 #shoppage .product.cover {
@@ -2248,7 +2249,7 @@ h4.ui.header .advantage {
 	margin-top: 1em;
 }
 #shoppage .product.service {
-	margin: 2em auto;
+	margin: 2em auto 0;
 	padding: 1.5em 0;
 	background-color: #f8f8f8;
 }
@@ -2260,6 +2261,16 @@ h4.ui.header .advantage {
     line-height: 30px;
     padding: 5px;
     width: 50%;
+}
+
+#shoplist .ui.sticklink.list {
+	font-weight: 400;
+	margin-left: 18px;
+}
+#shoplist h3 small {
+    font-size: 0.65em;
+    font-weight: 400;
+    margin-left: 0.5em;
 }
 
 .ui.share.modal {
