@@ -1590,9 +1590,19 @@ ul.sidemenu li a:hover span {
 #votelist .ui.items {
 	margin-top: 1.5em;
 }
+#votelist .i-stats{
+	position:absolute;
+	padding-top: 25px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
+}
 #votelist .vote {
 	position: relative;
 	padding-bottom: 0.5rem;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	padding-top: 10px;
 }
 #votelist .ui.timer.list .item {
 	text-align: center;
@@ -1617,7 +1627,7 @@ ul.sidemenu li a:hover span {
 	position: absolute;
     right: 0;
 	text-align: right;
-    top: 0;
+    top: 9px;
     z-index: 9;
 }
 #votelist .vote .progress .count {
@@ -1627,6 +1637,12 @@ ul.sidemenu li a:hover span {
 #votelist .vote .progress .description {
 	font-size: 0.875em;
 	color: rgba(0,0,0,0.5);
+}
+#votelist .ui.three.items .magenta.item .image+.content{
+	margin-left: 0;
+	padding: 10px !important;
+	padding-bottom: 55px !important;
+	height: 140px;
 }
 
 #votepage {
@@ -1779,6 +1795,20 @@ ul.sidemenu li a:hover span {
 /* 商店列表 */
 #shoplist {
 	margin-bottom: 0em;
+}
+#shoplist .ui.three.items .magenta.item .image+.content{
+	margin-left: 0;
+	padding: 10px !important;
+	padding-bottom: 55px !important;
+	height: 140px;
+}
+#shoplist .i-stats {
+	position: absolute;
+	padding-top: 33px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
 }
 #shoplist .ui.items .item > .content > .name {
 	font-size: 0.875em;
@@ -4176,3 +4206,63 @@ h4.ui.header .advantage{
   border: 1px solid #fff;
   background: rgba(0,0,0,0);
 }
+
+/*   大赛列表   */
+@media screen and (max-width:767px){
+	 .ui.allist .ui.four.items .item .ui.dividing.header{
+		height:100% !important;
+	}
+	.ui.allist .i-stats{
+		padding-top:15px;
+	}
+}
+.ui.allist .ui.items>.item:hover{
+	border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
+.ui.allist .ui.four.items .item .content{
+	padding-top:1.75em;
+}
+.ui.allist .ui.four.items .item .ui.dividing .image{
+	background-color: rgba(0,0,0,0);
+	border-radius: 0;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	margin: 12px auto;
+	max-height: 100%;
+}
+.ui.allist .ui.four.items .item .ui.dividing .image img{
+	width:100%;
+}
+.ui.allist .ui.four.items .item .ui.dividing.header{
+	border-bottom: 1px solid rgba(0,0,0,0); 
+	overflow: hidden;
+	margin-bottom: 54px;
+	height: 330px;
+	word-wrap: break-word;
+	padding-bottom:0 !important;
+}
+.ui.allist .ui.four.items .item .i-stats .schedule{
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+.ui.allist .ui.four.items .item .i-stats .schedule .status{
+	max-height: 30px;
+}
+.ui.allist .ui.items .item .full.advantage {
+	display: block;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-top: 0.8em;
+}
+.ui.allist .ui.items .item .like {
+	font-size: 0.875em;
+}
+.ui.allist .i-stats {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	padding-top: 45px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
+}
+
