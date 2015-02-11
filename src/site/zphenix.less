@@ -90,6 +90,19 @@ a.line:hover {
 	margin-top: 1rem;
 }
 
+/* block title */
+.block.title {
+	font-size: 28px;
+	color: rgba(0,0,0,0.85);
+	font-weight: normal;
+	margin: 0;
+}
+.block.title > small {
+	font-size: 0.875rem;
+	color: rgba(0,0,0,0.65);
+	margin-left: 0.8em;
+}
+
 /* the norm */
 #gritter-notice-wrapper {
 	position:fixed;
@@ -726,6 +739,64 @@ a.line:hover {
 	background-color: #F8F8F8;
 	color: rgba(255, 51, 102, 1);
 }
+
+.social.slide {
+	background-color: rgba(255,255,255, 1);
+	padding: 1.5rem 0;
+}
+.social.slide .ui.advert {
+	margin-bottom: 20px;
+	height: 200px;
+	overflow: hidden;
+}
+.social.slide .ui.advert:last-child {
+	margin-bottom: 0px;
+}
+.social.slide .slide.content {
+	height: 420px;
+	overflow: hidden;
+}
+.social.people {
+	background-color: #ffffff;
+	padding: 1rem 0;
+}
+.social.products,
+.social.topic {
+	background-color: #f1f1f1;
+	padding: 1rem 0;
+}
+.social.topic {
+	padding: 0rem 0 1.5rem;
+}
+.social.topic .ui.count.text {
+	color: rgba(0,0,0,0.35);
+}
+.social.topic .ui.table td.avatar {
+	vertical-align: top;
+}
+.social.topic .subcate.list > .item {
+	font-size: 1.75rem;
+	color: rgba(0,0,0,0.85);
+	text-decoration: none;
+}
+.social.topic .subcate.list > .item:hover,
+.social.topic .subcate.list > .active.item {
+	color: rgba(255,51,102,1);
+}
+.social.topic .ui.segment {
+	margin: 0em;
+}
+.social.people .ui.items > .item {
+	text-align: center;
+	box-shadow: 0 0 rgba(0, 0, 0, 0.05) inset;
+	box-sizing: border-box;
+	transition: all 0.3s ease 0.1s;
+}
+.social.people .ui.items > .item:hover {
+	background-color: #f36;
+	color: #fff;
+}
+
 /* 社区 */
 #topics .ui.grid .container.column {
 	margin-top: 0;
@@ -838,7 +909,14 @@ a.line:hover {
 	color: rgba(0, 0, 0, 0.4);
 }
 .topic.table .content .attribute a {
-	color: rgba(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.6);
+}
+.topic.table .content .attribute a:hover {
+	text-decoration: none;
+	color: #f36;
+}
+.topic.table .content .attribute a.ui.magenta.link {
+	color: #f36;
 }
 .topic.table .content .description {
 	color: rgba(0, 0, 0, 0.7);
@@ -901,23 +979,19 @@ a.line:hover {
 	width: 100%;
 }
 .hero .slidee {
-    height: 100%;
 	margin: 0;
 	padding: 0;
 }
 .hero .slidee li {
     display: inline-block;
     height: 100%;
-    min-width: 1024px;
 	float: left;
 }
 .hero .slidee li > div {
     height: 100%;
-    min-width: 1024px;
 }
 .container {
     margin: 0 auto;
-    max-width: 1920px;
 }
 .slide-1, .slide-2, .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
     background-repeat: no-repeat;
@@ -1794,7 +1868,7 @@ ul.sidemenu li a:hover span {
 
 /* 商店列表 */
 #shoplist {
-	margin-bottom: 0em;
+	margin: 1.5rem auto;
 }
 #shoplist .ui.three.items .magenta.item .image+.content{
 	margin-left: 0;
@@ -1813,19 +1887,20 @@ ul.sidemenu li a:hover span {
 #shoplist .ui.items .item > .content > .name {
 	font-size: 0.875em;
 }
-#shoplist .product.list {
-	padding-top: 2em;
+#shopindex .product.list {
+	padding-top: 1.5rem;
 }
-#shoplist .product.list.newest,
-#shoplist .product.list.okcase {
+#shopindex .product.list.newest,
+#shopindex .product.list.okcase {
 	background-color: #f1f1f1;
 }
-#shoplist .product.list.hotest {
+#shopindex .product.list.hotest {
 	background-color: #fff;
 }
-#shoplist .empty.result {
+#shopindex .empty.result {
 	margin-bottom: 1.5rem;
 }
+
 .shop.tophead {
     background: url("/images/bgc-all.jpg") no-repeat scroll center center / cover rgba(255, 51, 102, 1);
     color: #fff;
@@ -1855,11 +1930,27 @@ ul.sidemenu li a:hover span {
 }
 .shop.submenu {
 	background-color: #f4f4f4;
-	padding:1rem 0;
+	padding: 1rem 0;
 }
-.shop.submenu .ui.list a {
+.shop.submenu .ui.list > .item {
+	margin-left: 1.5rem;
+}
+.shop.submenu .ui.list > .item > a {
+	border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
 	font-size: 1.05em;
 }
+.shop.submenu .ui.list > .item > a:hover,
+.shop.submenu .ui.list > .item > a.active {
+	border-bottom: 2px solid #f36;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+
 .shop.slide {
 	background-color: #fff;
 	padding:1.5em 0 0;
@@ -4172,7 +4263,8 @@ section .pad .category {
 
 /* products color */
 h4.ui.header .advantage{
-  color:#666
+  color: #666;
+  min-height: 18px;
 }
 .ui.items>.item>.content .like{
   color:#999;
