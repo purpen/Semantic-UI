@@ -50,6 +50,9 @@ a.line:hover {
 .ui.show {
 	display:block;
 }
+.ui.breadcrumb a.section {
+	color: rgba(0, 0, 0, 0.65);
+}
 .post.froala-element,
 .product.content.froala-element {
 	overflow-y: hidden;
@@ -85,6 +88,19 @@ a.line:hover {
 }
 .advert.top.content {
 	margin-top: 1rem;
+}
+
+/* block title */
+.block.title {
+	font-size: 28px;
+	color: rgba(0,0,0,0.85);
+	font-weight: normal;
+	margin: 0;
+}
+.block.title > small {
+	font-size: 0.875rem;
+	color: rgba(0,0,0,0.65);
+	margin-left: 0.8em;
 }
 
 /* the norm */
@@ -274,6 +290,10 @@ a.line:hover {
 	margin: 0;
 }
 /* 搜索框 */
+.header.main {
+	border-bottom: 1px solid #dddddd;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.04);
+}
 .header.main .search.item {
     font-size: 1rem;
     margin-top: 1.2rem;
@@ -546,6 +566,7 @@ a.line:hover {
 	background: none repeat scroll 0 0 #FFFFFF;
     border-top: 1px solid #E4E5E7;
     padding: 1em 0 2em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 #ft .copyright {
 	font-size: 0.875em;
@@ -673,7 +694,7 @@ a.line:hover {
 	height: 100%;
 }
 .masthead > .masthead-cover.translucent {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 .masthead > .masthead-cover.transparent {
 	background-color: rgba(0, 0, 0, 0);
@@ -718,6 +739,64 @@ a.line:hover {
 	background-color: #F8F8F8;
 	color: rgba(255, 51, 102, 1);
 }
+
+.social.slide {
+	background-color: rgba(255,255,255, 1);
+	padding: 1.5rem 0;
+}
+.social.slide .ui.advert {
+	margin-bottom: 20px;
+	height: 200px;
+	overflow: hidden;
+}
+.social.slide .ui.advert:last-child {
+	margin-bottom: 0px;
+}
+.social.slide .slide.content {
+	height: 420px;
+	overflow: hidden;
+}
+.social.people {
+	background-color: #ffffff;
+	padding: 1rem 0;
+}
+.social.products,
+.social.topic {
+	background-color: #f1f1f1;
+	padding: 1rem 0;
+}
+.social.topic {
+	padding: 0rem 0 1.5rem;
+}
+.social.topic .ui.count.text {
+	color: rgba(0,0,0,0.35);
+}
+.social.topic .ui.table td.avatar {
+	vertical-align: top;
+}
+.social.topic .subcate.list > .item {
+	font-size: 1.75rem;
+	color: rgba(0,0,0,0.85);
+	text-decoration: none;
+}
+.social.topic .subcate.list > .item:hover,
+.social.topic .subcate.list > .active.item {
+	color: rgba(255,51,102,1);
+}
+.social.topic .ui.segment {
+	margin: 0em;
+}
+.social.people .ui.items > .item {
+	text-align: center;
+	box-shadow: 0 0 rgba(0, 0, 0, 0.05) inset;
+	box-sizing: border-box;
+	transition: all 0.3s ease 0.1s;
+}
+.social.people .ui.items > .item:hover {
+	background-color: #f36;
+	color: #fff;
+}
+
 /* 社区 */
 #topics .ui.grid .container.column {
 	margin-top: 0;
@@ -830,7 +909,14 @@ a.line:hover {
 	color: rgba(0, 0, 0, 0.4);
 }
 .topic.table .content .attribute a {
-	color: rgba(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.6);
+}
+.topic.table .content .attribute a:hover {
+	text-decoration: none;
+	color: #f36;
+}
+.topic.table .content .attribute a.ui.magenta.link {
+	color: #f36;
 }
 .topic.table .content .description {
 	color: rgba(0, 0, 0, 0.7);
@@ -893,23 +979,19 @@ a.line:hover {
 	width: 100%;
 }
 .hero .slidee {
-    height: 100%;
 	margin: 0;
 	padding: 0;
 }
 .hero .slidee li {
     display: inline-block;
     height: 100%;
-    min-width: 1024px;
 	float: left;
 }
 .hero .slidee li > div {
     height: 100%;
-    min-width: 1024px;
 }
 .container {
     margin: 0 auto;
-    max-width: 1920px;
 }
 .slide-1, .slide-2, .slide-3, .slide-4, .slide-5, .slide-6, .slide-7, .slide-8 {
     background-repeat: no-repeat;
@@ -1786,7 +1868,7 @@ ul.sidemenu li a:hover span {
 
 /* 商店列表 */
 #shoplist {
-	margin-bottom: 3em;
+	margin: 1.5rem auto;
 }
 #shoplist .ui.three.items .magenta.item .image+.content{
 	margin-left: 0;
@@ -1804,6 +1886,61 @@ ul.sidemenu li a:hover span {
 }
 #shoplist .ui.items .item > .content > .name {
 	font-size: 0.875em;
+}
+
+.shop.tophead {
+    background: url("/images/bgc-all.jpg") no-repeat scroll center center / cover rgba(255, 51, 102, 1);
+    color: #fff;
+    height: 300px;
+	margin: 0 0 1.5rem;
+}
+.shop.electronic.tophead {
+    background: url("/images/bgc-shuma.jpg") no-repeat scroll center center / cover rgba(255, 28, 127, 1);
+}
+.shop.entertainment.tophead {
+    background: url("/images/bgc-yule.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+}
+.shop.home.tophead {
+    background: url("/images/bgc_house.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+}
+.shop.outdoor.tophead {
+    background: url("/images/bgc-outdoor.jpg") no-repeat scroll center center / cover rgba(34, 161, 196, 1);
+}
+.shop.health.tophead {
+    background: url("/images/bgc-health.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+}
+.shop.presale.tophead {
+    background: url("/images/bgc-presale.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+}
+.shop.tophead .masthead > .masthead-cover.translucent {
+	background-color: rgba(0, 0, 0, 0);
+}
+.shop.submenu {
+	background-color: #f4f4f4;
+	padding: 1rem 0;
+}
+.shop.submenu .ui.list > .item {
+	margin-left: 1.5rem;
+}
+.shop.submenu .ui.list > .item > a {
+	border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+	font-size: 1.05em;
+}
+.shop.submenu .ui.list > .item > a:hover,
+.shop.submenu .ui.list > .item > a.active {
+	border-bottom: 2px solid #f36;
+	padding-bottom: 5px;
+	text-decoration: none;
+}
+
+.shop.slide {
+	background-color: #fff;
+	padding:1.5em 0 0;
 }
 .ui.items .item > .image .image-extra {
     background-color: rgba(0, 0, 0, 0.1);
@@ -1916,14 +2053,46 @@ ul.sidemenu li a:hover span {
     color: #ff3b6b;
 }
 
-h4.ui.header .advantage {
+h4.ui.header .advantage,
+h4.ui.header .result {
 	font-size: 0.75em;
 	margin: 0.35em 0;
 	font-weight: normal;
 }
-
+.shop.tophead .filter.conditions {
+	margin-top: 65px;
+}
+.shop.tophead .filter.conditions .ui.list a {
+	color: rgba(255, 255, 255, 1);
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+	border-bottom: 2px solid rgba(255, 255, 255, 0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.shop.tophead .filter.conditions .ui.list a:hover,
+.shop.tophead .filter.conditions .ui.list a.active {
+	padding-bottom: 3px;
+	font-size: 1.5rem;
+	border-bottom: 2px solid rgba(255, 255, 255, 1);
+	color: rgba(255, 255, 255, 0.9);
+}
+.shop.tophead .filter.conditions .ui.list a.active {
+	color: rgba(255, 255, 255, 1);
+	font-size: 2rem;
+}
+.shop.tophead .filter.conditions .onerow {
+	margin-bottom: 1em;
+}
+#shoppage .quickly i.icon {
+	opacity: 1;
+}
 #shoppage {
-	padding: 1em 0 3em;
+	padding: 1em 0 0em;
 	background-color: #fff;
 }
 #shoppage .product.cover {
@@ -2278,7 +2447,7 @@ h4.ui.header .advantage {
 	margin-top: 1em;
 }
 #shoppage .product.service {
-	margin: 2em auto;
+	margin: 2em auto 0;
 	padding: 1.5em 0;
 	background-color: #f8f8f8;
 }
@@ -2290,6 +2459,16 @@ h4.ui.header .advantage {
     line-height: 30px;
     padding: 5px;
     width: 50%;
+}
+
+#shoplist .ui.sticklink.list {
+	font-weight: 400;
+	margin-left: 18px;
+}
+#shoplist h3 small {
+    font-size: 0.65em;
+    font-weight: 400;
+    margin-left: 0.5em;
 }
 
 .ui.share.modal {
@@ -4071,7 +4250,8 @@ section .pad .category {
 
 /* products color */
 h4.ui.header .advantage{
-  color:#666
+  color: #666;
+  min-height: 18px;
 }
 .ui.items>.item>.content .like{
   color:#999;
@@ -4096,9 +4276,14 @@ h4.ui.header .advantage{
 .ui.items>.item>.content{
   padding:0.75em 0.8em;
 }
-.product.hotest.white .ui.items>.magenta.item .content {
-	box-shadow: 0px 1px 3px 0px rgba(0,0,0,.1);
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.1);
+.product.white .ui.items>.magenta.item .content {
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
+}
+#shoppage .product.dream .ui.level.row:hover .actions .ui.button {
+  color: #fff;
+  border: 1px solid #fff;
+  background: rgba(0,0,0,0);
 }
 
 /*   大赛列表   */
