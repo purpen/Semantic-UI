@@ -208,7 +208,6 @@ a.line:hover {
 }
 .main {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 1);
-    border-bottom: 1px solid #E4E5E7;
 	width: 100%;
 	padding: 0;
     -webkit-transition:
@@ -292,10 +291,6 @@ a.line:hover {
 	padding: 0.5rem 1.5em 1rem;
 }
 /* 搜索框 */
-.header.main {
-	border-bottom: 1px solid #dddddd;
-	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.04);
-}
 .header.main .search.item {
     font-size: 1rem;
     margin-top: 1rem;
@@ -763,7 +758,7 @@ a.line:hover {
 }
 .social.people {
 	background-color: #ffffff;
-	padding: 1rem 0;
+	padding: 1rem 0 5rem;
 }
 .social.products,
 .social.topic {
@@ -801,7 +796,60 @@ a.line:hover {
 	background-color: #f36;
 	color: #fff;
 }
+.ui.mentors.cards > .card,
+.ui.mentors.cards > .card:hover {
+	box-shadow: 0 0px 0px #c7c7c7 !important;
+}
+.ui.mentors.cards > .card > .mentor {
+	background-color: #fff;
+	border: 1px solid #ebebeb;
+	border-radius: 0.2857rem !important;
+	height: 280px;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+	transition: margin .3s ease;
+	-moz-transition: margin .3s ease;
+	-webkit-transition: margin .3s ease;
+	-o-transition: margin .3s ease;
+}
+.ui.mentors.cards > .card > .mentor a.user {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.ui.mentors.cards > .card > .mentor:hover {
+    margin-top: -6px;
+}
 
+.ui.mentors.cards > .card > .mentor > img.avatar {
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	display: inline-block;
+}
+.ui.mentors.cards > .card > .mentor h3 {
+	color: #000;
+	margin: 20px 0 10px;
+	line-height: 1;
+	font-size: 15px;
+	letter-spacing: .15em;
+	transition: color .2s ease-in;
+	-moz-transition: color .2s ease-in;
+	-webkit-transition: color .2s ease-in;
+	-o-transition: color .2s ease-in;
+}
+.ui.mentors.cards > .card > .mentor p {
+	font-size: 14px;
+	color: #72777a;
+	margin: 0 auto;
+	line-height: 1;
+}
 /* 社区 */
 #topics .ui.grid .container.column {
 	margin-top: 0;
@@ -856,6 +904,7 @@ a.line:hover {
 #topics .ui.items .item .cate.icon i {
 	margin: 0;
 	font-size: 1.5em;
+	padding-right: 0;
 }
 #topics .ui.items .item .ui.header {
 	margin: 0;
@@ -893,6 +942,9 @@ a.line:hover {
 #topics .ui.table .dot-irecommend:hover {
 	background-color: #f42156;
 	color: #fff;
+}
+#topics .ui.basic.table td {
+	padding: 0.5em;
 }
 .ui.basic.table tbody tr:last-child {
 	border-bottom: 0px solid transparent;
@@ -1140,11 +1192,11 @@ a.line:hover {
 }
 
 #fixedslide {
-  margin-bottom: 20px;
-  max-height: 500px;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
+	margin-bottom: 20px;
+	max-height: 550px;
+	height: 550px;
+	position: relative;
+	overflow: hidden;
 }
 #fixedslide > .ui.slide {
 	height: 100%;
@@ -1152,45 +1204,90 @@ a.line:hover {
 }
 #fixedslide > .ui.slide > .item {
 	display: inline-block;
-height: 100%;
+	height: 100%;
 	width: 100%;
 	float: left;
-position: relative;
-background-position: center center;
-background-repeat: no-repeat;
+	position: relative;
 }
-#fixedslide > .ui.slide > .item > a {
-display: block;
-width: 100%;
-height: 100%;
+#fixedslide .featured-vendor {
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 550px;
+    position: relative;
+    transition: all 0.2s ease 0s;
+}
+#fixedslide .featured-vendor .overlay {
+    padding: 120px 8%;
+    text-align: center;
+}
+#fixedslide .featured-vendor .overlay h1,
+#fixedslide .featured-vendor .overlay h3 {
+    color: white;
+    margin: 0;
+}
+#fixedslide .featured-vendor .overlay h1 {
+    font-size: 50px;
+}
+#fixedslide .featured-vendor .overlay h3 {
+	font-size: 22px;
+    margin-bottom: 10px;
+	color: rgba(255, 255, 255, 0.95);
+}
+#fixedslide .featured-vendor .overlay .snippet {
+    color: rgba(255, 255, 255, 0.95);
+    display: block;
+    margin: 10px auto;
+	line-height: 1.5em;
+    width: 480px;
+}
+#fixedslide .featured-vendor .overlay a {
+	color: rgba(255, 255, 255, 0.95);
+    margin-top: 50px;
+	padding: 0.8em 3.5em;
+}
+#fixedslide .featured-vendor .overlay a:hover {
+	color: rgba(0, 0, 0, 0.8);
+}
+#fixedslide .featured-vendor.left .overlay {
+    margin-left: 30px;
+    text-align: left;
+}
+#fixedslide .featured-vendor.left .overlay .snippet {
+    margin: 10px 0 0 0;
 }
 #fixedslide .pages {
-	bottom: -2em;
+  bottom: 1.5em;
   margin: 0 auto;
   position: absolute;
   width: 100%;
-	text-align: center;
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  -o-transition: all 0.3s ease-in-out 0s;
-  -ms-transition: all 0.3s ease-in-out 0s;
-	transition: all 0.3s ease-in-out 0s;
+  text-align: center;
 }
 #fixedslide .pages > a {
-	border: 1px solid #5f5953;
-  border-radius: 2em;
-  display: inline-block;
-  height: 0.85em;
-  margin-right: 0.65em;
-  text-indent: -999em;
-  width: 0.85em;
+	vertical-align: middle;
+	cursor: pointer;
+	display: inline-block;
+	text-indent: -9999px;
+	height: 6px;
+	margin: 0 5px;
+	width: 6px;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF,endColorstr=#99FFFFFF)";
+	/* IE8 */
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FFFFFF,endColorstr=#99FFFFFF)";
+	/* IE6 & 7 */
+	zoom: 1;
+}
+#fixedslide .pages > a.active {
+	background-color: white;
+	height: 10px;
+	width: 10px;
 }
 #fixedslide .pages > a.active,
 #fixedslide .pages > a:hover {
-	background-color: #6d6d6d;
-}
-#fixedslide:hover .pages {
-	bottom: 0.5em;
+	background-color: white; 
 }
 #fixedslide .next, #fixedslide .prev {
   top: 225px;
@@ -1202,19 +1299,19 @@ height: 100%;
   -moz-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
   -ms-transition: all 0.3s ease-in-out 0s;
-	transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 #fixedslide .prev {
   left: -50px;
 }
 #fixedslide .next {
-  right: -130px;
+  right: -50px;
 }
 #fixedslide:hover .prev {
-  left: 50px;
+  left: 40px;
 }
 #fixedslide:hover .next {
-  right: 50px;
+  right: 40px;
 }
 #fixedslide .next.disabled, #fixedslide .prev.disabled {
   color: rgba(255, 255, 255, 0.65);
@@ -1225,6 +1322,7 @@ height: 100%;
 	filter: alpha(opacity=65);
 	opacity: 0.65;
 }
+
 
 .ui.small.block {
 	padding-top: 1.5em;
@@ -1455,11 +1553,11 @@ ul.sidemenu li a:hover span {
 }
 
 .section-title hr {
-    background: none repeat scroll 0 0 #C3BBBE;
+    background: none repeat scroll 0 0 #ff3366;
     border: medium none;
-    height: 1px;
+    height: 2px;
     margin: 0 auto;
-    width: 50px;
+    width: 100px;
 }
 
 .ui.center.aligned.grid .column > .content-box {
@@ -1565,7 +1663,6 @@ ul.sidemenu li a:hover span {
     top: 0em;
     z-index: 9;
 }
-
 .social .dot-irecommend {
     background-color: rgb(255,51,102);
     border: 0 none !important;
@@ -1601,38 +1698,62 @@ ul.sidemenu li a:hover span {
 }
 
 /* 产品灵感 */
-.social.ideaheader .masthead > .masthead-cover {
-    background-color: rgba(0, 0, 0, 0.6);
+.catemenu .category.header {
+	text-align: center;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	color: white;
+	padding: 120px 0 40px 0;
 }
-.social.ideaheader h1.ui.header {
-	margin-top: 3rem;
-	font-size: 2.45rem;
+.catemenu .category.header .inner {
+	width: 80%;
+	margin: 0 auto;
+	padding: 20px 40px 20px 40px;
+	background: rgba(56,67,77,0.9);
 }
-.social.ideaheader h1.ui.header .sub.header {
-	color: #fff;
-	font-size: 1.05rem;
+.catemenu .category.header h2,
+.catemenu .category.header h1 {
+	color: white;
+	text-rendering: optimizeLegibility;
 }
-.social.ideaheader .subcate {
-	margin: 3rem 0 0;
+.catemenu .category.header h1 {
+	margin: 0.5rem 0;
+	font-size: 2rem;
 }
-.social.ideaheader .subcate .ui.button {
-	border: 0 solid transparent;
-	background-color: transparent;
-	box-shadow: 0 0 0 1px #fff inset !important;
-	color: #fff;
-	margin-bottom: 0.5em;
+.catemenu .category.header a {
+	text-decoration: none;
+	padding: 5px;
+	color: white;
+	border-bottom: 3px solid transparent;
 }
-.social.ideaheader .subcate .ui.button:hover,
-.social.ideaheader .subcate .ui.active.button {
-	box-shadow: 0 0 0 1px #ffe21f inset !important;
-	color: #ffe21f;
-	background-color: transparent;
+.catemenu .category.header a:hover {
+	border-bottom: 3px solid white;
 }
-.social.ideaheader .share.button {
-	padding: 0.8em 3em;
+.catemenu .category.header a.active {
+	border-bottom: 3px solid #ff3366;
 }
-.social.productist {
-	padding: 2.5rem 0 1.5rem;
+.catemenu .category.header .children {
+	margin-bottom: 0.875rem;
+}
+.catemenu .category.header h2 {
+	font-size: 1.25rem;
+	margin: 0.5rem 0.8rem;
+	display: inline-block;
+}
+.catemenu .category.header .inner .discription {
+	color: rgba(255, 255, 255, 0.9);
+	margin: 0rem 0rem 0.8rem;
+}
+.social.sortby,
+.social.stuffist {
+	background-color: #f1f1f1;
+}
+.social.sortby {
+	padding-top: 1.25rem;
+}
+.social.stuffist {
+	padding: 1.5rem 0 2.5rem;
 }
 
 #postpage .ui.big.segment {
@@ -1676,6 +1797,17 @@ ul.sidemenu li a:hover span {
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.6);
 }
+#postpage .idea.tags  {
+	margin-top: 2.5em;
+}
+#postpage .idea.tags .ui.line {
+	margin-right: 0.85em;
+	color: rgba(0,0,0,0.4);
+}
+#postpage .idea.tags .ui.line:hover {
+	color: #ff3366;
+}
+
 #postpage .post hr {
 	background: none repeat scroll 0 0 #c3bbbe;
     border: medium none;
@@ -1770,7 +1902,8 @@ ul.sidemenu li a:hover span {
 }
 
 #asset-list .buttons {
-	margin: 0.8em auto;
+	background-color: rgba(0, 0, 0, 0.05);
+	padding: 0.65em 0.25em;
 }
 
 /* 创意投票 */
@@ -2045,7 +2178,7 @@ ul.sidemenu li a:hover span {
 }
 .shop.submenu {
 	background-color: #f4f4f4;
-	padding: 1rem 0;
+	padding: 0.8rem 0;
 }
 .shop.submenu .ui.list > .item {
 	margin-left: 1.5rem;
@@ -2407,7 +2540,7 @@ h4.ui.header .result {
 }
 #shoppage .product.dream {
 	background:#eee;
-	padding: 4em 0 2em;
+	padding: 2rem;
 }
 #shoppage .product.dream .ui.levels>.level{
 	background:#fff;
@@ -2415,6 +2548,7 @@ h4.ui.header .result {
 #shoppage .product.dream .ui.level.row{
 	background: #fff;
 	border-radius: 6px;
+	padding-top: 0;
 	font-size: 0;
 }
 #shoppage .product.dream .ui.level.row .header{
