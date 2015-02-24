@@ -93,13 +93,13 @@ a.line:hover {
 /* block title */
 .block.title {
 	font-size: 28px;
-	color: rgba(0,0,0,0.85);
+	color: #444;
 	font-weight: normal;
 	margin: 0;
 }
 .block.title > small {
 	font-size: 0.875rem;
-	color: rgba(0,0,0,0.65);
+	color: rgba(0,0,0,0.5);
 	margin-left: 0.8em;
 }
 
@@ -665,7 +665,7 @@ a.line:hover {
 
 /* Social Page */
 .ui.social {
-	padding: 1em 0 2em;
+	padding: 1rem 0 0rem;
 }
 .fever.content {
 	margin-top: 1em;
@@ -1193,8 +1193,8 @@ a.line:hover {
 
 #fixedslide {
 	margin-bottom: 20px;
-	max-height: 550px;
-	height: 550px;
+	max-height: 500px;
+	height: 500px;
 	position: relative;
 	overflow: hidden;
 }
@@ -1212,7 +1212,7 @@ a.line:hover {
 #fixedslide .featured-vendor {
     background-position: center top;
     background-repeat: no-repeat;
-    height: 550px;
+    height: 500px;
     position: relative;
     transition: all 0.2s ease 0s;
 }
@@ -1290,7 +1290,7 @@ a.line:hover {
 	background-color: white; 
 }
 #fixedslide .next, #fixedslide .prev {
-  top: 225px;
+  top: 215px;
   color: #FFFFFF;
   font-size: 40px;
   position: absolute;
@@ -1552,6 +1552,19 @@ ul.sidemenu li a:hover span {
 	background-color: rgba(0,0,0,0);
 }
 
+.section-title h2.block.title {
+    font-size: 28px;
+    margin: 0;
+	color: white;
+	padding-top: 12px;
+	line-height: 32px;
+	padding-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-weight: 800;
+}
+.section-title h2 + p {
+	margin-bottom: 2rem;
+}
 .section-title hr {
     background: none repeat scroll 0 0 #ff3366;
     border: medium none;
@@ -1559,10 +1572,24 @@ ul.sidemenu li a:hover span {
     margin: 0 auto;
     width: 100px;
 }
+.section-title.white hr {
+    background: none repeat scroll 0 0 #fff;
+}
 
+.ui.frbird.block {
+	color: white;
+	padding: 100px 0 60px;
+	background: url("/images/contact_banner.jpg") no-repeat scroll center center / cover rgba(56, 67, 77, 0.9);
+}
+.ui.helper.block {
+	color: white;
+	padding: 100px 0 60px;
+	background: url("/images/support-background.jpg") no-repeat scroll center center / cover rgba(56, 67, 77, 0.9);
+}
 .ui.center.aligned.grid .column > .content-box {
 	text-align: left;
-	margin-bottom: 2em;
+	margin-bottom: 3rem;
+	padding: 0 6rem;
 }
 .ui.center.aligned.grid .column > .content-box .paragraph {
 	color: rgba(0, 0, 0, 0.6);
@@ -1754,6 +1781,10 @@ ul.sidemenu li a:hover span {
 }
 .social.stuffist {
 	padding: 1.5rem 0 2.5rem;
+}
+
+.ui.social.page > #postpage {
+    padding: 0rem 0rem 2.5rem;
 }
 
 #postpage .ui.big.segment {
@@ -2129,7 +2160,7 @@ ul.sidemenu li a:hover span {
 
 /* 商店列表 */
 #shoplist {
-	margin: 1.5rem auto;
+	margin: 2rem auto 4rem;
 }
 #shoplist .ui.three.items .magenta.item .image+.content{
 	margin-left: 0;
@@ -2183,6 +2214,9 @@ ul.sidemenu li a:hover span {
 .shop.submenu .ui.list > .item {
 	margin-left: 1.5rem;
 }
+.shop.submenu .ui.list > .item:first-child {
+	margin-left: 0rem;
+}
 .shop.submenu .ui.list > .item > a {
 	border-bottom: 2px solid transparent;
     -webkit-transition: all 0.3s ease-in-out 0s;
@@ -2198,7 +2232,9 @@ ul.sidemenu li a:hover span {
 	padding-bottom: 5px;
 	text-decoration: none;
 }
-
+.section.breadcrumb {
+    padding: 1rem 0;
+}
 .shop.slide {
 	background-color: #fff;
 	padding:1.5em 0 0;
@@ -2417,7 +2453,7 @@ h4.ui.header .result {
 }
 
 #shoppage .buy.box{
-	background:#f8f8f8;
+	background: #f4f4f4;
 }
 #shoppage .buy.box .ui.grid > .row {
 	margin-bottom: 0rem;
@@ -2711,7 +2747,7 @@ h4.ui.header .result {
 #shoppage .product.service {
 	margin: 2em auto 0;
 	padding: 1.5em 0;
-	background-color: #f8f8f8;
+	background-color: #f4f4f4;
 }
 #shoppage .product.service .ui.header {
 	margin-bottom: 0.35rem;
@@ -3401,7 +3437,7 @@ section.log-banner{
 	margin-top: 1em;
 }
 .try .mainlist {
-	margin: 1em auto;
+	margin: 2rem auto;
 }
 .try .mainlist .ui.items .item > .content > .name,
 .try .mainlist .ui.items .item > .content > .result {
@@ -3723,12 +3759,15 @@ section.log-banner{
 }
 
 /* 文章列表 */
+.ui.big.media.block {
+	padding: 2.5rem 0 4rem;
+}
 .ui.media.grid .row {
 	margin: 0;
 	padding: 0;
 }
 .ui.media.grid .more.row {
-	margin-top: 1.5%;
+	margin-top: 3rem;
 }
 .ui.media.grid .row .column {
 	padding-left: 0%;
@@ -4259,6 +4298,7 @@ section .pad .category {
 .ui.address.items .item {
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2) inset;
+	border-radius: 0.2875em;
     cursor: pointer;
     height: 180px;
 	margin-bottom: 1%;
@@ -4296,7 +4336,7 @@ section .pad .category {
 #create-new-address {
 	text-align: center;
 }
-#create-new-address .btn {
+#create-new-address .button {
 	margin: 22% auto;
 }
 #checkout .step {
