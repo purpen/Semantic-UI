@@ -768,7 +768,8 @@ a.line:hover {
 .social.topic {
 	padding: 0rem 0 1.5rem;
 }
-.social.topic .ui.count.text {
+.social.topic .ui.count.text,
+.topic .ui.count.text {
 	color: rgba(0,0,0,0.35);
 }
 .social.topic .ui.table td.avatar {
@@ -856,6 +857,70 @@ a.line:hover {
 }
 #topics .container.column .ui.block.segment {
 	margin: 1em 0 1.5em;
+}
+#topics .ui.cat.link {
+	display: block;
+}
+#topics .ui.cat.link:hover {
+	text-decoration: none;
+}
+.topics.masthead {
+	color: white;
+	padding: 100px 0 40px;
+	background-position: center center;
+	background-color: rgba(56, 67, 77, 0.9);
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.topics.catemenu .block.title {
+	margin-bottom: 1.5rem;
+}
+.topics.catemenu a.cate {
+	border-bottom: 2px solid transparent;
+    color: #fff;
+    padding: 5px 0;
+    text-decoration: none;
+}
+.topics.catemenu a.cate:hover {
+	border-bottom: 2px solid #fff;
+}
+.topics.catemenu hr {
+	background: none repeat scroll 0 0 #fff;
+    border: medium none;
+	display: inline-block;
+    height: 2px;
+    width: 130px;
+}
+.topics.catemenu .children {
+    margin-top: 2rem;
+}
+.topics.catemenu .children .ui.button {
+	margin-right: 0.5rem;
+}
+.topics.catemenu .children .ui.button i.flat.icon {
+	opacity: 1;
+}
+.topics.catemenu .stast {
+	margin-bottom: 1rem;
+}
+.topics.catemenu .stast .space {
+	font-size: 0.875rem;
+    margin: 0 0.5rem;
+}
+.topics.catemenu .stast > .ui.horizontal.list > .item {
+	font-size: 0.875rem;
+}
+
+#topiclist {
+	background-color: #f1f1f1;
+	padding-bottom: 2.5rem;
+}
+.social.sortby.actions .ui.grid > .row {
+	margin-bottom: 0rem;
+}
+.ui.topic.table td.author {
+	vertical-align: top;
+	text-align: center;
 }
 #topics .ui.three.items {
 	margin-left: 0;
@@ -1745,19 +1810,19 @@ ul.sidemenu li a:hover span {
 	text-rendering: optimizeLegibility;
 }
 .catemenu .category.header h1 {
-	margin: 0.5rem 0;
+	margin: 0.5rem 0 0.8rem;
 	font-size: 2rem;
 }
-.catemenu .category.header a {
+.catemenu .category.header a.cate {
 	text-decoration: none;
 	padding: 5px;
 	color: white;
 	border-bottom: 3px solid transparent;
 }
-.catemenu .category.header a:hover {
+.catemenu .category.header a.cate:hover {
 	border-bottom: 3px solid white;
 }
-.catemenu .category.header a.active {
+.catemenu .category.header a.cate.active {
 	border-bottom: 3px solid #ff3366;
 }
 .catemenu .category.header .children {
