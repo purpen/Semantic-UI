@@ -571,6 +571,9 @@ module.exports = function(grunt) {
           ],
           'build/packaged/css/calendar-theme.css': [
             'build/uncompressed/site/calendar.css'
+          ],
+          'build/packaged/css/eggs.min.css': [
+            'build/uncompressed/site/eggs.css'
           ]
         }
       }
@@ -662,6 +665,7 @@ module.exports = function(grunt) {
           ],
           'build/packaged/javascript/jquery.gsap.min.js': [
  		  	  'build/uncompressed/javascript/CSSPlugin.js',
+			  'build/uncompressed/javascript/EasePack.js',
 			  'build/uncompressed/javascript/jquery.gsap.js',
 			  'build/uncompressed/javascript/TweenLite.js',
           ],

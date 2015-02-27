@@ -1,0 +1,247 @@
+@keyframes rotation36 {
+	from {
+		-webkit-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+		-o-transform:rotate(0deg);
+		transform:rotate(0deg)
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+@-o-keyframes rotation36 {
+	from {
+		-webkit-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+		-o-transform:rotate(0deg);
+		transform:rotate(0deg)
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+@keyframes mymove {
+	0%   { padding-bottom: 0px; opacity: 0.8; }
+	50%  { padding-bottom: 15px; opacity: 0.35; }
+	100% { padding-bottom: 0px; opacity: 0.8; }
+}
+
+@-webkit-keyframes mymove {
+	0%   { padding-bottom: 0px; opacity: 0.8; }
+	50%  { padding-bottom: 15px; opacity: 0.35; }
+	100% { padding-bottom: 0px; opacity: 0.8; }
+}
+.ui.eggs.tabox {
+	background: none repeat scroll 0 0 #190019;
+  	width: 100%;
+	border: 0px solid #fff;
+	margin: 0;
+	position: relative;
+	-webkit-transition: opacity 0.25s ease,translateY 0.25s ease;
+	-moz-transition: opacity 0.25s ease,translateY 0.25s ease;
+	-o-transition: opacity 0.25s ease,translateY 0.25s ease;
+	-ms-transition: opacity 0.25s ease,translateY 0.25s ease;
+	transition: opacity 0.25s ease,translateY 0.25s ease;
+}
+.ui.eggs.tabox.fxd {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 9999;
+}
+.ui.eggs.tabox > .ui.grid > .row {
+	margin-bottom: 0rem;
+}
+.ui.eggs.tabox .ui.tabs {
+	display: inline-block;
+}
+.ui.eggs.tabox .ui.tabs .tab{
+	color:#fff;
+	text-align:center;
+	font-size: 0.9285rem;
+	margin: 0 1rem;
+	padding: 1rem 0;
+	margin-bottom: 0px;
+}
+.ui.eggs.tabox .ui.tabs .tab:hover{
+	color:#f36 !important;
+}
+.ui.eggs.tabox a.ui.btn,
+.ui.eggs.tabox a.ui.btn:hover {
+	border-radius: 0.2875em;
+    padding: 0.5em 2.5em;
+}
+.ui.eggs.tabox .ui.btn-4c:before {
+	top: -9px;
+}
+#eggBox section.page {
+	padding-top: 125px;
+	position: relative;
+	height: 100%;
+	overflow:hidden;
+}
+#eggBox section.page .w-1180 {
+	width: 1180px;
+	height: 100%;
+	margin: 0 auto;
+	overflow-y: hidden;
+}
+#eggBox section.page .w-1180 > h3.ui.header{
+	color: #fff;
+	padding-top: 20px !important;
+}
+#eggBox section.page .w-1180 > h3.ui.header small {
+	font-size: 0.5em;
+}
+#eggBox section.pagex {
+	position: relative;
+	height: 100%;
+	text-align: center;
+	position: relative;
+}
+.section .pagex a.arrow {
+	position: absolute;
+	bottom: 1rem;
+	color: white;
+	font-size: 2rem;
+	text-decoration: none;
+	-webkit-animation: mymove 1.75s ease-in-out infinite;
+	-moz-animation: mymove 1.75s ease-in-out infinite;
+	animation: mymove 1.75s ease-in-out infinite;
+}
+.section .pagex a.arrow .icon {
+	opacity: 1;
+	margin-right: 0;
+}
+
+#eggBox .section.instro {
+	background-image: url("/images/egg-desc-stars.png");
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+#eggBox .section.instro .left-text,
+#eggBox .section.instro .right-text {
+	display: inline-block;
+	box-sizing: border-box;
+	vertical-align: top;
+	position: relative;
+}
+#eggBox .section.instro .left-text {
+	padding-left: 5%;
+    padding-right: 5%;
+	margin-top: 6%;
+    width: 35%;
+}
+#eggBox .section.instro .left-text .summary {
+	color: #8c4a8c;
+	line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+#eggBox .section.instro .left-text .date,
+#eggBox .section.instro .left-text b {			
+	color: #fff;
+}
+#eggBox .section.instro .right-text {
+	width: 55%;
+}
+
+#eggBox .section.instro .right-text .platfam {
+	left: 20px;
+    position: absolute;
+    top: 50px;
+    width: 90%;
+    z-index: 99;
+}
+
+#eggBox .section.instro .right-text .ball {
+	left: 200px;
+    position: absolute;
+    top: 175px;
+    width: 40%;
+    z-index: 90;
+	-moz-animation: rotation36 20s linear infinite;
+	-o-animation: rotation36 20s linear infinite;
+	-webkit-animation: rotation36 20s linear infinite;
+	animation: rotation36 20s linear infinite
+}
+#eggBox .section.instro .right-text .five {
+	color: white;
+    font-size: 0.875rem;
+    left: 370px;
+    position: absolute;
+    top: 275px;
+    width: 135px;
+    z-index: 100;
+}
+#eggBox .section.instro .right-text .five span {
+	font-size: 3rem;
+}
+#eggBox .section.instro .right-text .smart {
+	background: url("/images/platfam-line.png") no-repeat scroll left bottom transparent;
+    color: white;
+    font-size: 0.875rem;
+    left: 0;
+    padding-bottom: 8px;
+    position: absolute;
+    top: 210px;
+    width: 55%;
+    z-index: 100;
+}
+#eggBox .section.instro .right-text .smart span {
+	font-size: 1.5rem;
+}
+#eggBox .section.instro .right-text .vc {
+	background: url("/images/platfam-line.png") no-repeat scroll left bottom transparent;
+    color: white;
+    height: 6px;
+    left: 56px;
+    position: absolute;
+    top: 300px;
+    width: 50%;
+    z-index: 100;
+}
+
+#eggBox .section.stuffs {
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+#eggBox .section.stuffs .featured {
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+#eggBox .section.stuffs .buttons {
+	text-align: center;
+}
+#eggBox .section.stuffs .tips {
+	color: rgba(255, 255, 255, 0.7);
+	line-height: 2;
+	padding: 2rem 6rem;
+}
+
+#eggBox .section.contact .ui.grid {
+	padding: 0 12%;
+	margin: 4rem auto;
+	color: white;
+}
+#eggBox .section.contact .ui.grid img {
+	width: 80%;
+}
+#eggBox .section.contact .share.box {
+	margin: 4rem 0;
+}
+#eggBox .section.contact .share.box .ui.icon.button {
+	background-color: transparent;
+    border: medium none;
+    color: white;
+    font-size: 2rem;
+}
