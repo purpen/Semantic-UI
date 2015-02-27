@@ -204,6 +204,12 @@ button {
 .froala-box {
   position: relative;
 }
+.froala-box > :first-child {
+  border-radius: 0.2857rem 0.2857rem 0em 0em !important;
+}
+.froala-box > :last-child {
+  border-radius: 0em 0em 0.2857rem 0.2857rem !important;
+}
 .froala-box .html-switch {
   position: absolute;
   left: 0;
@@ -303,15 +309,16 @@ button {
 }
 .froala-element a,
 .froala-element a:visited {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
   color: #f36;
   cursor: pointer;
+  padding-bottom: 2px;
   text-decoration: none;
 }
 .froala-element a:hover,
 .froala-element a:active {
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 51, 102, 1);	
+  border-bottom: 2px solid rgba(255, 51, 102, 1);	
 }
 .froala-element img {
   min-width: 32px !important;
