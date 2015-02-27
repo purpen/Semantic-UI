@@ -647,12 +647,24 @@ module.exports = function(grunt) {
 			'build/uncompressed/javascript/langs/zh_cn.js',
           ],
           'build/packaged/javascript/calendar.js': [
- 		  	    'build/uncompressed/javascript/calendar.js',
-            'build/uncompressed/javascript/calendar-en.js',   
+ 		  	  'build/uncompressed/javascript/calendar.js',
+              'build/uncompressed/javascript/calendar-en.js',   
           ],
           'build/packaged/javascript/jquery.flexslider.js': [
- 		  	    'build/uncompressed/javascript/jquery.flexslider.js'
-          ]
+ 		  	  'build/uncompressed/javascript/jquery.flexslider.js'
+          ],
+          'build/packaged/javascript/jquery.fullPage.min.js': [
+ 		  	  'build/uncompressed/javascript/jquery.fullPage.js',
+			  'build/uncompressed/javascript/jquery.mousewheel.js',
+          ],
+          'build/packaged/javascript/egg.min.js': [
+ 		  	  'build/uncompressed/javascript/egg.js'
+          ],
+          'build/packaged/javascript/jquery.gsap.min.js': [
+ 		  	  'build/uncompressed/javascript/CSSPlugin.js',
+			  'build/uncompressed/javascript/jquery.gsap.js',
+			  'build/uncompressed/javascript/TweenLite.js',
+          ],
         }
       }
     },
