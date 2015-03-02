@@ -19,6 +19,7 @@ phenix.birdegg = {
 			menu: '#eggmenu',
 		    anchors: ['topbanner', 'instro', 'specially', 'guest', 'process', 'stuffs', 'partners', 'contact'],
 			scrollingSpeed: 1000,
+      scrollBar: true,
 			onLeave: function(index, nextIndex, direction){
 				phenix.birdegg.hideHeader();
 				if(index == 1 && direction == 'down'){
