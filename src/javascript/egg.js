@@ -45,6 +45,7 @@ phenix.birdegg = {
 			},
 			afterLoad: function(anchorLink, index){}
 		});
+		
 		$.fn.fullpage.moveTo(1);
 
 		$('body').on('mousewheel', function(e, delta){
