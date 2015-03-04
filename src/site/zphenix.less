@@ -4723,9 +4723,10 @@ h4.ui.header .advantage{
 	color: white;
 	padding: 8% 0;
 	background-color: rgba(56, 67, 77, 0.9);
-	background-image: url("/images/incubator/bgbird.jpg");
+	background-image: url("/images/incubator/bgbird01.jpg");
 	background-position: left top;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 .incubator.masthead .ui.grid {
 	padding: 0 15%;
@@ -4987,15 +4988,23 @@ h4.ui.header .advantage{
 	text-align: left;
 }
 .incubator.supply .supplies .image {
-    float: left;
-	width: 400px;
-	overflow: hidden;
-	margin-right: 3rem;
-	margin-top: 0.5rem;
+    box-sizing: border-box;
+   display: inline-block;
+   margin-top: 2rem;
+   overflow: hidden;
+   padding: 0 3%;
+   vertical-align: top;
+   width: 47%;
+}
+.incubator.supply .supplies .image img {
+	width: 100%;
 }
 .incubator.supply .supplies .content {
-    float: right;
-	width: 450px;
+    box-sizing: border-box;
+    display: inline-block;
+	margin-top: 1.5rem;
+	width: 50%;
+	padding-right: 3%;
 }
 .incubator.supply .supplies .ui.list > .item {
 	line-height: 2;
@@ -5095,7 +5104,11 @@ h4.ui.header .advantage{
 .incubator.submit {
 	padding: 3% 5%;
 	background-color: #273c67;
+	background-image: url("/images/incubator/idea.jpg");
+	background-position: left top;
+	background-attachment: fixed;
 	color: white;
+	background-repeat: no-repeat;
 }
 .incubator.submit .ui.grid {
 	padding: 0 15%;
