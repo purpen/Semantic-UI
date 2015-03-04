@@ -19,6 +19,7 @@ phenix.birdegg = {
 			menu: '#eggmenu',
 		    anchors: ['topbanner', 'instro', 'specially', 'guest', 'process', 'stuffs', 'partners', 'contact'],
 			scrollingSpeed: 1000,
+      scrollBar: true,
 			onLeave: function(index, nextIndex, direction){
 				phenix.birdegg.hideHeader();
 				if(index == 1 && direction == 'down'){
@@ -45,6 +46,7 @@ phenix.birdegg = {
 			},
 			afterLoad: function(anchorLink, index){}
 		});
+		
 		$.fn.fullpage.moveTo(1);
 
 		$('body').on('mousewheel', function(e, delta){

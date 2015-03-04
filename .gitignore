@@ -1,5 +1,5 @@
-build/
 rtl/
+build/
 docs/
 node_modules
 node/server.json

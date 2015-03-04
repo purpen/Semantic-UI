@@ -20,7 +20,8 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 
 		var settings = $.extend({
 			'scrollSpeed'  : 500,
-			'mySelector'     : 'div'
+			'mySelector'   : 'div',
+			'selectClass'  : '',
 		}, options);
 
 		// adding a class to users div
@@ -34,13 +35,14 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 			lastScrollTop = 0,
 			menuHeight = $(".smint").height(),
 			smint = $('.smint'),
-        	smintA = $('.smint a'),
         	myOffset = smint.height();
-
-      
-
-
-
+		
+		if ( settings.selectClass ){
+			var smintA = $('.smint a.' + settings.selectClass);
+		} else {
+			var smintA = $('.smint a');
+		}
+		
 		if ( settings.scrollSpeed ) {
 				var scrollSpeed = settings.scrollSpeed
 			}
@@ -89,7 +91,7 @@ If you like Smint, or have suggestions on how it could be improved, send me a tw
 					//remove the padding we added.
 					$('body').css('padding-top', '0' );	
 				}   
-
+				console.log('scrollTop:'+ scrollTop +' direction: '+direction+' index: '+ index);
 				// Check if the position is inside then change the menu
 				// Courtesy of Ryan Clarke (@clarkieryan)
 				if(optionLocs[index][0] <= scrollTop && scrollTop <= optionLocs[index][1]){	
