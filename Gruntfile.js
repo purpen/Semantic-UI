@@ -572,7 +572,7 @@ module.exports = function(grunt) {
           'build/packaged/css/calendar-theme.css': [
             'build/uncompressed/site/calendar.css'
           ],
-          'build/packaged/css/eggs.min.css': [
+          'build/packaged/css/eggs01.min.css': [
             'build/uncompressed/site/eggs.css'
           ]
         }
