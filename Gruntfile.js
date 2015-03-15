@@ -669,6 +669,9 @@ module.exports = function(grunt) {
 			  'build/uncompressed/javascript/jquery.gsap.js',
 			  'build/uncompressed/javascript/TweenLite.js',
           ],
+          'build/packaged/javascript/jquery.zclip.min.js': [
+ 		  	  'build/uncompressed/javascript/jquery.zclip.min.js'
+          ],
         }
       }
     },
