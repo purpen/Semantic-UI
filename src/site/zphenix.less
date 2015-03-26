@@ -58,6 +58,16 @@ a.line:hover {
 	overflow-y: hidden;
 	min-height: 200px;
 }
+.cover {
+    background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+}
+.cover.translucent {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.cover.transparent {
+	background-color: rgba(0, 0, 0, 0);
+}
 /* 视频 */
 .ui.video.grid {
     margin-left: 0 !important;
@@ -273,7 +283,7 @@ a.line:hover {
 .main .ui.main-nav > .item {
 	border-bottom: 2px solid transparent;
     margin: 0;
-	padding: 0.5rem 1.5em;
+	padding: 0.5rem 1.5rem 0rem;
 	color: #ff3366;
 	font-weight: bold;
 	opacity: 0.9;
@@ -289,8 +299,7 @@ a.line:hover {
 .main .ui.main-nav > .item:hover {
 	border-bottom: 2px solid #ff3366;
 	margin: 0;
-	padding-bottom: 16px !important;
-	padding: 0.5rem 1.5em 1rem;
+	padding: 0.5rem 1.5rem;
 }
 /* 搜索框 */
 .header.main .search.item {
@@ -765,7 +774,7 @@ a.line:hover {
 .social.products,
 .social.topic {
 	background-color: #f1f1f1;
-	padding: 1rem 0;
+	padding: 1.5rem 0;
 }
 .social.topic {
 	padding: 0rem 0 1.5rem;
@@ -852,6 +861,57 @@ a.line:hover {
 	color: #72777a;
 	margin: 0 auto;
 	line-height: 1;
+}
+.social.people.all {
+	background-color: #f1f1f1;
+	padding: 2rem 0 5rem;
+}
+.social.people.filter {
+    background-color: #fff;
+    padding: 2rem 0rem;
+}
+.social.people.showall {
+    display: block;
+}
+.social.people.showno {
+    display: none;
+}
+.social.people.more {
+    padding: 1rem 0;
+}
+.social.people.more .ui.ell.link {
+    display: inline-block;
+    width: 50px;
+    margin: 0 auto;
+}
+.social.people.more .ui.ell.link:hover{
+    text-decoration: none;
+}
+.social.people.filter .block.title {
+    font-size: 22px;
+}
+.social.people.filter .ui.list {
+    margin: 0.5rem 0 1rem;
+}
+.social.people.filter .ui.list > .item {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    margin-right: 1rem;
+}
+.social.people.filter .ui.list > .item > a {
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.social.people.filter .ui.list > .item > a:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+.social.people.filter .ui.list > .item > a.active {
+    border-color: #f36;
+    text-decoration: none;
 }
 /* 社区 */
 #topics .ui.grid .container.column {
@@ -1801,52 +1861,71 @@ ul.sidemenu li a:hover span {
 }
 
 /* 产品灵感 */
-.catemenu .category.header {
-	text-align: center;
+.ideaheader.catemenu .category.header {
+    background-color: rgba(56, 67, 77, 0.9);
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	color: white;
-	padding: 120px 0 40px 0;
 }
-.catemenu .category.header .inner {
-	width: 80%;
-	margin: 0 auto;
-	padding: 20px 40px 20px 40px;
-	background: rgba(56,67,77,0.9);
+.ideaheader.catemenu .container {
+    margin: 100px 0 0;
 }
-.catemenu .category.header h2,
-.catemenu .category.header h1 {
-	color: white;
-	text-rendering: optimizeLegibility;
+.ideaheader.catemenu .container hr {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    display: inline-block;
+    height: 2px;
+    width: 130px;
 }
-.catemenu .category.header h1 {
+.ideaheader.catemenu .category.header .children {
+    margin-bottom: 60px;
+    margin-top: 2rem;
+}
+.ideaheader.catemenu .children .ui.button {
+    margin-right: 0.5rem;
+}
+.ideaheader.catemenu .stast {
+    margin-bottom: 1rem;
+}
+.ideaheader.catemenu .stast .space {
+    font-size: 0.875rem;
+    margin: 0 0.5rem;
+}
+.ideaheader.catemenu .category.header h1 {
 	margin: 0.5rem 0 0.8rem;
 	font-size: 2rem;
 }
-.catemenu .category.header a.cate {
+.ideaheader.catemenu .category.header a.cate {
 	text-decoration: none;
 	padding: 5px;
 	color: white;
 	border-bottom: 3px solid transparent;
 }
-.catemenu .category.header a.cate:hover {
+.ideaheader.catemenu .category.header a.cate:hover {
 	border-bottom: 3px solid white;
 }
-.catemenu .category.header a.cate.active {
+.ideaheader.catemenu .category.header a.cate.active {
 	border-bottom: 3px solid #ff3366;
 }
-.catemenu .category.header .children {
-	margin-bottom: 0.875rem;
+
+.social.submitbox {
+	background-color: #f1f1f1;
+	padding: 40px 0 50px;
 }
-.catemenu .category.header h2 {
-	font-size: 1.25rem;
-	margin: 0.5rem 0.8rem;
-	display: inline-block;
+.social.submitbox h2 {
+	padding-top: 12px;
+	line-height: 32px;
+	padding-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	font-weight: 800;
+	color: #444;
 }
-.catemenu .category.header .inner .discription {
-	color: rgba(255, 255, 255, 0.9);
-	margin: 0rem 0rem 0.8rem;
+.social.submitbox h2 + p {
+	margin-bottom: 2rem;
+}
+.social.submitbox .ui.share.button {
+	padding: 0.8em 3.5rem;
 }
 .social.sortby,
 .social.stuffist {
@@ -1857,6 +1936,50 @@ ul.sidemenu li a:hover span {
 }
 .social.stuffist {
 	padding: 1.5rem 0 2.5rem;
+}
+.ui.stuffs.cards > .card .content {
+    position: relative;
+}
+.ui.stuffs.cards > .card .content .ui.author.link {
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+.ui.stuffs.cards > .card .content .support.button {
+    border-radius: 10rem;
+    font-size: 1.2rem;
+    height: 40px;
+    padding: 0.625rem;
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    width: 40px;
+    opacity: 0.8;
+}
+.ui.stuffs.cards > .card .content .support.button:hover,
+.ui.stuffs.cards > .card .content .support.actived.button {
+    opacity: 1;
+}
+.ui.stuffs.cards > .card .ui.avatars.images {
+    font-size: 1rem;
+    padding-bottom: 3px;
+}
+.ui.stuffs.cards > .card .ui.avatars.images > img.avatar {
+    height: 1.35em;
+    margin: 0;
+    width: 1.35em;
+}
+.ui.stuffs.cards > .card .ui.avatars.images .count {
+    margin-left: 0.25em;
+    margin-top: 0.25em;
+    position: relative;
+}
+.ui.stuffs.cards > .card .ui.avatars.images .count small {
+    position: absolute;
+}
+.ui.stuffs.cards > .card [class*="right floated"],
+.ui.stuffs.card [class*="right floated"] {
+    float: right;
+    margin-top: 0em;
 }
 
 .ui.social.page > #postpage {
@@ -2308,6 +2431,18 @@ ul.sidemenu li a:hover span {
 	padding-bottom: 5px;
 	text-decoration: none;
 }
+.shop.submenu .ui.quick.horizontal.list {
+    margin-left: 1rem;
+}
+.shop.submenu .ui.quick.horizontal.list > .item {
+    line-height: 0.6em;
+}
+.shop.submenu .ui.quick.horizontal.list > .item:first-child {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: 0.5rem;
+    padding-left: 1.5rem;
+}
+
 .section.breadcrumb {
     padding: 1rem 0;
 }
