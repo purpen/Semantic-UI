@@ -281,9 +281,9 @@ a.line:hover {
 	float: left;
 }
 .main .ui.main-nav > .item {
-	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
     margin: 0;
-	padding: 0.5rem 1.5rem 0rem;
+	padding: 0.5rem 1.5rem;
 	color: #ff3366;
 	font-weight: bold;
 	opacity: 0.9;
@@ -292,15 +292,15 @@ a.line:hover {
     -o-transition: all 0.3s ease-in-out 0s;
     -ms-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
-		transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
 }
 .main .ui.main-nav > .active.item,
 .main .ui.main-nav > .item:active,
 .main .ui.main-nav > .item:hover {
-	border-bottom: 2px solid #ff3366;
-	margin: 0;
-	padding: 0.5rem 1.5rem;
+	border-top: 2px solid #ff3366;
+    padding: 0.5rem 1.5rem;
 }
+
 /* 搜索框 */
 .header.main .search.item {
     font-size: 1rem;
@@ -2278,6 +2278,11 @@ ul.sidemenu li a:hover span {
 }
 .vote.highlight {
     margin-bottom: 0.5em;
+}
+
+.fever.content .ui.segment {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
 }
 
 /* 个人中心 */
@@ -4676,14 +4681,14 @@ section .pad .category {
 
 @media only screen and (min-width : 992px) and (max-width : 1500px) {
 	.header.main .ui.main-nav > .item {
-		padding-left: 1em;
-		padding-right: 1em;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 	.header.main .ui.main-nav > .active.item,
 	.header.main .ui.main-nav > .item:active,
 	.header.main .ui.main-nav > .item:hover {
-	    padding-left: 1em;
-	    padding-right: 1em;
+	    padding-left: 1rem;
+	    padding-right: 1rem;
 	}
 }
 @media only screen and (min-width : 992px) and (max-width : 1024px) {
@@ -4717,14 +4722,14 @@ section .pad .category {
 	}
 	
 	.header.main .ui.main-nav > .item {
-		padding-left: 1em;
-		padding-right: 1em;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 	.header.main .ui.main-nav > .active.item,
 	.header.main .ui.main-nav > .item:active,
 	.header.main .ui.main-nav > .item:hover {
-	    padding-left: 1em;
-	    padding-right: 1em;
+	    padding-left: 1rem;
+	    padding-right: 1rem;
 	}
 	.hero .slidee li,
 	.hero .slidee li > div {
