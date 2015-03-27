@@ -38,7 +38,8 @@ a.line:visited {
 	transition: all 0.3s ease-in-out 0s;
 	text-decoration: none;
 }
-a.line:hover {
+a.line:hover,
+a.line.active {
 	color: #ff3366;
 	text-decoration: none;
 	padding-bottom: 3px;
@@ -682,10 +683,12 @@ a.line:hover {
 	margin-top: 1em;
 }
 .ui.tophead {
-    background: url("/images/002.jpg") no-repeat scroll center center / cover rgba(0, 0, 0, 0);
-    color: #FFFFFF;
-    height: 260px;
-    text-align: center;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    height: auto;
 }
 .masthead {
     border-bottom: medium none;
@@ -716,16 +719,28 @@ a.line:hover {
     margin-bottom: 0;
 	margin-top: 0;
 }
-.masthead .introduction {
-    padding: 1.5em 0 4.5em;
+.masthead .introduction,
+.masthead .actions {
+    padding: 100px 0 30px;
 }
-.masthead .introduction .ui.header .sub.header {
-	color: #fff;
-	line-height: 1.5;
+.masthead .introduction hr {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    display: inline-block;
+    height: 2px;
+    width: 130px;
 }
-.masthead .introduction .actions {
-	margin-top: 1.5em;
+.masthead .children {
+    margin-bottom: 60px;
 }
+.masthead .stast {
+    margin-bottom: 1rem;
+}
+.masthead .stast .space {
+    font-size: 0.875rem;
+    margin: 0 0.5rem;
+}
+
 .masthead .ui.tabular.menu {
     border-bottom: medium none;
 }
@@ -1700,6 +1715,7 @@ ul.sidemenu li a:hover span {
 }
 .section-title h2 + p {
 	margin-bottom: 2rem;
+    line-height: 1.35rem;
 }
 .section-title hr {
     background: none repeat scroll 0 0 #ff3366;
@@ -2136,108 +2152,62 @@ ul.sidemenu li a:hover span {
 	padding: 0.65em 0.25em;
 }
 
+.sortby .ui.horizontal.sortby.list {
+    margin-left: 1.5rem;
+}
+
 /* 创意投票 */
-#votelist {
-	margin: 1.5em auto 2em;
-}
-#votelist a.link:hover {
-	text-decoration: none;
-}
-#votelist .ui.attached.header {
-	position: relative;
-}
-#votelist .ui.attached.header .showbox.link {
+.voteist .i-stats {
 	position: absolute;
-    right: 0;
-    top: 12px;
-	z-index: 10;
-}
-#votelist .ui.items {
-	margin-top: 1.5em;
-}
-#votelist .i-stats{
-	position:absolute;
-	padding-top: 25px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
+	padding-top: 15px;
+	bottom: 0.5rem;
+	left: 1rem;
+	right: 1rem;
 	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
 }
-#votelist .vote {
+.voteist .vote {
 	position: relative;
 	padding-bottom: 0.5rem;
-	border-top: 1px solid rgba(0,0,0,0.1);
-	padding-top: 10px;
+	border-top: 2px solid rgba(0,0,0,0.1);
+	padding-top: 0.7rem;
 }
-#votelist .ui.timer.list .item {
+.voteist .ui.timer.list .item {
 	text-align: center;
 }
-#votelist .ui.timer.list .item:hover {
+.voteist .ui.timer.list .item:hover {
 	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2) inset;
 }
-#votelist .ui.timer.list .green.item {
+.voteist .ui.timer.list .green.item {
 	color: #58CB73;
 }
-#votelist .ui.timer.list .green.item .unit {
+.voteist .ui.timer.list .green.item .unit {
 	color: #58CB73;
 }
-#votelist .ui.timer.list .number {
+.voteist .ui.timer.list .number {
 	margin-bottom: 0.6em;
 }
-#votelist .ui.timer.list .unit {
+.voteist .ui.timer.list .unit {
 	font-size: 0.875em;
 	color: rgba(0,0,0,0.5);
 }
-#votelist .vote .progress {
+.voteist .vote .progress {
 	position: absolute;
     right: 0;
 	text-align: right;
     top: 9px;
     z-index: 9;
 }
-#votelist .vote .progress .count {
+.voteist .vote .progress .count {
 	display: block;
 	font-size: 1.15em;
 }
-#votelist .vote .progress .description {
+.voteist .vote .progress .description {
 	font-size: 0.875em;
 	color: rgba(0,0,0,0.5);
 }
-#votelist .ui.three.items .magenta.item .image+.content{
-	margin-left: 0;
-	padding: 10px !important;
-	padding-bottom: 55px !important;
-	height: 140px;
+.voteist .ui.vstatus.horizontal.list > .item {
+	line-height: 1.8rem;
 }
-
-#votepage {
-	padding-top: 1em;
-	padding-bottom: 3em;
-	background-color: #fff;
-}
-#votepage .product.params {
-	padding: 1.5em 0;
-	position: relative;
-}
-#votepage .product.reviews {
-	margin-bottom: 2em;
-}
-
-#votepage .ui.rules.grid > .column {
-    margin-bottom: 0;
-	font-size: 0.875rem;
-	color: rgba(0,0,0,0.6);
-	margin-top: 0.5em;
-}
-#votepage .vote.people {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	box-sizing: border-box;
-	padding-bottom: 0.45em;
-}
-#votepage .avatars .ui.image {
-	margin-bottom: 0.5em;
-}
-
 .vote.box {
     margin-bottom: 0.5em;
 }
@@ -2280,6 +2250,38 @@ ul.sidemenu li a:hover span {
     margin-bottom: 0.5em;
 }
 
+#votelist {
+    margin: 0;
+    padding: 1.5rem 0 2rem;
+    background-color: #f1f1f1;
+}
+#votepage {
+	padding-top: 1em;
+	padding-bottom: 3em;
+	background-color: #fff;
+}
+#votepage .product.params {
+	padding: 1.5em 0;
+	position: relative;
+}
+#votepage .product.reviews {
+	margin-bottom: 2em;
+}
+
+#votepage .ui.rules.grid > .column {
+    margin-bottom: 0;
+	font-size: 0.875rem;
+	color: rgba(0,0,0,0.6);
+	margin-top: 0.5em;
+}
+#votepage .vote.people {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	padding-bottom: 0.45em;
+}
+#votepage .avatars .ui.image {
+	margin-bottom: 0.5em;
+}
 .fever.content .ui.segment {
     margin-bottom: 3rem;
     padding: 1.5rem;
@@ -2413,7 +2415,7 @@ ul.sidemenu li a:hover span {
 }
 .shop.submenu {
 	background-color: #f4f4f4;
-	padding: 0.8rem 0;
+	padding: 0.65rem 0;
 }
 .shop.submenu .ui.list > .item {
 	margin-left: 1.5rem;
