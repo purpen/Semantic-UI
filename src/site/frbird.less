@@ -451,6 +451,16 @@ i.basic.icon {
   padding-right: 1%;
 }
 
+.ui.very.compact.grid {
+  margin: 0% -0.5%;
+}
+.ui.very.compact.grid > .column,
+.ui.very.compact.grid > .row > .column {
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+}
+
+
 @media only screen and (min-width : 768px) {
   .ui.mobile.only.block,
   .ui.mobile.only.grid,
@@ -2257,6 +2267,7 @@ ul.ui.list li:before,
 .ui.links .magenta.link,
 .ui.magenta.link {
     color: #FF3366;
+	text-decoration: none;
 }
 
 .ui.links .gray.link,
@@ -2405,7 +2416,7 @@ ul.ui.list li:before,
   background: none;
   height: 70px;
   margin: 0em;
-  padding: 1em 1em 65px !important;
+  padding: 1rem 1rem 75px !important;
   box-shadow: none;
   font-size: 1em;
   border: none;
@@ -2578,6 +2589,23 @@ ul.ui.list li:before,
      Labels
 ---------------*/
 
+.ui.cards > .card > .content > .i-stats,
+.ui.card > .content > .i-stats {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0px, #fff 26%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 0.5rem;
+    left: 1rem;
+    padding-top: 15px;
+    position: absolute;
+    right: 1rem;
+}
+
+.ui.cards > .card > .content > .i-stats > .love,
+.ui.card > .content > .i-stats > .love {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.5rem;
+    padding-top: 0.7rem;
+    position: relative;
+}
 
 /*-----Star----- */
 
@@ -2643,8 +2671,8 @@ ul.ui.list li:before,
   color: rgba(0, 0, 0, 0.4);
   box-shadow: none;
   -webkit-transition: color 0.2s ease;
-          transition: color 0.2s ease;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  transition: color 0.2s ease;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
 .ui.cards > .card > .extra a:not(.ui),
 .ui.card > .extra a:not(.ui) {
@@ -2654,7 +2682,6 @@ ul.ui.list li:before,
 .ui.card > .extra a:not(.ui):hover {
   color: #ff3366;
 }
-
 
 /*******************************
            Variations
