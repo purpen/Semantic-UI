@@ -5403,6 +5403,18 @@ position: relative;
 .ui.center-list .presell{
 	top:0;
 	bottom:auto;
+	border-top-left-radius: 4px;
+}
+.ui.center-list >.ui.three.cards >.card >.image{
+	padding:37.65% 0;
+	background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(255,94,58,.8)),to(#f36));
+	background-image: -webkit-linear-gradient(bottom,rgba(255,94,58,.8) 0,#f36 100%);
+	background-image: linear-gradient(to top,rgba(255,94,58,.8) 0,#f36 100%);
+	background-size:cover;
+}
+.ui.center-list .ui.three.cards>.card>.content{
+	height: 30px;
+	padding: 1rem 1rem 60px!important;
 }
 .ui.center-list .exit{
 	padding: .5em 1.5em;
@@ -5413,9 +5425,9 @@ position: relative;
 	right:0;
 	color: #fff;
 	z-index: 999;
-	-webkit-transform: translateX(200%);
-	-ms-transform: translateX(200%);
-	transform: translateX(100%);
+	-webkit-transform: translateX(0%);
+	-ms-transform: translateX(0%);
+	transform: translateX(0%);
 	-webkit-transition: all 500ms;
 	transition: all 500ms;
 }
