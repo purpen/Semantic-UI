@@ -765,11 +765,8 @@ a.line.active {
 
 .social.slide {
 	background-color: rgba(255,255,255, 1);
-	padding: 1.5rem 0;
+	padding: 1rem 0 0;
 }
-.social.slide > .ui.grid > .row > .ten.wide.column {
-	padding-right: 0.5%;
-} 
 .social.slide .ui.advert {
 	margin-bottom: 20px;
 	height: 200px;
@@ -782,6 +779,10 @@ a.line.active {
 	height: 420px;
 	overflow: hidden;
 }
+.social.topstick {
+    background: none repeat scroll 0 0 #fff;
+}
+
 .social.people {
 	background-color: #f1f1f1;
 	padding: 1rem 0 5rem;
@@ -928,6 +929,9 @@ a.line.active {
     border-color: #f36;
     text-decoration: none;
 }
+.social.catemenu {
+    color: white;
+}
 /* 社区 */
 #topics .ui.grid .container.column {
 	margin-top: 0;
@@ -998,6 +1002,17 @@ a.line.active {
 .ui.topic.table td.author {
 	vertical-align: top;
 	text-align: center;
+}
+.social.topstick.top {
+    padding: 1.5rem 0 0;
+    background: none repeat scroll 0 0 #f1f1f1;
+}
+.social.topstick .ui.socialstick.items > .item {
+    margin-bottom: 1.5rem;
+}
+#topics {
+    padding: 0.5rem 0 3rem;
+    background: none repeat scroll 0 0 #f1f1f1;
 }
 #topics .ui.three.items {
 	margin-left: 0;
@@ -1070,10 +1085,6 @@ a.line.active {
     font-weight: normal;
     margin-top: 0.5em;
 }
-#topics .ui.table tr .dot-irecommend {
-	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-	color: #5d6266;
-}
 #topics .ui.table tr:hover {
 	background-color: rgba(0, 0, 50, 0.02);
 }
@@ -1119,6 +1130,7 @@ a.line.active {
 }
 .topic.table .content .description {
 	color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 0.5rem;
 }
 .topic .ui.table .center.aligned,
 .ui.topic.table .center.aligned {
@@ -1876,6 +1888,51 @@ ul.sidemenu li a:hover span {
 	float: right;
 }
 
+.ui.socialstick.items .item .transparent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0,0,0,0.1);
+    -webkit-transition: all 0.3s ease 0.1s;
+    -moz-transition: all 0.3s ease 0.1s;
+    -o-transition: all 0.3s ease 0.1s;
+    -ms-transition: all 0.3s ease 0.1s;
+	transition: all 0.3s ease 0.1s;
+}
+.ui.socialstick.items .item .sub.title {
+    bottom: 0.5rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: bold;
+    line-height: 1.6;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    z-index: 99;
+    -webkit-transition: all 0.3s ease 0.1s;
+    -moz-transition: all 0.3s ease 0.1s;
+    -o-transition: all 0.3s ease 0.1s;
+    -ms-transition: all 0.3s ease 0.1s;
+	transition: all 0.3s ease 0.1s;
+}
+.ui.socialstick.items .item:hover .transparent {
+	background-color: rgba(0,0,0,0.7);
+}
+.ui.socialstick.items .item:hover .sub.title {
+	bottom: 2rem;
+    color: rgba(255,255,255,1.0);
+}
+.ui.socialstick.items > .item > .image {
+    height: 200px;
+    background-image: linear-gradient(to top, rgba(255, 94, 58, 0.8) 0%, rgba(255, 51, 102, 1.0) 100%);
+    overflow: hidden;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* 产品灵感 */
 .ideaheader.catemenu .category.header {
     background-color: rgba(56, 67, 77, 0.9);
@@ -1909,6 +1966,7 @@ ul.sidemenu li a:hover span {
     margin: 0 0.5rem;
 }
 .ideaheader.catemenu .category.header h1 {
+    color: white;
 	margin: 0.5rem 0 0.8rem;
 	font-size: 2rem;
 }
@@ -1958,7 +2016,7 @@ ul.sidemenu li a:hover span {
 }
 .ui.stuffs.cards > .card .content .ui.author.link {
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 .ui.stuffs.cards > .card .content .support.button {
     border-radius: 10rem;
@@ -1975,9 +2033,17 @@ ul.sidemenu li a:hover span {
 .ui.stuffs.cards > .card .content .support.actived.button {
     opacity: 1;
 }
+.ui.stuffs.cards > .card > .content > .i-stats > .love > .category {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0.75rem;
+    z-index: 9;
+}
 .ui.stuffs.cards > .card .ui.avatars.images {
     font-size: 1rem;
     padding-bottom: 3px;
+    margin: 0rem;
 }
 .ui.stuffs.cards > .card .ui.avatars.images > img.avatar {
     height: 1.35em;
