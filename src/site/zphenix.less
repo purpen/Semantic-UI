@@ -453,11 +453,11 @@ a.line.active {
 	color: #FF3b6b;
 }
 .header.main .ui.basket.button > .floating.label {
-	font-size: 0.01rem;
-    height: 1rem;
-    left: 65%;
-    top: 0;
-    width: 1rem;
+	font-size: 12px;
+  height: 16px;
+  left: 59%;
+  top: 0;
+  width: 16px;
 }
 
 .header.main .ui.secondary.user.menu {
@@ -4909,11 +4909,19 @@ h4.ui.header .advantage{
 		padding-top:15px;
 	}
 }
+.ui.allist .ui.four.items > .item  {
+  box-shadow: 0 0px 0 0 rgba(0,0,0,.2) inset;
+  background-color: #fff;
+  border-radius: 0.3125em;
+  min-height: 320px;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: auto;
+}
 .ui.allist .ui.items>.item:hover{
 	border-bottom: 1px solid rgba(0,0,0,0.1) !important;
 }
 .ui.allist .ui.four.items .item .content{
-	padding-top:1.75em;
+	padding: .75em .8em;
 }
 .ui.allist .ui.four.items .item .ui.dividing .image{
 	background-color: rgba(0,0,0,0);
@@ -4921,7 +4929,7 @@ h4.ui.header .advantage{
 	position: relative;
 	display: block;
 	box-sizing: border-box;
-	margin: 12px auto;
+	margin: 5px auto 12px;
 	max-height: 100%;
 }
 .ui.allist .ui.four.items .item .ui.dividing .image img{
@@ -4937,6 +4945,7 @@ h4.ui.header .advantage{
 }
 .ui.allist .ui.four.items .item .i-stats .schedule{
 	border-top: 1px solid rgba(0,0,0,.1);
+	margin-bottom: 0.35rem;
 }
 .ui.allist .ui.four.items .item .i-stats .schedule .status{
 	max-height: 30px;
@@ -4958,6 +4967,19 @@ h4.ui.header .advantage{
 	padding-top: 45px;
 	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
 }
+.ui.allist .image .school{
+	position:absolute;
+	width:100%;
+	background:rgba(0,0,0,0.5);
+	color:#fff;
+	bottom:0;
+	left:0;
+	font-size: 14px;
+	text-align:center;
+	padding: 8px 0;
+	text-align: center;
+	z-index:4;
+}
 
 
 /** 孵化页面 **/
@@ -4969,6 +4991,7 @@ h4.ui.header .advantage{
 	background-position: left top;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
+	background-size:cover;
 }
 .incubator.masthead .ui.grid {
 	padding: 0 15%;
@@ -5351,6 +5374,7 @@ h4.ui.header .advantage{
 	background-attachment: fixed;
 	color: white;
 	background-repeat: no-repeat;
+	background-size:cover;
 }
 .incubator.submit .ui.grid {
 	padding: 0 15%;
@@ -5358,3 +5382,203 @@ h4.ui.header .advantage{
 .incubator.submit .buttons {
 	margin: 5rem 0 2rem;
 }
+
+/****个人中心****/
+.ui.center-list{
+	padding: 1em 2%;
+}
+.ui.center-list .timestatus {
+position: relative;
+}
+.ui.center-list .ui.items .item{
+	cursor:auto;
+}
+.ui.center-list .ui.cards .card {
+	border-top:1px solid rgba(0,0,0,.1) !important;
+}
+.ui.center-list .ui.cards .card{
+	margin-left:1%;
+	margin-right:1%;
+}
+.ui.center-list .card .image-extra{
+	background-color: rgba(0,0,0,.1);
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	-webkit-transition: opacity .25s ease 0s,background-color .45s ease 0s;
+	transition: opacity .25s ease 0s,background-color .45s ease 0s;
+	width: 100%;
+	z-index: 3;
+}
+.ui.center-list .card .image-extra > a{
+	position: absolute;
+	width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.ui.center-list .presell{
+	top:0;
+	bottom:auto;
+}
+.ui.center-list .exit{
+	padding: .5em 1.5em;
+	font-size: 14px;
+	background: rgba(0,0,0,.7);
+	position: absolute;
+	bottom: 0;
+	right:0;
+	color: #fff;
+	z-index: 999;
+	-webkit-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(100%);
+	-webkit-transition: all 500ms;
+	transition: all 500ms;
+}
+.ui.center-list .exit .ui.button{
+	padding:.5em;
+}
+.ui.center-list .exit .ui.btn,.ui.center-list .exit .ui.btn:hover{
+	padding: .5em .8em;
+	vertical-align: middle;
+}
+.ui.center-list .ui.cards .card:hover .exit{
+	-webkit-transform: translateX(0%);
+	-ms-transform: translateX(0%);
+	transform: translateX(0%);
+}
+.menu-remind{
+	padding:8px 10px;
+	border-bottom:1px solid rgba(0,0,0,.2);
+	position:relative;
+}
+.menu-remind:hover{
+	background:rgba(0,0,0,0.1);
+}
+.menu-remind a{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+.menu-remind:last-child{
+	border:0px solid #fff;
+}
+
+
+/**** 点赞 ****/
+.image.zan .image-extra{
+	background-color: rgba(0,0,0,0.1);
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	-webkit-transition: opacity .25s ease 0s,background-color .45s ease 0s;
+	transition: opacity .25s ease 0s,background-color .45s ease 0s;
+	width: 100%;
+	z-index: 3;
+}
+.image.zan:hover .image-extra,.ui.cards .card:hover .image.zan .image-extra,.ui.items .item:hover .image.zan .image-extra{
+	background-color: rgba(0,0,0,0.5);
+	opacity:1;
+}
+.image.zan .plus-icon .like {
+	border: 1px solid rgba(255,255,255,0.5);
+	border-radius: 50%;
+	display: inline-block;
+	height: 50px;
+	-webkit-transition: all 500ms cubic-bezier(0.175,.885,.32,1.275) 0s;
+	transition: all 500ms cubic-bezier(0.175,.885,.32,1.275) 0s;
+	width: 50px;
+}
+.image.zan .single-image.plus-icon .like {
+ 	-webkit-transform: translateX(-300%);
+	-ms-transform: translateX(-300%);
+	transform: translateX(-300%); 
+}
+.image.zan:hover .single-image.plus-icon .like,.ui.items .item:hover .image.zan .single-image.plus-icon .like{
+	-webkit-transform: translateX(0%);
+	-ms-transform: translateX(0%);
+	transform: translateX(0%);
+}
+.image.zan .plus-icon .like:after{
+	border-radius: 50%;
+	color: #FFF;
+	display: block;
+	font-size: 18px;
+	height: 100%;
+	left: 0;
+	line-height: 57px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	-webkit-transition: color .25s ease-in-out 0s;
+	transition: color .25s ease-in-out 0s;
+	width: 100%;
+}
+.image.zan .plus-icon .like:after {
+	content: "\f004";
+	font-size: 35px;
+	font-family: FontIcons;
+}
+
+.image.zan .plus-icon .like.active:after{
+  color: #F36;
+}
+
+.image.zan .image-extra > a{
+	position: absolute;
+	width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.image.zan .add{
+	position: absolute;
+	top: 14px;
+	text-align: center;
+	left: 0;
+	color: rgba(0,0,0,0);
+	width: 100%;
+	font-size: 22px;
+	opacity: 1;
+	z-index:-1;
+	transition: all 1s;
+}
+.image.zan .add-active{
+	top:-70px;
+	color:#f36;
+	transition-delay: .3s;
+	-webkit-animation: arrow 1.2s ease both;
+	-moz-animation: arrow 1.2s ease both;
+	animation: arrow 1.2s ease both;
+}
+@-webkit-keyframes arrow {
+	0%{opacity:1}
+	95%{opacity:1}
+	100%{opacity:0}
+}
+@-moz-keyframes arrow {
+	0%{opacity:1}
+	95%{opacity:1}
+	100%{opacity:0}
+}
+@keyframes arrow {
+	0%{opacity:1}
+	95%{opacity:1}
+	100%{opacity:0}
+}
+
+
+
+
+
