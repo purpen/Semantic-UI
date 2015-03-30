@@ -778,6 +778,7 @@ a.line.active {
 .social.slide .slide.content {
 	height: 420px;
 	overflow: hidden;
+    margin-bottom: 1rem;
 }
 .social.topstick {
     background: none repeat scroll 0 0 #fff;
@@ -932,6 +933,15 @@ a.line.active {
 .social.catemenu {
     color: white;
 }
+.social.topics.catemenu {
+    background-color: #fff;
+}
+.social.topics.catemenu .container {
+    padding: 100px 0 40px;
+}
+.social.topics.catemenu .children {
+    padding: 0px 0 60px;
+}
 /* 社区 */
 #topics .ui.grid .container.column {
 	margin-top: 0;
@@ -977,6 +987,7 @@ a.line.active {
 }
 .topics.catemenu .children .ui.button {
 	margin-right: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 .topics.catemenu .children .ui.button i.flat.icon {
 	opacity: 1;
@@ -990,6 +1001,9 @@ a.line.active {
 }
 .topics.catemenu .stast > .ui.horizontal.list > .item {
 	font-size: 0.875rem;
+}
+.topic.table .title .icon {
+    color: #ff3366;
 }
 
 #topiclist {
@@ -1453,11 +1467,14 @@ a.line.active {
 	background-color: white; 
 }
 #fixedslide .next, #fixedslide .prev {
-  top: 215px;
+  top: 0px;
   color: #FFFFFF;
   font-size: 40px;
   position: absolute;
-	text-decoration: none;
+  text-decoration: none;
+  height: 500px;
+  line-height: 500px;
+  width: 80px;
   -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
@@ -1465,16 +1482,20 @@ a.line.active {
   transition: all 0.3s ease-in-out 0s;
 }
 #fixedslide .prev {
-  left: -50px;
+  left: -80px;
+  text-align: right;
 }
 #fixedslide .next {
-  right: -50px;
+  right: -80px;
+  text-align: left;
 }
 #fixedslide:hover .prev {
-  left: 40px;
+  left: 0px;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0px, rgba(0, 0, 0, 0.1) 100%);
 }
 #fixedslide:hover .next {
-  right: 40px;
+  right: 0px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0px, rgba(0, 0, 0, 0.1) 100%);
 }
 #fixedslide .next.disabled, #fixedslide .prev.disabled {
   color: rgba(255, 255, 255, 0.65);
@@ -1485,7 +1506,6 @@ a.line.active {
 	filter: alpha(opacity=65);
 	opacity: 0.65;
 }
-
 
 .ui.small.block {
 	padding-top: 1.5em;
@@ -2043,6 +2063,7 @@ ul.sidemenu li a:hover span {
 .ui.stuffs.cards > .card .ui.avatars.images {
     font-size: 1rem;
     padding-bottom: 3px;
+    min-height: 1.35em;
     margin: 0rem;
 }
 .ui.stuffs.cards > .card .ui.avatars.images > img.avatar {
