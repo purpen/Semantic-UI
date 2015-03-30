@@ -59,16 +59,6 @@ a.line.active {
 	overflow-y: hidden;
 	min-height: 200px;
 }
-.cover {
-    background-color: rgba(0, 0, 0, 0.7);
-	height: 100%;
-}
-.cover.translucent {
-	background-color: rgba(0, 0, 0, 0.1);
-}
-.cover.transparent {
-	background-color: rgba(0, 0, 0, 0);
-}
 /* 视频 */
 .ui.video.grid {
     margin-left: 0 !important;
@@ -929,6 +919,16 @@ a.line.active {
 .social.people.filter .ui.list > .item > a.active {
     border-color: #f36;
     text-decoration: none;
+}
+.catemenu .cover {
+    background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+}
+.catemenu .cover.translucent {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+.catemenu .cover.transparent {
+	background-color: rgba(0, 0, 0, 0);
 }
 .social.catemenu {
     color: white;
@@ -2714,6 +2714,7 @@ h4.ui.header .result {
 #shoppage .product.cover .thumb.wrap .image:hover img,
 #shoppage .product.cover .thumb.wrap .active.image img {
 	border: 1px solid rgba(255, 51, 102, 1);
+    border-radius: 0.25em;
 }
 
 #shoppage .slidebox {
@@ -2803,20 +2804,20 @@ h4.ui.header .result {
 #shoppage .ui.buy.action.table td {
 	padding: 0.25em 0;
 }
-#shoppage .buy.box .ui.basic.table .buy.btn,
-#shoppage .buy.box .ui.basic.table .nowbuy.btn,
-#shoppage .buy.box .ui.basic.table .locknotice.btn {
+#shoppage .buy.box .ui.basic.table .buy.button,
+#shoppage .buy.box .ui.basic.table .nowbuy.button,
+#shoppage .buy.box .ui.basic.table .locknotice.button {
 	margin-top: 0.5em;
 	min-width: 190px;
 }
-#shoppage .buy.box .ui.basic.table .nowbuy.btn {
+#shoppage .buy.box .ui.basic.table .nowbuy.button {
 	text-align: center;
 	padding: 0.75em 1em;
 }
-#shoppage .buy.box .ui.basic.table .ui.btn + .btn {
+#shoppage .buy.box .ui.basic.table .ui.button + .button {
    margin-left: 0.25em;
 }
-#shoppage .buy.box .ui.basic.table .ui.btn.icon {
+#shoppage .buy.box .ui.basic.table .ui.button.icon {
 	padding: 1em;
 }
 #shoppage .buy.box .reorder.title {
@@ -2855,12 +2856,12 @@ h4.ui.header .result {
     font-size: 1.325em;
     margin-bottom: 0.65em;
 }
-#shoppage .buy.box .ui.tobuy.btn {
+#shoppage .buy.box .ui.tobuy.button {
 	line-height: 1.5em;
 	padding: 0.75em 3em 0.75em 2em;
 	margin-top: 2.5em;
 }
-#shoppage .buy.box .ui.tobuy.btn > .icon {
+#shoppage .buy.box .ui.tobuy.button > .icon {
 	font-size: 1.5em;
 	vertical-align: top;
 	margin-right: 0.2em;
