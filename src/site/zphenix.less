@@ -59,6 +59,10 @@ a.line.active {
 	overflow-y: hidden;
 	min-height: 200px;
 }
+.post.froala-element embed {
+    display: block;
+    margin: 2rem auto;
+}
 /* 视频 */
 .ui.video.grid {
     margin-left: 0 !important;
@@ -772,6 +776,7 @@ a.line.active {
 }
 .social.topstick {
     background: none repeat scroll 0 0 #fff;
+    padding-bottom: 1.5rem;
 }
 
 .social.people {
@@ -1021,9 +1026,10 @@ a.line.active {
     padding: 1.5rem 0 0;
     background: none repeat scroll 0 0 #f1f1f1;
 }
-.social.topstick .ui.socialstick.items > .item {
-    margin-bottom: 1.5rem;
+.social.topstick.bottom {
+    padding-bottom: 1.5rem;
 }
+
 #topics {
     padding: 0.5rem 0 3rem;
     background: none repeat scroll 0 0 #f1f1f1;
@@ -1908,7 +1914,17 @@ ul.sidemenu li a:hover span {
 	float: right;
 }
 
-.ui.socialstick.items .item .transparent {
+.ui.socialstick.blocks > .block > .image {
+    height: 200px;
+    background-image: linear-gradient(to top, rgba(255, 94, 58, 0.8) 0%, rgba(255, 51, 102, 1.0) 100%);
+    overflow: hidden;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.ui.socialstick.blocks > .block > .image > .transparent {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1922,7 +1938,7 @@ ul.sidemenu li a:hover span {
     -ms-transition: all 0.3s ease 0.1s;
 	transition: all 0.3s ease 0.1s;
 }
-.ui.socialstick.items .item .sub.title {
+.ui.socialstick.blocks > .block > .image > .transparent > .sub.title {
     bottom: 0.5rem;
     color: rgba(255,255,255,0.9);
     font-weight: bold;
@@ -1936,21 +1952,54 @@ ul.sidemenu li a:hover span {
     -ms-transition: all 0.3s ease 0.1s;
 	transition: all 0.3s ease 0.1s;
 }
-.ui.socialstick.items .item:hover .transparent {
+.ui.socialstick.blocks > .block > .image:hover > .transparent {
 	background-color: rgba(0,0,0,0.7);
 }
-.ui.socialstick.items .item:hover .sub.title {
+.ui.socialstick.blocks > .block > .image:hover > .transparent > .sub.title {
 	bottom: 2rem;
     color: rgba(255,255,255,1.0);
 }
-.ui.socialstick.items > .item > .image {
-    height: 200px;
-    background-image: linear-gradient(to top, rgba(255, 94, 58, 0.8) 0%, rgba(255, 51, 102, 1.0) 100%);
+
+.ui.comments .onecomment {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}
+.ui.comments .onecomment:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.ui.comments .onecomment .avatar {
+    display: block;
+    float: left;
+    width: 2em;
+    margin-right: 0.5rem;
+}
+.ui.comments .onecomment .avatar img {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.25);
     overflow: hidden;
-    background-color: rgba(56, 67, 77, 0.9);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    border-radius: 500px;
+    display: block;
+    height: 2em;
+    margin: 0 auto;
+    width: 2em;
+}
+.ui.comments .onecomment .metadata {
+    color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 2;
+    margin-left: 0.3em;
+}
+.ui.comments .onecomment .text {
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.325rem;
+    margin: 1rem 0;
+    word-wrap: break-word;
+}
+.ui.comments .onecomment .target {
+    margin: 0 0 1rem;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* 产品灵感 */
@@ -2455,18 +2504,17 @@ ul.sidemenu li a:hover span {
 #shoplist {
 	margin: 2rem auto 4rem;
 }
-#shoplist .ui.three.items .magenta.item .image+.content{
+#shoplist .ui.items .magenta.item .image+.content{
 	margin-left: 0;
-	padding: 10px !important;
-	padding-bottom: 55px !important;
-	height: 140px;
+	padding: 1rem 1rem 55px !important;
+	height: 150px;
 }
 #shoplist .i-stats {
 	position: absolute;
-	padding-top: 33px;
+	padding-top: 35px;
 	bottom: 10px;
-	left: 10px;
-	right: 10px;
+	left: 1rem;
+	right: 1rem;
 	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
 }
 #shoplist .ui.items .item > .content > .name {
@@ -2542,7 +2590,7 @@ ul.sidemenu li a:hover span {
 }
 .shop.slide {
 	background-color: #fff;
-	padding:1.5em 0 0;
+	padding:0.5rem 0;
 }
 .ui.items .item > .image .image-extra {
     background-color: rgba(0, 0, 0, 0.1);
@@ -2553,12 +2601,16 @@ ul.sidemenu li a:hover span {
     position: absolute;
     text-align: center;
     top: 0;
+    border-radius: 0.2857rem 0.2857rem 0 0 !important;
+    -webkit-transition: opacity 0.25s ease 0s, background-color 0.45s ease 0s;
     transition: opacity 0.25s ease 0s, background-color 0.45s ease 0s;
     width: 100%;
     z-index: 3;
 }
-#shoplist .ui.items .item.touched .image-extra, .ui.items .item:hover .image-extra {
+#shoplist .ui.items > .item.touched .image-extra,
+.ui.items > .item:hover .image-extra {
     background-color: rgba(255, 51, 102, 0.8);
+    border-radius: 0.2857rem 0.2857rem 0 0 !important;
     opacity: 1;
 }
 .extra-content {
@@ -2919,9 +2971,10 @@ h4.ui.header .result {
 	color: #fff !important;
 }
 .presell{
-  padding: .8em 1.5em .8em .8em;
+    border-radius: 0 0.25em 0 0;
+    padding: 0.5rem 0.8rem;
 	font-size: 14px;
-	background: rgba(0,0,0,.5);
+	background: rgba(0,0,0,0.5);
 	position: absolute;
 	bottom: 0;
 	color: #fff;
@@ -2942,11 +2995,6 @@ h4.ui.header .result {
 .schedule.p-sell>.remaining{
 	float:right;
 }
-.ui.items>.item .ui.progress{
-	background-color: #eee !important;
-	height: 5px !important;
-}
-
 .product.promotion {
 	display: none;
 	margin: 1.5em auto;
@@ -3130,7 +3178,9 @@ h4.ui.header .result {
 	margin-bottom: 3em;
 }
 #checkout .ordered.message {
-	margin-bottom: 2em;
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.15);
+    margin-bottom: 2em;
 }
 #checkout .ordered.message .count {
 	color: #ff3366;
@@ -3738,6 +3788,39 @@ section.log-banner{
 }
 
 /* 评测页面 */
+.try.masthead {
+	color: white;
+	padding: 100px 0 60px;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.try.masthead .buttons {
+	margin-top: 3rem;
+}
+.ui.try .ui.three.items .magenta.item .image+.content{
+	margin-left: 0;
+	padding: 1rem 1rem 55px !important;
+	height: 150px;
+}
+.ui.try .i-stats {
+	position: absolute;
+	padding-top: 25px;
+	bottom: 10px;
+	left: 1rem;
+	right: 1rem;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
+}
+.ui.try .i-stats .trycm{
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.5rem;
+    padding-top: 0.7rem;
+}
+.ui.try .i-stats .trycm .name{
+	margin-bottom: 0.3em;
+}
 .try .masthead .column {
 	padding-top: 80px;
 }
@@ -4306,17 +4389,11 @@ section .pad .category {
 .ui.succase.block .ui.grid .more.row {
 	margin-top: 0;
 }
-.ui.succase.block .ui.items .item {
-	box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset;
-}
 .ui.succase.block .ui.items .item .ui.text {
 	color: rgba(0, 0, 0, 0.7);
 }
 .ui.succase.block .ui.items .item:hover .ui.text {
 	color: #ff3366;
-}
-.ui.succase.block .ui.items .item:hover {
-	box-shadow: 0 -2px 0 0 rgba(255, 51, 102, 1) inset;
 }
 
 #homepage .ui.topic .ui.grid > .row > .column {
@@ -4546,6 +4623,9 @@ section .pad .category {
 .cart.page .ui.cart.table {
 	margin: 1.5em auto 1em;
 }
+.ui.cart.table tr th {
+    background-color: rgba(255, 255, 255, 1);
+}
 .ui.cart.table tr.center.aligned,
 .ui.cart.table tr td.center.aligned,
 .ui.cart.table tr th.center.aligned {
@@ -4608,10 +4688,9 @@ section .pad .category {
 #checkout {
 	margin: 0 auto 3em;
 }
-.ui.address.items .item {
+.ui.address.blocks > .block {
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2) inset;
-	border-radius: 0.2875em;
+	border-radius: 0.2875rem;
     cursor: pointer;
     height: 180px;
 	margin-bottom: 1%;
@@ -4623,27 +4702,26 @@ section .pad .category {
     -ms-transition: all 0.3s ease 0.1s;
 	transition: all 0.3s ease 0.1s;
 }
-.ui.address.items .item .actions {
+.ui.address.blocks > .block .actions {
 	position: absolute;
-	right: 0.6em;
-	top: 0.25em;
+    right: 1rem;
+    top: 0.5rem;
     z-index: 10;
 }
-.ui.address.items .item .actions .button {
-	opacity: 0;
+.ui.address.blocks > .block .actions .button {
 	padding: 0.5em;
 }
-.ui.address.items .item:hover,
-.ui.address.items .active.item {
+.ui.address.blocks > .block:hover,
+.ui.address.blocks > .active.block {
 	border: 1px solid #ff3366;
 }
-.ui.address.items .active.item .actions .button {
+.ui.address.blocks > .active.block .actions .button {
 	opacity: 1;
 }
-.ui.address.items .item:hover .map.icon,
-.ui.address.items .item:hover .name,
-.ui.address.items .active.item .map.icon,
-.ui.address.items .active.item .name {
+.ui.address.blocks .block:hover .map.icon,
+.ui.address.blocks .block:hover .name,
+.ui.address.blocks .active.block .map.icon,
+.ui.address.blocks .active.block .name {
 	color: #ff3366;
 }
 #create-new-address {
@@ -4695,6 +4773,34 @@ section .pad .category {
 }
 #checkout .ui.bonus.segment .field .small {
 	font-size: 0.875rem;
+}
+
+/* 活动 */
+.activity.masthead {
+	color: white;
+	padding: 100px 0 60px;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.activity.masthead .buttons {
+	margin-top: 3rem;
+}
+.ui.activity.cards > .card > .content > .i-stats > .love > .apply {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0.75rem;
+    z-index: 9;
+}
+.ui.activity.cards > .card > .content > .i-stats > .love > .apply > a {
+    color: rgba(255, 51, 102, 0.9);
+}
+.ui.activity.cards > .card > .image > .presell {
+    border-radius: 0 0.25em 0 0;
+    padding: 0.5rem 0.8rem;
 }
 
 /* 导航购物篮 */
@@ -4877,23 +4983,11 @@ h4.ui.header .advantage{
 .ui.items>.magenta.item .schedule .status .count {
   margin-right: 0em; 
 }
-.ui.items>.item:hover ,.ui.items>.item{
-  -webkit-box-shadow: 0 0px 0 0 #f36 inset !important;
-  box-shadow: 0 0px 0 0 #f36 inset !important;
-}
-.ui.items>.magenta.item:hover .content,#homepage .ui.items>.item:hover{
-  -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.1) !important;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.1) !important;
-}
 .ui.items>.magenta.item .schedule .status .remaining .count {
   margin-right: 0em;
 }
 .ui.items>.item>.content{
   padding:0.75em 0.8em;
-}
-.product.white .ui.items>.magenta.item .content {
-	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
-	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.1);
 }
 #shoppage .product.dream .ui.level.row:hover .actions .ui.button {
   color: #fff;
@@ -5386,7 +5480,7 @@ h4.ui.header .advantage{
 
 /****个人中心****/
 .ui.center-list{
-	padding: 1em 2%;
+	padding: 1rem 0;
 }
 .ui.center-list .timestatus {
 position: relative;

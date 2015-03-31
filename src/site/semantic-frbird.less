@@ -12,30 +12,45 @@
   background-color: #FFFFFF;
   line-height: 1.2;
   font-size: 1em;
-
-  border-bottom: 0.2em solid rgba(0, 0, 0, 0.2);
-  padding: 0.5em;
+  
+  padding: 0em;
+  border: none;
+  border-radius: 0.2857rem;
+  box-shadow: 0 1px 3px #C7C7C7;
+  -webkit-transition: box-shadow 0.2s ease;
+          transition: box-shadow 0.2s ease;
 }
 
-.ui.items > .item {
-	border-bottom: 0em solid rgba(0, 0, 0, 0.2);
-	box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset;
-	min-height: 0;
-	border-radius: 0;
-	padding: 0;
+/*--------------
+  Rounded Edges
+---------------*/
+
+.ui.items > .item > *:first-child,
+.ui.item > *:first-child {
+    border-radius: 0.2857rem 0.2857rem 0 0 !important;
 }
+.ui.items > .item > *:last-child,
+.ui.item > *:last-child {
+    border-radius: 0 0 0.2857rem 0.2857rem !important;
+}
+
+.ui.items > .item:hover {
+  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1) !important;
+}
+
 .ui.items > .item a {
 	cursor: pointer;
 	text-decoration: none;
 }
 .ui.items > .item > .image {
 	background-color: rgba(0, 0, 0, 0);
-	border-radius: 0;
 	position: relative;
 }
 .ui.items > .item > .image > img,
 .ui.items > .item > .image > a > img {
     display: block;
+    border-radius: 0.2857rem 0.2857rem 0 0 !important;
 	-webkit-transition: transform 0.25s ease-in-out 0s;
 	-moz-transition: transform 0.25s ease-in-out 0s;
 	-o-transition: transform 0.25s ease-in-out 0s;
@@ -77,9 +92,6 @@
    text-indent: -999em;
 }
 
-.ui.items > .item:hover {
-  	box-shadow: 0 -2px 0 0 rgba(255, 51, 102, 1) inset;
-}
 .ui.items > .item:hover > .content a,
 .ui.items > .item:hover > .content .price,
 .ui.items > .item:hover > .content .count,
@@ -127,7 +139,26 @@
 .ui.items > .item .ui.progress {
 	overflow: hidden;
 }
-
+.ui.items > .item > .content > .header {
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.33em;
+    margin-top: -0.165em;
+    color: rgba(0, 0, 0, 0.85);
+    display: block;
+}
+.ui.items > .item > .content > .advantage,
+.ui.items > .item > .content > .description {
+    clear: both;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 0.5em;
+    min-height: 38px;
+    word-wrap: break-word;
+}
+.ui.items > .item > .content > .advantage > .result,
+.ui.items > .item > .content > .description > .result {
+    margin-top: 0.25rem;
+}
 /* 预售进度 */
 .ui.items > .item .schedule {
     margin-bottom: 0.75rem;
@@ -153,11 +184,11 @@
 	margin-right: 0.25em;
 }
 .ui.items > .item .ui.progress {
-	background-color: #ccc;
+	background-color: #eee;
     border: 0 solid rgba(0, 0, 0, 0.1);
     border-radius: 0;
 	line-height: 0;
-    height: 7px;
+    height: 2px;
     padding: 0;
 }
 .ui.items > .item .ui.progress .bar {
