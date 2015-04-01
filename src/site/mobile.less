@@ -1,17 +1,12 @@
-.ui.grid{
-	margin:0!important;
-}
 .ui.responsive.grid {
 	padding: 0 1.5%;
-	margin: 0 !important;
 	max-width: 767px;
+    margin: 1rem auto;
 }
 .ui.wap {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     line-height: 30px;
 	margin: 0 auto;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 .ui.hide {
 	display: none;
@@ -34,7 +29,7 @@
     margin: 1.5em 0 3em;
 }
 #frslide {
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
 	max-height: 300px;
 	position: relative;
 }
@@ -46,6 +41,9 @@
 	display: inline-block;
 	max-width: 100%;
 	float: left;
+}
+#frslide > .ui.slide > .item > .ui.image {
+	margin: 0 auto;
 }
 #frslide .pages {
 	bottom: 1em;
@@ -78,19 +76,57 @@
     margin-right: 2%;
     width: 96%;
 }
-.ui.items > .item .ui.header > .advantage {
+.ui.one.items > .item > .content {
+    border: 0 none;
+	padding: 1rem;
+	position: relative;
+}
+.ui.one.items > .item > .content > .advantage {
 	color: #666;
     font-size: 0.875em;
-    font-weight: 700;
+    margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     min-height: 18px;
 }
-.ui.items > .item .ui.dividing.header {
-	margin-bottom: 0.5rem;
-	padding-bottom: 0.5rem;
-}
 .ui.items > .item > .content > .name {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    padding-top: 1rem;
+}
+.ui.items > .item > .content > .schedule {
+    margin-bottom: 0.75rem;
+}
+.ui.items > .item > .content > .schedule .total.amount {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+	color: #ff3366;
+}
+.ui.items > .item > .content > .schedule .total.amount .unit {
 	font-size: 0.875em;
+}
+.ui.items > .item > .content > .schedule .status {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+}
+.ui.items > .item > .content > .schedule .status .count {
+	margin-right: 0.5em;
+}
+.ui.items > .item > .content > .schedule .status .remaining {
+	float: right;
+}
+.ui.items > .item > .content > .schedule .status .remaining .count {
+	margin-right: 0.25em;
+}
+.ui.items > .item > .content > .schedule .ui.progress {
+	background-color: #eee;
+    border: 0 solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+	line-height: 0;
+    height: 2px;
+    padding: 0;
+}
+.ui.items > .item > .content > .schedule .ui.progress .bar {
+	border-radius: 0px;
 }
 .mmfoot .ui.grid > .row.bot {
 	padding: 8px 0;
@@ -218,15 +254,15 @@
 /****话题内容****/
 .froala-element{
 	overflow-y:hidden !important;
-	padding-top:6px !important;
+	padding-top: 1rem !important;
+    padding-bottom: 1rem;
 }
-
 
 .ui.items>.magenta.item:hover .content,#homepage .ui.items>.item:hover{
      -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.1) !important;
      box-shadow: 0 3px 5px rgba(0,0,0,0.1) !important;
  }
-.ui.items>.item{
+.ui.items>.item {
 	-webkit-box-shadow: 0 0px 0 0 rgba(0,0,0,.2) inset !important;
 	box-shadow: 0 0px 0 0 rgba(0,0,0,.2) inset !important;
 }
@@ -245,15 +281,15 @@
 
 /***** <iphone5 ****/
 @media only screen and (max-width: 320px){
-.ui.pagination.menu .item {
-  min-width: 2em;
-}
-.ui.menu .item{
-	padding: .83em .65em;
-}
-.ui.btn{
-	padding: 1em 2.5em;
-}
+    .ui.pagination.menu .item {
+      min-width: 2em;
+    }
+    .ui.menu .item{
+    	padding: .83em .65em;
+    }
+    .ui.btn{
+    	padding: 1em 2.5em;
+    }
 }
 
 

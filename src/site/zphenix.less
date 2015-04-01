@@ -303,9 +303,6 @@ a.line.active {
 	width:38%;
 	float: left;
 }
-.header.main .search.item .ui.input input {
-	border-color: #E4E5E7;
-}
 .header.main .search.item .ui.icon.input > input ~ .icon {
 	border-left: 1px solid rgba(244, 33, 86, 0.9);
 	color:rgba(255, 255, 255, 0.9);
@@ -2283,9 +2280,15 @@ ul.sidemenu li a:hover span {
     text-align: center;
 }
 
+#asset-list > .block > .image > img {
+    width: 100%;
+}
 #asset-list .buttons {
 	background-color: rgba(0, 0, 0, 0.05);
 	padding: 0.65em 0.25em;
+}
+#asset-list .buttons .ui.link:hover {
+    text-decoration: none;
 }
 
 .sortby .ui.horizontal.sortby.list {
@@ -2430,6 +2433,10 @@ ul.sidemenu li a:hover span {
 .account.profile {
     margin-bottom: 3em;
 }
+.account.profile .ui.pagebox {
+    margin: 3rem auto 0;
+    text-align: center;
+} 
 .order-item {
 	margin-top: 1em;
 	margin-bottom: 1.5em;
@@ -4969,26 +4976,6 @@ section .pad .category {
 	
 }
 
-/* products color */
-h4.ui.header .advantage{
-  color: #666;
-  min-height: 18px;
-}
-.ui.items>.item>.content .like{
-  color:#999;
-}
-.ui.items>.item>.content .unit,.ui.items>.item>.content .price{
-  color:#f36;
-}
-.ui.items>.magenta.item .schedule .status .count {
-  margin-right: 0em; 
-}
-.ui.items>.magenta.item .schedule .status .remaining .count {
-  margin-right: 0em;
-}
-.ui.items>.item>.content{
-  padding:0.75em 0.8em;
-}
 #shoppage .product.dream .ui.level.row:hover .actions .ui.button {
   color: #fff;
   border: 1px solid #fff;
@@ -5102,25 +5089,26 @@ h4.ui.header .advantage{
 	padding: 3% 8%;
 	background-color: #d82545;
 }
-.incubator.service .ui.items {
+.incubator.service .ui.blocks {
 	margin-top: 5%;
 }
-.incubator.service .ui.items > .item {
+.incubator.service .ui.blocks > .block {
 	background: transparent;
+    margin-bottom: 2rem;
 }
-.incubator.service .ui.items > .item > .wtitle {
+.incubator.service .ui.blocks > .block > .wtitle {
 	border-radius: 500%;
 	margin-right: 2.5rem;
     height: 200px;
     width: 200px;
 }
-.incubator.service .ui.items > .item > .wtitle > a {
+.incubator.service .ui.blocks > .block > .wtitle > a {
 	display: inline-block;
 	font-size: 28px;
     font-weight: 500;
     margin-top: 80px;
 }
-.incubator.service .ui.items > .item:hover > .wtitle > a {
+.incubator.service .ui.blocks > .block:hover > .wtitle > a {
 	color: #ff3366;
 	padding-bottom: 3px;
 	border-bottom: 2px solid #ff3366;
@@ -5210,30 +5198,32 @@ h4.ui.header .advantage{
 	color: white;
 	padding: 3% 5%;
 }
-.incubator.design .ui.items {
+.incubator.design .ui.blocks {
 	margin-top: 5%;
 }
-.incubator.design .ui.items > .item {
+.incubator.design .ui.blocks > .block {
 	background-color: transparent;
 	color: #222;
 }
-.incubator.design .ui.items > .item > .avatar {
+.incubator.design .ui.blocks > .block > .avatar {
 	border-radius: 500px;
+    height: 150px;
+    width: 150px;
 }
-.incubator.design .ui.items > .item > h3 {
+.incubator.design .ui.blocks > .block > h3 {
     font-size: 22px;
     font-weight: 500;
     margin: 0;
     padding: 0.5rem 0;
 }
-.incubator.design .ui.items > .item > hr {
+.incubator.design .ui.blocks > .block > hr {
 	background: none repeat scroll 0 0 #ef9b9e;
     border: medium none;
     height: 2px;
     margin: 0 auto;
     width: 30px;
 }
-.incubator.design .ui.items > .item:hover {
+.incubator.design .ui.blocks > .block:hover {
 	color: #fff;
 }
 
@@ -5243,7 +5233,7 @@ h4.ui.header .advantage{
 	background-color: #222;
 	position: relative;
 }
-.incubator.marketing .ui.items > .item {
+.incubator.marketing .ui.blocks > .block {
 	background: none repeat scroll 0 0 transparent;
     color: #222;
     font-size: 1.5rem;
@@ -5253,38 +5243,38 @@ h4.ui.header .advantage{
     padding: 5rem 0;
     text-align: center;
 }
-.incubator.marketing .ui.stepone.items {
+.incubator.marketing .ui.stepone.blocks {
 	margin-top: 5%;
 }
-.incubator.marketing .ui.steptwo.items {
+.incubator.marketing .ui.steptwo.blocks {
 	margin-bottom: 2.5rem;
 	margin-top: 0;
 }
-.incubator.marketing .ui.items > .item.ma {
+.incubator.marketing .ui.blocks > .block.ma {
 	background-color: #f8cc8b;
 }
-.incubator.marketing .ui.items > .item.mb {
+.incubator.marketing .ui.blocks > .block.mb {
 	background-color: #fff79c;
 }
-.incubator.marketing .ui.items > .item.mc {
+.incubator.marketing .ui.blocks > .block.mc {
 	background-color: #cbe19a;
 }
-.incubator.marketing .ui.items > .item.md {
+.incubator.marketing .ui.blocks > .block.md {
 	background-color: #8ac797;
 }
-.incubator.marketing .ui.items > .item.me {
+.incubator.marketing .ui.blocks > .block.me {
 	background-color: #81ccf2;
 }
-.incubator.marketing .ui.items > .item.mf {
+.incubator.marketing .ui.blocks > .block.mf {
 	background-color: #c18fbc;
 }
-.incubator.marketing .ui.items > .item.mg {
+.incubator.marketing .ui.blocks > .block.mg {
 	background-color: #ef9b9e;
 }
-.incubator.marketing .ui.items > .item.mk {
+.incubator.marketing .ui.blocks > .block.mk {
 	background-color: #efe29b;
 }
-.incubator.marketing .ui.items > .item > i.icon {
+.incubator.marketing .ui.blocks > .block > i.icon {
 	display: block;
     font-size: 4rem;
     margin: 0 auto 1rem;
@@ -5512,47 +5502,41 @@ position: relative;
 .ui.center-list .card .image-extra > a{
 	position: absolute;
 	width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+      height: 100%;
+      top: 0;
+      left: 0;
 }
 .ui.center-list .presell{
-	top:0;
-	bottom:auto;
-	border-top-left-radius: 4px;
+    border-radius: 0;
+    bottom: 0;
+    height: 2rem;
+    padding: 0.5rem 0;
+    width: 100%;
 }
-.ui.center-list >.ui.three.cards >.card >.image{
-	padding:37.65% 0;
+.ui.center-list .presell > label {
+    line-height: 2rem;
+    padding: 0.5rem 1rem;
+}
+.ui.center-list > .ui.three.cards > .card > .image{
+	padding: 37.65% 0;
 	background-image: -webkit-gradient(linear,left bottom,left top,from(rgba(255,94,58,.8)),to(#f36));
 	background-image: -webkit-linear-gradient(bottom,rgba(255,94,58,.8) 0,#f36 100%);
 	background-image: linear-gradient(to top,rgba(255,94,58,.8) 0,#f36 100%);
-	background-size:cover;
+	background-size: cover;
 }
-.ui.center-list .ui.three.cards>.card>.content{
-	height: 30px;
-	padding: 1rem 1rem 65px!important;
+.ui.center-list .ui.three.cards > .card > .content{
+	height: 40px;
+	padding: 1rem 1rem 75px!important;
 }
-.ui.center-list .exit{
-	padding: .5em 1.5em;
-	font-size: 14px;
-	background: rgba(0,0,0,.7);
-	position: absolute;
-	bottom: 0;
-	right:0;
-	color: #fff;
-	z-index: 999;
-	-webkit-transform: translateX(0%);
-	-ms-transform: translateX(0%);
-	transform: translateX(0%);
-	-webkit-transition: all 500ms;
-	transition: all 500ms;
+.ui.center-list .exit {
+    bottom: 0;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    right: 0;
+    z-index: 999;
 }
 .ui.center-list .exit .ui.button{
-	padding:.5em;
-}
-.ui.center-list .exit .ui.btn,.ui.center-list .exit .ui.btn:hover{
-	padding: .5em .8em;
-	vertical-align: middle;
+	padding: 0.5em;
 }
 .ui.center-list .ui.cards .card:hover .exit{
 	-webkit-transform: translateX(0%);
