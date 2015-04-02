@@ -4697,18 +4697,20 @@ section .pad .category {
 	margin: 0 auto 3em;
 }
 .ui.address.blocks > .block {
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	border-radius: 0.2875rem;
     cursor: pointer;
     height: 180px;
-	margin-bottom: 1%;
-    padding: 1%;
+	margin-bottom: 1rem;
     position: relative;
     -webkit-transition: all 0.3s ease 0.1s;
     -moz-transition: all 0.3s ease 0.1s;
     -o-transition: all 0.3s ease 0.1s;
     -ms-transition: all 0.3s ease 0.1s;
 	transition: all 0.3s ease 0.1s;
+}
+.ui.address.blocks > .block > .content {
+    padding: 1rem;
 }
 .ui.address.blocks > .block .actions {
 	position: absolute;
@@ -4721,7 +4723,7 @@ section .pad .category {
 }
 .ui.address.blocks > .block:hover,
 .ui.address.blocks > .active.block {
-	border: 1px solid #ff3366;
+    box-shadow: 0 0 0 1px rgba(255, 51, 102, 1.0);
 }
 .ui.address.blocks > .active.block .actions .button {
 	opacity: 1;
@@ -4895,6 +4897,7 @@ section .pad .category {
 	    padding-right: 1rem;
 	}
 }
+
 @media only screen and (min-width : 992px) and (max-width : 1024px) {
 	.ui.responsive.grid {
 		padding: 0 3.5%;
@@ -4911,6 +4914,9 @@ section .pad .category {
 	.fulllayout .match.head > .ui.logo.grid {
 		margin-top: 1.5%;
 	}
+    .ui.inverted.button {
+        padding: 0.8em 1em;
+    }
 }
 
 @media only screen and (max-width: 960px) {
@@ -5656,6 +5662,7 @@ position: relative;
 	-moz-animation: arrow 1.2s ease both;
 	animation: arrow 1.2s ease both;
 }
+
 @-webkit-keyframes arrow {
 	0%{opacity:1}
 	95%{opacity:1}
