@@ -6,7 +6,7 @@
   position: relative;
 
   width: 316px;
-  /*min-height: 375px;*/
+  min-height: 0px;
   margin: 0em 0.5em 2.5em;
 	
   background-color: #FFFFFF;
@@ -44,17 +44,16 @@
 	text-decoration: none;
 }
 .ui.items > .item > .image ,.ui.cards > .card > .image{
-	padding:37.7% 0 !important;
-	-webkit-background-size: cover!important;
-	background-size:cover !important;
+	background:rgba(0,0,0,0);
+	position:relative;
 }
-.ui.items > .item > .image > a, .ui.cards > .card > .image > a{
+/*.ui.items > .item > .image > a, .ui.cards > .card > .image > a{
 	position:absolute;
 	width:100%;
 	height:100%;
 	top:0;
 	left:0;
-}
+}*/
 .ui.items > .item > .image > img,
 .ui.items > .item > .image > a > img {
     display: block;
