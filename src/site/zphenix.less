@@ -2433,9 +2433,94 @@ ul.sidemenu li a:hover span {
 }
 
 /* 个人中心 */
-.user.center {
-    margin-bottom: 3em;
+.user.masthead {
+	color: white;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.user.masthead .container {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+.user.masthead .container .summary {
+	font-size: 0.875rem;
+}
+.user.masthead .container .avatar {
+	border: 3px solid #FFFFFF;
+}
+.user.submenu {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0 0;
+    background-color: #fff;
+}
+.user.submenu .ui.list > .item {
+    border-bottom: 2px solid transparent;
+    box-sizing: border-box;
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    padding-bottom: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    margin: 0 1.5rem;
+}
+.user.submenu .ui.list > .item:hover, 
+.user.submenu .ui.list > .item.active {
+    border-bottom: 2px solid #f36;
+    color: #f36;
+    transition: all 0.3s ease-in-out 0s;
+}
+.user.center {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+.user.center h3 a.ui.small{
+	float: right;
+	font-weight: 400;
+	font-size: .65em;
+	margin-right:.3em;
+	line-height: 27px;
+}
+.user.center .ui.pagebox {
+    margin-top: 2rem;
+}
+.user.center .ui.table .event {
+    margin-left: 0.5rem;
+}
+.user.center .rightbar .ui.menu .name {
+    margin-bottom: 0.75rem;
+}
+.user.center .rightbar .ui.info.list .item {
+    padding: 0.75rem 0;
+}
+.user.center .rightbar .ui.info.list .item .tg {
+    display: inline-block;
+    padding: 0 0.25rem 0.25rem 0;
+}
+.ui.timeline.list > .item {
+    padding-top: 0.75rem;
+}
+.ui.timeline.list > .item > .content {
+    margin-left: 0;
+}
+.ui.timeline.list > .item > .content > .header > small {
+    font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    margin-left: 0.5rem;
+}
+.ui.timeline.list > .item > .content > .description > p {
+    margin: 0.5rem 0;
+}
+.ui.timeline.list > .item > .content > .cover {
+    margin: 0.75rem auto;
+}
+.ui.magenta.line {
+    color: #ff3366;
+}
+
 .account.profile {
     margin-bottom: 3em;
 }
