@@ -101,7 +101,7 @@ module.exports = function(grunt) {
       'copy:examplesToDocs',
 
       // creates release zip
-      'compress:everything',
+      // 'compress:everything',
 
       // copies files over to docs
       'copy:buildToDocs',

@@ -1153,6 +1153,10 @@ a.line.active {
 .ui.topic.table .center.aligned {
 	text-align: center;
 }
+.topic.guess {
+    margin-left: 5rem;
+    padding: 2.5rem 0 0;
+}
 
 /* 未登录时评论显示 */
 .not.login {
@@ -2429,9 +2433,95 @@ ul.sidemenu li a:hover span {
 }
 
 /* 个人中心 */
-.user.center {
-    margin-bottom: 3em;
+.user.masthead {
+	color: white;
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.user.masthead .container {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+.user.masthead .container .summary {
+	font-size: 0.875rem;
+}
+.user.masthead .container .avatar {
+	border: 3px solid #FFFFFF;
+}
+.user.submenu {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0 0;
+    background-color: #fff;
+}
+.user.submenu .ui.list > .item {
+    border-bottom: 2px solid transparent;
+    box-sizing: border-box;
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    padding-bottom: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    margin: 0 1.5rem;
+}
+.user.submenu .ui.list > .item:hover, 
+.user.submenu .ui.list > .item.active {
+    border-bottom: 2px solid #f36;
+    color: #f36;
+    transition: all 0.3s ease-in-out 0s;
+}
+.user.center {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+.user.center h3 a.ui.small{
+	float: right;
+	font-weight: 400;
+	font-size: .65em;
+	margin-right:.3em;
+	line-height: 27px;
+}
+.user.center .ui.pagebox {
+    margin-top: 2rem;
+}
+.user.center .ui.table .event {
+    margin-left: 0.5rem;
+}
+.user.center .rightbar .ui.menu .name {
+    margin-bottom: 0.75rem;
+}
+.user.center .rightbar .ui.info.list .item {
+    padding: 0.75rem 0;
+}
+.user.center .rightbar .ui.info.list .item .tg {
+    display: inline-block;
+    padding: 0 0.25rem 0.25rem 0;
+}
+.ui.timeline.list > .item {
+    padding-top: 0.75rem;
+}
+.ui.timeline.list > .item > .content {
+    margin-left: 0;
+    width: 90%;
+}
+.ui.timeline.list > .item > .content > .header > small {
+    font-weight: 400;
+    color: rgba(0,0,0,0.4);
+    margin-left: 0.5rem;
+}
+.ui.timeline.list > .item > .content > .description > p {
+    margin: 0.5rem 0;
+}
+.ui.timeline.list > .item > .content > .cover {
+    margin: 0.75rem auto;
+}
+.ui.magenta.line {
+    color: #ff3366;
+}
+
 .account.profile {
     margin-bottom: 3em;
 }
@@ -2531,28 +2621,45 @@ ul.sidemenu li a:hover span {
 }
 
 .shop.tophead {
-    background: url("/images/bgc-all.jpg") no-repeat scroll center center / cover rgba(255, 51, 102, 1);
+    background: url("/images/topicbg/jordan-blyth.jpg") no-repeat scroll center center / cover rgba(255, 51, 102, 1);
     color: #fff;
-    height: 300px;
-	margin: 0 0 1.5rem;
+}
+.shop.tophead .container {
+    margin: 100px 0 0;
+}
+.shop.catemenu .container h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0.5rem 0 0.8rem;
+}
+.shop.catemenu .container hr {
+    background: none repeat scroll 0 0 #fff;
+    border: medium none;
+    display: inline-block;
+    height: 2px;
+    width: 130px;
+}
+.shop.catemenu .children {
+    margin-bottom: 60px;
+    margin-top: 2rem;
 }
 .shop.electronic.tophead {
-    background: url("/images/bgc-shuma.jpg") no-repeat scroll center center / cover rgba(255, 28, 127, 1);
+    background: url("/images/topicbg/smart-wearable.jpg") no-repeat scroll center center / cover rgba(255, 28, 127, 1);
 }
 .shop.entertainment.tophead {
-    background: url("/images/bgc-yule.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+    background: url("/images/topicbg/smart-wearable2.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
 }
 .shop.home.tophead {
-    background: url("/images/bgc_house.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+    background: url("/images/topicbg/smart-home.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
 }
 .shop.outdoor.tophead {
-    background: url("/images/bgc-outdoor.jpg") no-repeat scroll center center / cover rgba(34, 161, 196, 1);
+    background: url("/images/topicbg/smart-healthy.jpg") no-repeat scroll center center / cover rgba(34, 161, 196, 1);
 }
 .shop.health.tophead {
-    background: url("/images/bgc-health.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+    background: url("/images/topicbg/e1.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
 }
 .shop.presale.tophead {
-    background: url("/images/bgc-presale.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
+    background: url("/images/topicbg/crowdfunding-product.jpg") no-repeat scroll center center / cover rgba(13, 170, 127, 1);
 }
 .shop.tophead .masthead > .masthead-cover.translucent {
 	background-color: rgba(0, 0, 0, 0);
@@ -3059,7 +3166,21 @@ h4.ui.header .result {
 .ui.tabox .ui.four.tabs .tab {
 	width: 25%;
 }
-
+.product.overview .tags {
+    margin-top: 2rem;
+}
+.product.overview .tags .ui.line {
+    color: rgba(0, 0, 0, 0.4);
+    margin-right: 0.85em;
+}
+.product.overview .tags a.ui.line:hover {
+    color: #ff3366;
+}
+.product.stuffs {
+    background-color: #f1f1f1;
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
 .product.inventor {
 	background-color:rgba(255,51,102,1);
 	color: #fff;
@@ -3799,12 +3920,14 @@ section.log-banner{
 /* 评测页面 */
 .try.masthead {
 	color: white;
-	padding: 100px 0 60px;
     background-color: rgba(56, 67, 77, 0.9);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+}
+.try.masthead .container {
+    padding: 100px 0 60px;
 }
 .try.masthead .buttons {
 	margin-top: 3rem;
@@ -3907,9 +4030,18 @@ section.log-banner{
 }
 
 /* 搜索页 */
+.social.search {
+    background: url("/images/support-background.jpg") no-repeat scroll center center / cover rgba(56, 67, 77, 0.9);
+    color: #fff;
+    padding: 60px 0;
+}
+.social.search .block.title {
+    color: #fff;
+    margin-bottom: 1rem;
+}
 #searchpage {
-	padding-top: 1.5em;
-	padding-bottom: 2em;
+	padding-top: 1rem;
+	padding-bottom: 2rem;
 	background-color: #fff;
 	min-height: 350px;
 }
@@ -3922,11 +4054,231 @@ section.log-banner{
 	text-align: center;
 }
 .ui.search.list > .item {
-	margin-bottom: 1em;
+    margin-bottom: 1rem;
+    padding: 0;
 }
 .ui.search.list > .item > .content {
-	margin-left: 0;
-	margin-right: -1.5%;
+	margin: 1rem 0.5rem;
+}
+.ui.search.list > .item > .image + .content {
+    margin-left: 0.5rem;
+}
+.ui.search.list > .item > .content > .header {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.33em;
+    margin-bottom: 0.5rem;
+}
+
+/* 孵化资源 */
+.cooperate.masthead {
+	color: white;
+	background: url("/images/topicbg/features_banner.jpg") no-repeat scroll center center / cover rgba(56, 67, 77, 0.9);
+}
+.cooperate.masthead > .masthead-cover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.cooperate.masthead .container {
+    padding: 100px 0 60px;
+}
+.cooperate.masthead .buttons {
+	margin-top: 3rem;
+}
+.cooperate.submenu {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0 0;
+}
+.cooperate.submenu .ui.list > .item {
+    border-bottom: 2px solid transparent;
+    box-sizing: border-box;
+    color: #444;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    padding-bottom: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    margin: 0 1.5rem;
+}
+.cooperate.submenu .ui.list > .item:hover, 
+.cooperate.submenu .ui.list > .item.active {
+    border-bottom: 2px solid #f36;
+    color: #f36;
+    transition: all 0.3s ease-in-out 0s;
+}
+.cooperate.topstick .ui.socialstick.blocks {
+    margin-top: 1rem;
+}
+
+.cooperate.mainlist {
+	padding: 2rem 0;
+}
+.ui.cooperate.cards > .card > .container {
+    padding: 1rem;
+    position: relative;
+}
+.ui.cooperate.cards > .card > .container > .ui.rating {
+    position: absolute;
+    right: 1rem;
+    top: 1.3rem;
+    z-index: 10;
+}
+.ui.cooperate.cards > .card > .container > .summary {
+    color: rgba(0,0,0,0.6);
+    line-height: 1.5rem;
+    font-size: 0.9rem;
+}
+.ui.cooperate.cards > .card > .container > .expertise {
+    margin-top: 1rem;
+}
+.ui.cooperate.cards > .card > .container img.avatar {
+    height: 5em;
+    width: 5em;
+}
+.ui.cooperate.cards > .card > .container > .ui.list {
+    margin: 0 0 1rem;
+}
+.ui.cooperate.cards > .card > .container > .ui.list .content {
+    margin-left: 0;
+    margin-top: 1rem;
+}
+.ui.cooperate.cards > .card > .container > .ui.list .name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.ui.cooperate.cards > .card > .container > .ui.list .description {
+    margin-top: 0.25rem;
+}
+.ui.cooperate.cards > .card > .container > .cases {
+    margin-top: 1rem;
+}
+
+.cooperate.masthead .container {
+    padding: 100px 20% 160px;
+}
+.cooperate.masthead .ui.header {
+    position: relative;
+}
+.cooperate.masthead .ui.header .content {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+.cooperate.masthead .ui.header .sub.header {
+    color: white;
+    margin-bottom: 1rem;
+    margin-top: 0.35rem;
+}
+.cooperate.masthead .ui.header i.icon {
+    margin-right: 0;
+    opacity: 1;
+}
+.cooperate.masthead .rate {
+    margin-top: 1rem;
+    padding-right: 1.75rem;
+}
+.cooperate.masthead .rate .ui.star.rating .icon {
+    color: #fff;
+}
+.cooperate.support {
+    text-align: center;
+    position: relative;
+    margin-top: -3rem;
+}
+.cooperate.support .circular.button {
+    background: none repeat scroll 0 0 #ff3366;
+    border: medium none;
+    color: #fff;
+    font-size: 2rem;
+    height: 6rem;
+    width: 6rem;
+}
+.cooperate.support .circular.button .icon {
+    margin-top: 0.5rem;
+}
+.cooperate.support .editable {
+    position: absolute;
+    right: 9%;
+    top: 4rem;
+    z-index: 10;
+}
+.cooperate.stuffs {
+    padding: 4rem 0 1.5rem;
+}
+.cooperate.stuffs .section-title .block.title,
+.cooperate.content .section-title .block.title,
+.cooperate.prize .section-title .block.title {
+    color: #444;
+    font-size: 24px;
+}
+.cooperate.stuffs .ui.okcase.cards > .card > .content {
+    height: 40px;
+    padding: 1rem 1rem 55px !important;
+}
+.cooperate.stuffs .ui.cards > .card > .content > .i-stats > .love {
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+}
+.cooperate.stuffs .ui.okcase.cards > .card > .content > .i-stats .support.button {
+    top: 0.375rem;
+}
+.cooperate.stuffs .ui.okcase.cards > .card .ui.avatars.images {
+    padding-bottom: 0;
+}
+
+.cooperate.content {
+    background: none repeat scroll 0 0 #f4f4f4;
+    padding: 1.5rem 0 3rem;
+}
+.cooperate.content > .ui.grid {
+    padding: 0 15%;
+}
+.cooperate.content .summary {
+    line-height: 1.75;
+    text-indent: 2em;
+}
+.cooperate.content .expertise {
+    text-align: center;
+}
+.cooperate.prize {
+    padding: 1.5rem 0 3rem;
+}
+#cooperate-follow-label {
+    font-size: 0.875rem;
+    font-weight: normal;
+    margin-left: 0.5rem;
+}
+.cooperate.support .love.count {
+    font-size: 12px;
+    margin-top: 5px;
+}
+.cooperate.prize .avatars .people {
+    display: inline-block;
+}
+.cooperate.prize .avatars .ui.small.images .image {
+    height: 60px;
+    width: 60px;
+}
+
+.cooperate.contact {
+    background-color: rgba(56, 67, 77, 0.9);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    background-image: url("/images/headbg/city.jpg");
+    padding: 1.5rem 0;
+}
+.cooperate.contact .container {
+    width: 60%;
+    margin-bottom: 1.5rem;
+}
+.cooperate.contact .social {
+    margin-bottom: 1.5rem;
+}
+.cooperate.contact .social .ui.icon.button {
+    margin-right: 0.5rem;
 }
 
 /* 后台管理 */
@@ -4673,7 +5025,7 @@ section .pad .category {
  	font-size: 1.05em;
 }
 #shopping-basket .bill p {
- 	margin: 0.35em auto;
+ 	margin: 0 auto 0.5rem;
 }
 #shopping-basket .ui.btn {
 	font-size: 0.875rem;
@@ -4760,18 +5112,20 @@ section .pad .category {
 	margin: 0 auto 3em;
 }
 .ui.address.blocks > .block {
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	border-radius: 0.2875rem;
     cursor: pointer;
     height: 180px;
-	margin-bottom: 1%;
-    padding: 1%;
+	margin-bottom: 1rem;
     position: relative;
     -webkit-transition: all 0.3s ease 0.1s;
     -moz-transition: all 0.3s ease 0.1s;
     -o-transition: all 0.3s ease 0.1s;
     -ms-transition: all 0.3s ease 0.1s;
 	transition: all 0.3s ease 0.1s;
+}
+.ui.address.blocks > .block > .content {
+    padding: 1rem;
 }
 .ui.address.blocks > .block .actions {
 	position: absolute;
@@ -4784,7 +5138,7 @@ section .pad .category {
 }
 .ui.address.blocks > .block:hover,
 .ui.address.blocks > .active.block {
-	border: 1px solid #ff3366;
+    box-shadow: 0 0 0 1px rgba(255, 51, 102, 1.0);
 }
 .ui.address.blocks > .active.block .actions .button {
 	opacity: 1;
@@ -4893,9 +5247,6 @@ section .pad .category {
 #shopping-basket .bill {
 	margin-bottom: 0;
 }
-#shopping-basket .bill p {
-	padding: 5px 0 0em;
-}
 #shopping-basket .bill p + p {
 	padding: 0em;
 }
@@ -4958,6 +5309,7 @@ section .pad .category {
 	    padding-right: 1rem;
 	}
 }
+
 @media only screen and (min-width : 992px) and (max-width : 1024px) {
 	.ui.responsive.grid {
 		padding: 0 3.5%;
@@ -4974,6 +5326,9 @@ section .pad .category {
 	.fulllayout .match.head > .ui.logo.grid {
 		margin-top: 1.5%;
 	}
+    .ui.inverted.button {
+        padding: 0.8em 1em;
+    }
 }
 
 @media only screen and (max-width: 960px) {
@@ -5724,6 +6079,7 @@ position: relative;
 	-moz-animation: arrow 1.2s ease both;
 	animation: arrow 1.2s ease both;
 }
+
 @-webkit-keyframes arrow {
 	0%{opacity:1}
 	95%{opacity:1}
