@@ -773,7 +773,16 @@
 		 */
 		function activate(item, force) {
 			var index = getIndex(item);
-
+            
+            // 判断循环 by purpen
+            if(index == -1){
+                if(rel.activeItem >= items.length - 1){
+                    index = 0;
+                }else{
+                    index = items.length - 1;
+                }
+            }
+            
 			if (!itemNav || index < 0) {
 				return false;
 			}
@@ -804,7 +813,6 @@
 		 */
 		self.activate = function (item, immediate) {
 			var index = activate(item);
-
 			// Smart navigation
 			if (o.smart && index !== false) {
 				// When centeredNav is enabled, center the element.
