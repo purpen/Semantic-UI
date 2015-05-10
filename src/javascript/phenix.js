@@ -241,7 +241,7 @@ phenix.show_login_box = function(next_res_url) {
 }
 
 // wap显示登录弹出框
-phenix.wap_show_sign_box = function(next_res_url) {
+phenix.wap_show_sign_box = function(next_res_url, type) {
 
   $('.two.fields .field').tab();
   $('.two.fields .field .fluid').tab();
@@ -289,7 +289,11 @@ phenix.wap_show_sign_box = function(next_res_url) {
 						phenix.visitor = result.data;
 						// 登录成功后，自动发送ajax请求
 						if (next_res_url) {
-							$.get(next_res_url);
+              if(type==1){
+                phenix.redirect(next_res_url);
+              }else if(type==2){
+ 							  $.get(next_res_url);             
+              }
 						}
 					}
 				}
@@ -337,7 +341,11 @@ phenix.wap_show_sign_box = function(next_res_url) {
             alert('您的默认密码为当前手机号后6位,为了您的账户安全,请尽快去个人中心修改密码!');
 						// 注册成功后，自动发送ajax请求
 						if (next_res_url) {
-							$.get(next_res_url);
+              if(type==1){
+                phenix.redirect(next_res_url);
+              }else if(type==2){
+ 							  $.get(next_res_url);             
+              }
 						}
 					}
 					
