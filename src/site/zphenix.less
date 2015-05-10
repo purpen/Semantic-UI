@@ -37,6 +37,7 @@ a.line:visited {
     -ms-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
 	text-decoration: none;
+    font-weight: 400;
 }
 a.line:hover,
 a.line.active {
@@ -776,6 +777,7 @@ a.line.active {
 .social.topstick {
     background: none repeat scroll 0 0 #fff;
     padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 .social.people {
@@ -1387,7 +1389,6 @@ a.line.active {
 }
 
 #fixedslide {
-	margin-bottom: 20px;
 	max-height: 500px;
 	height: 500px;
 	position: relative;
@@ -1968,6 +1969,33 @@ ul.sidemenu li a:hover span {
     color: rgba(255,255,255,1.0);
 }
 
+.ui.stickcount.blocks > .block > .image .ui.cate.label {
+    background-color: rgba(255, 51, 102, 0.7);
+    border-radius: 2.5rem;
+    color: #fff;
+    font-size: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    top: 1rem;
+}
+.ui.stickcount.blocks {
+    margin-bottom: 0.5rem;
+}
+.ui.stickcount.blocks > .block > .image > .transparent > .sub.title {
+    bottom: -2rem;
+}
+.ui.stickcount.blocks > .block > .image > .transparent > .sub.title > .extra.count {
+    padding-top: 1rem;
+    font-weight: 400;
+}
+.ui.stickcount.blocks > .block > .image > .transparent > .sub.title > .extra.count > span {
+    margin-right: 0.75rem;
+}
+.ui.stickcount.blocks > .block > .image:hover > .transparent > .sub.title {
+	bottom: 1rem;
+}
+
 .ui.comments .onecomment {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     margin-bottom: 1rem;
@@ -2320,7 +2348,6 @@ ul.sidemenu li a:hover span {
 .voteist .vote {
 	position: relative;
 	padding-bottom: 0.5rem;
-	border-top: 2px solid rgba(0,0,0,0.1);
 	padding-top: 0.7rem;
 }
 .voteist .ui.timer.list .item {
@@ -4864,12 +4891,6 @@ section .pad .category {
 	color: #ff3366;
 }
 
-#homepage .ui.topic .ui.grid > .row > .column {
-	padding-right: 0;
-}
-#homepage .ui.topic .ui.grid > .two.column.row > .column:first-child {
-	padding-left: 0;
-}
 #homepage .ui.topic .advert.content .ui.image {
     border-radius: 0em;
 }
@@ -4984,6 +5005,44 @@ section .pad .category {
 	padding: 0.15em 0em 0em;
 	font-size: 14px;
 }
+
+.ui.homesocial.blocks > .block {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.ui.headline.header { 
+    min-height: 115px;
+    padding-right: 165px;
+    padding-top: 1rem;
+    position: relative;
+    padding-bottom: 1rem; 
+}
+.ui.headline.header:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+.ui.headline.header .sub.header {
+    margin-top: 0.75rem;
+}
+.ui.headline.header .ui.image {
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    top: 1rem;
+}
+.ui.headline.header .extra {
+    font-weight: 400;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    bottom: 0.75rem;
+}
+.ui.headline.header .extra .item {
+    margin-right: 0.75rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+.ui.headline.header .extra .item i.icon {
+    font-size: 0.875rem;
+}
+
 #homepage .ui.vote.block .content.row {
 	margin-top: 0;
 	padding-top: 0;
