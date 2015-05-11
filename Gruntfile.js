@@ -638,6 +638,7 @@ module.exports = function(grunt) {
 			'build/uncompressed/javascript/maxlength.js',
 			'build/uncompressed/javascript/jquery.arbitrary-anchor.js',
 			'build/uncompressed/javascript/jquery.gritter.js',
+            'build/uncompressed/javascript/mustache.js',
           ],
           'build/packaged/javascript/frbird.min.js': [
             'build/uncompressed/javascript/phenix.js'
