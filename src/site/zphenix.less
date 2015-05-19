@@ -6212,7 +6212,7 @@ table.topic .author a.avatar.image img.image-V{
   width: 1.2rem;
 	border-radius: 500rem;
 }
-table.topic .author a.avatar.image{
+table.topic .author a.avatar.image,#postpage .ui.header a.ui.avatar.image{
 	overflow: visible !important;
 }
 img.image-WV{
@@ -6222,14 +6222,15 @@ img.image-WV{
   background: #f36;
   z-index: 9999;
   display: block;
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 1.2rem !important;
+  width: 1.2rem !important;
   border-radius: 500rem;
 }
 img.image-UV{
-	position: relative;
-  top: 45px;
-  left: -35px;
+	position: absolute;
+	top: 180px;
+  left: 52%;
+  margin-left: 5px;
   background: #f36;
   z-index: 99;
   height: 1.5rem;
