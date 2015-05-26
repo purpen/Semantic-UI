@@ -557,7 +557,7 @@ module.exports = function(grunt) {
             'build/uncompressed/site/semantic-frbird.css',
 			'build/uncompressed/site/flat.icon.css',
 			'build/uncompressed/site/font-awesome.css',
-			'build/uncompressed/site/froala_editor.css',
+			'build/uncompressed/site/froala_editor.v1.2.7.css',
           ],
           'build/packaged/css/frbird.min.css': [
 			'build/uncompressed/site/resp.css',
@@ -644,10 +644,17 @@ module.exports = function(grunt) {
             'build/uncompressed/javascript/phenix.js'
           ],
           'build/packaged/javascript/froala_editor.min.js': [
-		  	'build/uncompressed/javascript/langs/beautify-html.js',
-            'build/uncompressed/javascript/froala_editor.js',
-			'build/uncompressed/javascript/video.js',
-			'build/uncompressed/javascript/tables.js',
+            'build/uncompressed/javascript/froala_editor.v1.2.7.js',
+            'build/uncompressed/javascript/plugins/block_styles.js',
+            'build/uncompressed/javascript/plugins/char_counter.js',
+            'build/uncompressed/javascript/plugins/colors.js',
+            'build/uncompressed/javascript/plugins/font_size.js',
+            'build/uncompressed/javascript/plugins/fullscreen.js',
+            'build/uncompressed/javascript/plugins/lists.js',
+            'build/uncompressed/javascript/plugins/media_manager.js',
+            'build/uncompressed/javascript/plugins/urls.js',
+			'build/uncompressed/javascript/plugins/video.js',
+			'build/uncompressed/javascript/plugins/tables.js',
 			'build/uncompressed/javascript/langs/zh_cn.js',
           ],
           'build/packaged/javascript/calendar.js': [
