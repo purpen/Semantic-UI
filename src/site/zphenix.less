@@ -1178,6 +1178,18 @@ a.line.active {
     background: transparent;
     color: rgba(0, 0, 0, 0.5);
 }
+.topic-title-color-red > a{
+    color:#ff002b !important;
+}
+.topic-title-color-red > a:hover{
+    border-bottom: 2px solid #ff002b !important;
+}
+.topic-title-color-blue > a{
+    color:#245dc1 !important;
+}
+.topic-title-color-blue > a:hover{
+    border-bottom: 2px solid #245dc1 !important;
+}
 
 /* 未登录时评论显示 */
 .not.login {
@@ -2651,6 +2663,8 @@ ul.sidemenu li a:hover span {
 }
 #shoplist .ui.items .magenta.item .image+.content .advantage{
 	font-size:1rem !important;
+	max-height: 58px;
+  	overflow: hidden;
 }
 #shoplist .i-stats {
 	position: absolute;
