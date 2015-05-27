@@ -3939,7 +3939,7 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
   Editable.prototype.createEditPopupHTML = function () {
     var html = '<div class="froala-popup froala-text-popup" style="display:none;">';
     html += '<h4><span data-text="true">Edit text</span><i title="Cancel" class="fa fa-times" id="f-text-close-' + this._id + '"></i></h4></h4>';
-    html += '<div class="f-popup-line"><input type="text" placeholder="http://www.example.com" class="f-lu" id="f-ti-' + this._id + '">';
+    html += '<div class="f-popup-line"><input type="text" placeholder="http://www.taihuoniao.com" class="f-lu" id="f-ti-' + this._id + '">';
     html += '<button data-text="true" type="button" class="f-ok" id="f-edit-popup-ok-' + this._id + '">OK</button>';
     html += '</div>';
     html += '</div>';
@@ -6894,7 +6894,7 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
     }
 
     if (this.options.imageLink) {
-      html += '<div class="f-popup-line"><label><span data-text="true">Enter URL</span>: </label><input id="f-image-url-' + this._id + '" type="text" placeholder="http://example.com"><button class="f-browse fr-p-bttn" id="f-browser-' + this._id + '"><i class="fa fa-search"></i></button><button data-text="true" class="f-ok fr-p-bttn f-submit" id="f-image-ok-' + this._id + '">OK</button></div>';
+      html += '<div class="f-popup-line"><label><span data-text="true">Enter URL</span>: </label><input id="f-image-url-' + this._id + '" type="text" placeholder="http://taihuoniao.com"><button class="f-browse fr-p-bttn" id="f-browser-' + this._id + '"><i class="fa fa-search"></i></button><button data-text="true" class="f-ok fr-p-bttn f-submit" id="f-image-ok-' + this._id + '">OK</button></div>';
     }
 
     html += '</div>';
@@ -8802,7 +8802,7 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
     }
 
     // URL.
-    html += '<div class="f-popup-line"><input type="text" placeholder="http://www.example.com" class="f-lu ' + browse_cls + '" id="f-lu-' + this._id + '"/>';
+    html += '<div class="f-popup-line"><input type="text" placeholder="http://taihuoniao.com" class="f-lu ' + browse_cls + '" id="f-lu-' + this._id + '"/>';
 
     // Link list.
     if (this.options.linkList.length) {
