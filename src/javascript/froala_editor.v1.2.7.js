@@ -125,7 +125,7 @@ if (typeof jQuery === "undefined") { throw new Error("Froala requires jQuery") }
     maxHeight: 'auto',
     minHeight: 'auto',
     multiLine: true,
-    noFollow: true,
+    noFollow: false,
     paragraphy: true,
     placeholder: 'Type something',
     plainPaste: false,
