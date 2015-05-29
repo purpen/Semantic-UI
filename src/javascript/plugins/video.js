@@ -109,7 +109,7 @@
 
 
   $.Editable.prototype.insertVideoHTML = function () {
-    var html = '<div class="froala-popup froala-video-popup" style="display: none;"><h4><span data-text="true">Insert Video</span><i title="Cancel" class="fa fa-times" id="f-video-close-' + this._id + '"></i></h4><div class="f-popup-line"><textarea placeholder="Embedded code" id="f-video-textarea-' + this._id + '"></textarea></div><p class="or"><span data-text="true">or</span></p><div class="f-popup-line"><input type="text" placeholder="http://youtube.com/" id="f-video-input-' + this._id + '"/><button data-text="true" class="f-ok f-submit fr-p-bttn" id="f-video-ok-' + this._id + '">OK</button></div></div>';
+    var html = '<div class="froala-popup froala-video-popup" style="display: none;"><h4><span data-text="true">Insert Video</span><i title="Cancel" class="fa fa-times" id="f-video-close-' + this._id + '"></i></h4><div class="f-popup-line"><textarea placeholder="Embedded code" id="f-video-textarea-' + this._id + '"></textarea></div><p class="or"><span data-text="true">or</span></p><div class="f-popup-line"><input type="text" placeholder="http://youku.com/" id="f-video-input-' + this._id + '"/><button data-text="true" class="f-ok f-submit fr-p-bttn" id="f-video-ok-' + this._id + '">OK</button></div></div>';
 
     return html;
   }
