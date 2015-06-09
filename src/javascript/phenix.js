@@ -535,6 +535,16 @@ phenix.build_auth_page = function() {
 					prompt : '两次输入密码不一致'
 				}
 			]
+		},
+		//terms
+		terms: {
+			identifier  : 'terms',
+			rules: [
+				{
+					type   : 'checked',
+					prompt : '请先阅读并同意我们的条款'
+				}
+			]
 		}
 	}, {
 		inline : true,
