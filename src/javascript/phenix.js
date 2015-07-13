@@ -826,6 +826,42 @@ phenix.hook_imgarea_select = function(){
 	});
 };
 
+/**
+ * 追加ID值
+ */
+phenix.record_asset_id = function(name, id){
+    var ids = $('#'+name).val();
+    if (ids.length == 0){
+        ids = id;
+    }else{
+        if (ids.indexOf(id) == -1){
+            ids += ','+id;
+        }
+    }
+    $('#'+name).val(ids);
+};
+
+//移除id值
+phenix.remove_asset_id = function(name, id){
+    var ids = $('#'+name).val();
+    var ids_arr = ids.split(',');
+    var is_index_key = phenix.in_array(ids_arr,id);
+    ids_arr.splice(is_index_key,1);
+    ids = ids_arr.join(',');
+    $('#'+name).val(ids);
+};
+
+//查看字符串是否在数组中存在
+phenix.in_array = function(arr, val) {
+    var i;
+    for (i = 0; i < arr.length; i++) {
+        if (val === arr[i]) {
+            return i;
+        }
+    }
+    return -1;
+}; // 返回-1表示没找到，返回其他值表示找到的索引
+
 phenix.preview = function(img, selection) {
 	if (!selection.width || !selection.height){
 		return;
